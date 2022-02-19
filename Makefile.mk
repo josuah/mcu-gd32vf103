@@ -1,5 +1,3 @@
-DEVICE = gd32vf103
-
 OBJCOPY = llvm-objcopy
 OBJDUMP = llvm-objdump
 CC = clang --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
