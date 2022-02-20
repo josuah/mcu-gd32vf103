@@ -312,7 +312,7 @@ struct zmcu_rcu {
 #define RCU_CFG1_I2S2SEL			(1u << 18)
 
 	/* 0x30 */
-	uint32_t volatile RESERVED0;
+	uint8_t volatile RESERVED0[0x34-0x30];
 
 	/* 0x34: Deep-sleep mode voltage register */
 	uint32_t volatile DSV;

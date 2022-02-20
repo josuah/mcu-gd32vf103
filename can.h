@@ -80,7 +80,7 @@ struct zmcu_can {
 	uint32_t volatile FMCFG;
 
 	/* 0x208 */
-	uint32_t volatile RESERVED3;
+	uint8_t volatile RESERVED3[0x20C-0x208];
 
 	/* 0x20C: Filter scale configuration register */
 	uint32_t volatile FSCFG;

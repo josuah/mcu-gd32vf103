@@ -6,7 +6,7 @@
 
 struct zmcu_bkp {
 	/* 0x00 */
-	uint32_t volatile RESERVED0;
+	uint8_t volatile RESERVED0[0x04-0x00];
 
 	/* 0x04: Backup data register x */
 	uint32_t volatile DATAx;

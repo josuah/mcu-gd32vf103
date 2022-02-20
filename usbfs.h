@@ -69,7 +69,7 @@ struct zmcu_usbfs {
 	uint32_t volatile HFINFR;
 
 	/* 0x40C */
-	uint32_t volatile RESERVED4;
+	uint8_t volatile RESERVED4[0x410-0x40C];
 
 	/* 0x410: Host periodic transmit FIFO/queue status register */
 	uint32_t volatile HPTFQSTAT;
@@ -96,7 +96,7 @@ struct zmcu_usbfs {
 		uint32_t volatile CTL;
 
 		/* 0x04 */
-		uint32_t volatile RESERVED7;
+		uint8_t volatile RESERVED7[0x08-0x04];
 
 		/* 0x08: Interrupt flag register */
 		uint32_t volatile INTF;
@@ -146,7 +146,7 @@ struct zmcu_usbfs {
 	uint32_t volatile DVBUSPT;
 
 	/* 0x830 */
-	uint32_t volatile RESERVED11;
+	uint8_t volatile RESERVED11[0x834-0x830];
 
 	/* 0x834: Device IN endpoint FIFO empty interrupt enable register */
 	uint32_t volatile DIEPFEINTEN;
@@ -161,25 +161,25 @@ struct zmcu_usbfs {
 		uint32_t volatile CTL;
 
 		/* 0x04 */
-		uint32_t volatile RESERVED13;
+		uint8_t volatile RESERVED13[0x08-0x04];
 
 		/* 0x08: Interrupt flag register */
 		uint32_t volatile INTF;
 
 		/* 0x0C */
-		uint32_t volatile RESERVED14;
+		uint8_t volatile RESERVED14[0x10-0x0C];
 
 		/* 0x10: Transfer length register */
 		uint32_t volatile LEN;
 
 		/* 0x14 */
-		uint32_t volatile RESERVED15;
+		uint8_t volatile RESERVED15[0x18-0x14];
 
 		/* 0x18: Transmit FIFO status register */
 		uint32_t volatile TFSTAT;
 
 		/* 0x1C */
-		uint32_t volatile RESERVED16;
+		uint8_t volatile RESERVED16[0x1C-0x18];
 
 	} DIEP[4];
 
@@ -193,13 +193,13 @@ struct zmcu_usbfs {
 		uint32_t volatile CTL;
 
 		/* 0x04 */
-		uint32_t volatile RESERVED18;
+		uint8_t volatile RESERVED18[0x08-0x04];
 
 		/* 0x08: Interrupt flag register */
 		uint32_t volatile INTF;
 
 		/* 0x0C */
-		uint32_t volatile RESERVED19;
+		uint8_t volatile RESERVED19[0x10-0x0C];
 
 		/* 0x10: Transfer length register */
 		uint32_t volatile LEN;

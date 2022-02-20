@@ -7,7 +7,7 @@
 struct zmcu_dbg {
 
 	/* 0x00 */
-	uint32_t volatile RESERVED0;
+	uint8_t volatile RESERVED0[0x04-0x00];
 
 	/* 0x04: Control register */
 	uint32_t volatile CTL;

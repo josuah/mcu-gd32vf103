@@ -48,7 +48,7 @@ struct zmcu_afio {
 #define AFIO_EXTISS_PE				B00000100
 
 	/* 0x18 */
-	uint32_t volatile RESERVED0;
+	uint8_t volatile RESERVED0[0x1C-0x18];
 
 	/* 0x1C: AFIO port configuration register 1 */
 	uint32_t volatile PCF1;
