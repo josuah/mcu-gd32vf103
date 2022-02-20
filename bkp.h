@@ -12,7 +12,7 @@ struct zmcu_bkp {
 	uint32_t volatile DATAx;
 
 	/* 0x08 */
-	uint32_t volatile RESERVED1[(0x2C-0x08)/4];
+	uint8_t volatile RESERVED1[0x2C-0x08];
 
 	/* 0x2C: RTC signal output control register */
 	uint32_t volatile OCTL;

@@ -26,7 +26,7 @@ struct zmcu_i2c {
 	uint32_t volatile RT;
 
 	/* 0x24 */
-	uint32_t volatile RESERVED0[(0x90-0x24)/4];
+	uint8_t volatile RESERVED0[0x90-0x24];
 
 	/* 0x90: Fast mode plus configure register */
 	uint32_t volatile FMPCFG;

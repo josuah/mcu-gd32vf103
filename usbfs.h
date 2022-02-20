@@ -26,7 +26,7 @@ struct zmcu_usbfs {
 	uint32_t volatile GINTEN;
 
 	/* 0x01C */
-	uint32_t volatile RESERVED0[(0x0024-0x001C)/4];
+	uint8_t volatile RESERVED0[0x0024-0x001C];
 
 	/* 0x024: Global receive FIFO length register */
 	uint32_t volatile GRFLEN;
@@ -39,7 +39,7 @@ struct zmcu_usbfs {
 	uint32_t volatile HNPTFQSTAT;
 
 	/* 0x030 */
-	uint32_t volatile RESERVED1[(0x0038-0x0030)/4];
+	uint8_t volatile RESERVED1[0x0038-0x0030];
 
 	/* 0x038: Global core configuration register */
 	uint32_t volatile GCCFG;
@@ -48,7 +48,7 @@ struct zmcu_usbfs {
 	uint32_t volatile CID;
 
 	/* 0x034 */
-	uint32_t volatile RESERVED2[(0x0100-0x0034)/4];
+	uint8_t volatile RESERVED2[0x0100-0x0034];
 
 	/* 0x100: Host periodic transmit FIFO length register */
 	uint32_t volatile HPTFLEN;
@@ -57,7 +57,7 @@ struct zmcu_usbfs {
 	uint32_t volatile DIEPTFLEN[3];
 
 	/* 0x110 */
-	uint32_t volatile RESERVED3[(0x0400-0x0110)/4];
+	uint8_t volatile RESERVED3[0x0400-0x0110];
 
 	/* 0x400: Host control register */
 	uint32_t volatile HCTL;
@@ -81,13 +81,13 @@ struct zmcu_usbfs {
 	uint32_t volatile HACHINTEN;
 
 	/* 0x41C */
-	uint32_t volatile RESERVED5[(0x440-0x41C)/4];
+	uint8_t volatile RESERVED5[0x440-0x41C];
 
 	/* 0x440: Host port control and status register */
 	uint32_t volatile HPCS;
 
 	/* 0x444 */
-	uint32_t volatile RESERVED6[(0x500-0x444)/4];
+	uint8_t volatile RESERVED6[0x500-0x444];
 
 	/* 0x500: Host channel */
 	struct {
@@ -108,12 +108,12 @@ struct zmcu_usbfs {
 		uint32_t volatile LEN;
 
 		/* 0x14 */
-		uint32_t volatile RESERVED8[(0x20-0x14)/4];
+		uint8_t volatile RESERVED8[0x20-0x14];
 
 	} HCH[8];
 
 	/* 0x600 */
-	uint32_t volatile RESERVED9[(0x800-0x600)/4];
+	uint8_t volatile RESERVED9[0x800-0x600];
 
 	/* 0x800: Device configuration register */
 	uint32_t volatile DCFG;
@@ -137,7 +137,7 @@ struct zmcu_usbfs {
 	uint32_t volatile DAEPINTEN;
 
 	/* 0x820 */
-	uint32_t volatile RESERVED10[(0x0828-0x0820)/4];
+	uint8_t volatile RESERVED10[0x0828-0x0820];
 
 	/* 0x828: Device VBUS discharge time register */
 	uint32_t volatile DVBUSDT;
@@ -152,7 +152,7 @@ struct zmcu_usbfs {
 	uint32_t volatile DIEPFEINTEN;
 
 	/* 0x838 */
-	uint32_t volatile RESERVED12[(0x900-0x838)/4];
+	uint8_t volatile RESERVED12[0x900-0x838];
 
 	/* 0x900: Device IN endpoint registers */
 	struct {
@@ -184,7 +184,7 @@ struct zmcu_usbfs {
 	} DIEP[4];
 
 	/* 0x980 */
-	uint32_t volatile RESERVED17[(0xB00-0x980)/4];
+	uint8_t volatile RESERVED17[0xB00-0x980];
 
 	/* 0xB00: Device OUT endpoint registers */
 	struct {
@@ -205,12 +205,12 @@ struct zmcu_usbfs {
 		uint32_t volatile LEN;
 
 		/* 0x14 */
-		uint32_t volatile RESERVED20[(0x20-0x14)/4];
+		uint8_t volatile RESERVED20[0x20-0x14];
 
 	} DOEP[4];
 
 	/* 0xB80 */
-	uint32_t volatile RESERVED21[(0xE00-0xB80)/4];
+	uint8_t volatile RESERVED21[0xE00-0xB80];
 
 	/* 0xE00: Power and clock control register */
 	uint32_t volatile PWRCLKCTL;

@@ -50,7 +50,7 @@ struct zmcu_adc {
 	uint32_t volatile RDATA;
 
 	/* 0x50 */
-	uint32_t volatile RESERVED0[(0x80-0x50)/4];
+	uint8_t volatile RESERVED0[0x80-0x50];
 
 	/* 0x80: Oversample control register */
 	uint32_t volatile OVSAMPCTL;

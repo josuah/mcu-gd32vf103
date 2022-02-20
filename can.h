@@ -32,7 +32,7 @@ struct zmcu_can {
 	uint32_t volatile BT;
 
 	/* 0x20 */
-	uint32_t volatile RESERVED0[(0x180-0x20)/4];
+	uint8_t volatile RESERVED0[0x180-0x20];
 
 	/* 0x180: */
 	struct {
@@ -51,7 +51,7 @@ struct zmcu_can {
 	} TX[3];
 
 	/* 0x1A4 */
-	uint32_t volatile RESERVED1[(0x1B0-0x1A4)/4];
+	uint8_t volatile RESERVED1[0x1B0-0x1A4];
 
 	/* 0x1B0: */
 	struct {
@@ -71,7 +71,7 @@ struct zmcu_can {
 	} RX[3];
 
 	/* 0x1D4 */
-	uint32_t volatile RESERVED2[(0x200-0x1D4)/4];
+	uint8_t volatile RESERVED2[0x200-0x1D4];
 
 	/* 0x200: Filter control register */
 	uint32_t volatile FCTL;
@@ -92,7 +92,7 @@ struct zmcu_can {
 	uint32_t volatile FW;
 
 	/* 0x220 */
-	uint32_t volatile RESERVED4[(0x240-0x220)/4];
+	uint8_t volatile RESERVED4[0x240-0x220];
 
 	/* 0x240: Filter registers */
 	struct {

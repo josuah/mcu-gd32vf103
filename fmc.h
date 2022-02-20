@@ -31,7 +31,7 @@ struct zmcu_fmc {
 	uint32_t volatile WP;
 
 	/* 0x24 */
-	uint32_t volatile RESERVED0[(0x100-0x24)/4];
+	uint8_t volatile RESERVED0[0x100-0x24];
 
 	/* 0x100: Product ID register */
 	uint32_t volatile PID;
