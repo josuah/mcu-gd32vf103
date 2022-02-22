@@ -37,5 +37,3 @@ struct zmcu_rtc {
 	uint32_t volatile ALRML;
 
 };
-
-

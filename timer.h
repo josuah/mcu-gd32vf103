@@ -73,5 +73,3 @@ struct zmcu_timer {
 	uint32_t volatile DMATB;
 
 };
-
-

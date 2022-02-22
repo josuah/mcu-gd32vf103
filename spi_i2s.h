@@ -38,5 +38,3 @@ struct zmcu_spi_i2s {
 	uint32_t volatile I2SPSC;
 
 };
-
-
