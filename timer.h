@@ -2,15 +2,15 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define TIMER0 ((struct zmcu_timer *)0x40012C00)
-#define TIMER1 ((struct zmcu_timer *)0x40000000)
-#define TIMER2 ((struct zmcu_timer *)0x40000400)
-#define TIMER3 ((struct zmcu_timer *)0x40000800)
-#define TIMER4 ((struct zmcu_timer *)0x40000C00)
-#define TIMER5 ((struct zmcu_timer *)0x40001000) /* up to CAR */
-#define TIMER6 ((struct zmcu_timer *)0x40001400) /* up to CAR */
+#define TIMER0 ((struct sdk_timer *)0x40012C00)
+#define TIMER1 ((struct sdk_timer *)0x40000000)
+#define TIMER2 ((struct sdk_timer *)0x40000400)
+#define TIMER3 ((struct sdk_timer *)0x40000800)
+#define TIMER4 ((struct sdk_timer *)0x40000C00)
+#define TIMER5 ((struct sdk_timer *)0x40001000) /* up to CAR */
+#define TIMER6 ((struct sdk_timer *)0x40001400) /* up to CAR */
 
-struct zmcu_timer {
+struct sdk_timer {
 
 	/* 0x00: Control register 0 */
 	uint32_t volatile CTL0;

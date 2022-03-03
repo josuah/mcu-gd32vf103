@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define FMC ((struct zmcu_fmc *)0x40022000)
+#define FMC ((struct sdk_fmc *)0x40022000)
 
-struct zmcu_fmc {
+struct sdk_fmc {
 
 	/* 0x00: Wait state register */
 	uint32_t volatile WS;

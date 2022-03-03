@@ -2,13 +2,13 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define GPIOA ((struct zmcu_gpio *)0x40010800)
-#define GPIOB ((struct zmcu_gpio *)0x40010C00)
-#define GPIOC ((struct zmcu_gpio *)0x40011000)
-#define GPIOD ((struct zmcu_gpio *)0x40011400)
-#define GPIOE ((struct zmcu_gpio *)0x40011800)
+#define GPIOA ((struct sdk_gpio *)0x40010800)
+#define GPIOB ((struct sdk_gpio *)0x40010C00)
+#define GPIOC ((struct sdk_gpio *)0x40011000)
+#define GPIOD ((struct sdk_gpio *)0x40011400)
+#define GPIOE ((struct sdk_gpio *)0x40011800)
 
-struct zmcu_gpio {
+struct sdk_gpio {
 
 	/* 0x00: Port control register */
 	uint64_t volatile CTL;
@@ -49,19 +49,19 @@ struct zmcu_gpio {
 };
 
 static inline void
-gpio_port_set(struct zmcu_gpio *gpio, uint32_t mask)
+gpio_port_set(struct sdk_gpio *gpio, uint32_t mask)
 {
 	gpio->BOP = GPIO_BOP_SET(mask);
 }
 
 static inline void
-gpio_port_clear(struct zmcu_gpio *gpio, uint32_t mask)
+gpio_port_clear(struct sdk_gpio *gpio, uint32_t mask)
 {
 	gpio->BOP = GPIO_BOP_CLR(mask);
 }
 
 static inline void
-gpio_port_enable(struct zmcu_gpio *gpio)
+gpio_port_enable(struct sdk_gpio *gpio)
 {
 	if (gpio == GPIOA)
 		RCU->APB2EN |= RCU_APB2EN_PAEN;
@@ -76,7 +76,7 @@ gpio_port_enable(struct zmcu_gpio *gpio)
 }
 
 static inline void
-gpio_mode(struct zmcu_gpio *gpio, uint8_t pin, uint8_t mode, uint8_t ctl)
+gpio_mode(struct sdk_gpio *gpio, uint8_t pin, uint8_t mode, uint8_t ctl)
 {
 	uint64_t reg;
 
@@ -85,51 +85,51 @@ gpio_mode(struct zmcu_gpio *gpio, uint8_t pin, uint8_t mode, uint8_t ctl)
 }
 
 static inline void
-gpio_mode_input_floating(struct zmcu_gpio *gpio, uint8_t pin)
+gpio_mode_input_floating(struct sdk_gpio *gpio, uint8_t pin)
 {
 	gpio_mode(gpio, pin, GPIO_MD_INPUT, GPIO_CTL_INPUT_FLOATING);
 }
 
 static inline void
-gpio_mode_input_analog(struct zmcu_gpio *gpio, uint8_t pin)
+gpio_mode_input_analog(struct sdk_gpio *gpio, uint8_t pin)
 {
 	gpio_mode(gpio, pin, GPIO_MD_INPUT, GPIO_CTL_INPUT_ANALOG);
 }
 
 static inline void
-gpio_mode_input_pull_up(struct zmcu_gpio *gpio, uint8_t pin)
+gpio_mode_input_pull_up(struct sdk_gpio *gpio, uint8_t pin)
 {
 	gpio_mode(gpio, pin, GPIO_MD_INPUT, GPIO_CTL_INPUT_PULL_UP_DOWN);
 	gpio_port_set(gpio, 1u << pin);
 }
 
 static inline void
-gpio_mode_input_pull_down(struct zmcu_gpio *gpio, uint8_t pin)
+gpio_mode_input_pull_down(struct sdk_gpio *gpio, uint8_t pin)
 {
 	gpio_mode(gpio, pin, GPIO_MD_INPUT, GPIO_CTL_INPUT_PULL_UP_DOWN);
 	gpio_port_clear(gpio, 1u << pin);
 }
 
 static inline void
-gpio_mode_output_push_pull(struct zmcu_gpio *gpio, uint8_t pin, uint32_t speed)
+gpio_mode_output_push_pull(struct sdk_gpio *gpio, uint8_t pin, uint32_t speed)
 {
 	gpio_mode(gpio, pin, speed, GPIO_CTL_OUTPUT_PUSH_PULL);
 }
 
 static inline void
-gpio_mode_output_open_drain(struct zmcu_gpio *gpio, uint8_t pin, uint32_t speed)
+gpio_mode_output_open_drain(struct sdk_gpio *gpio, uint8_t pin, uint32_t speed)
 {
 	gpio_mode(gpio, pin, speed, GPIO_CTL_OUTPUT_OPEN_DRAIN);
 }
 
 static inline void
-gpio_mode_altfn_push_pull(struct zmcu_gpio *gpio, uint8_t pin, uint32_t speed)
+gpio_mode_altfn_push_pull(struct sdk_gpio *gpio, uint8_t pin, uint32_t speed)
 {
 	gpio_mode(gpio, pin, speed, GPIO_CTL_ALTFN_PUSH_PULL);
 }
 
 static inline void
-gpio_mode_altfn_open_drain(struct zmcu_gpio *gpio, uint8_t pin, uint32_t speed)
+gpio_mode_altfn_open_drain(struct sdk_gpio *gpio, uint8_t pin, uint32_t speed)
 {
 	gpio_mode(gpio, pin, speed, GPIO_CTL_ALTFN_OPEN_DRAIN);
 }

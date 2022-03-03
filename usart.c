@@ -16,7 +16,7 @@
 #define USART0_BAUD_RATE	9600
 
 void
-usart_set_baud_rate(struct zmcu_usart *usart, uint32_t baud_rate)
+usart_set_baud_rate(struct sdk_usart *usart, uint32_t baud_rate)
 {
 	/* USART->BAUD = 16 * CK_USART0 / (16 * USART0_BAUD_RATE) */
 	//usart->BAUD = CK_USART0 / USART0_BAUD_RATE;
@@ -24,7 +24,7 @@ usart_set_baud_rate(struct zmcu_usart *usart, uint32_t baud_rate)
 }
 
 void
-usart_set_word_length(struct zmcu_usart *usart, uint8_t len)
+usart_set_word_length(struct sdk_usart *usart, uint8_t len)
 {
 	switch (len) {
 	case 8: usart->CTL0 &= ~USART_CTL0_WL; break;
@@ -34,28 +34,28 @@ usart_set_word_length(struct zmcu_usart *usart, uint8_t len)
 }
 
 void
-usart_set_stop_bits(struct zmcu_usart *usart, uint8_t stop_bits)
+usart_set_stop_bits(struct sdk_usart *usart, uint8_t stop_bits)
 {
 	uint32_t reg = usart->CTL1 & ~USART_CTL1_STB_MASK;
 	usart->CTL1 = reg | USART_CTL1_STB(stop_bits);
 }
 
 void
-usart_mode_parity_odd(struct zmcu_usart *usart)
+usart_mode_parity_odd(struct sdk_usart *usart)
 {
 	usart->CTL0 |= USART_CTL0_PM;
 	usart->CTL0 |= USART_CTL0_PCEN;
 }
 
 void
-usart_mode_parity_even(struct zmcu_usart *usart)
+usart_mode_parity_even(struct sdk_usart *usart)
 {
 	usart->CTL0 &= ~USART_CTL0_PM;
 	usart->CTL0 |= USART_CTL0_PCEN;
 }
 
 void
-usart_mode_parity_off(struct zmcu_usart *usart)
+usart_mode_parity_off(struct sdk_usart *usart)
 {
 	usart->CTL0 &= ~USART_CTL0_PCEN;
 }
@@ -73,55 +73,55 @@ usart_clock_disable(void)
 }
 
 void
-usart_enable(struct zmcu_usart *usart)
+usart_enable(struct sdk_usart *usart)
 {
 	usart->CTL0 |= USART_CTL0_UEN;
 }
 
 void
-usart_transmit_enable(struct zmcu_usart *usart)
+usart_transmit_enable(struct sdk_usart *usart)
 {
 	usart->CTL0 |= USART_CTL0_TEN;
 }
 
 void
-usart_receive_enable(struct zmcu_usart *usart)
+usart_receive_enable(struct sdk_usart *usart)
 {
 	usart->CTL0 |= USART_CTL0_REN;
 }
 
 int
-usart_transmit_ready(struct zmcu_usart *usart)
+usart_transmit_ready(struct sdk_usart *usart)
 {
 	return usart->STAT & USART_STAT_TBE;
 }
 
 int
-usart_transmit_done(struct zmcu_usart *usart)
+usart_transmit_done(struct sdk_usart *usart)
 {
 	return usart->STAT & USART_STAT_TC;
 }
 
 void
-usart_transmit_break(struct zmcu_usart *usart)
+usart_transmit_break(struct sdk_usart *usart)
 {
 	usart->CTL0 |= USART_CTL0_SBKCMD;
 }
 
 void
-usart_transmit_byte(struct zmcu_usart *usart, uint8_t byte)
+usart_transmit_byte(struct sdk_usart *usart, uint8_t byte)
 {
 	usart->DATA = byte;
 }
 
 void
-usart_disable_hardware_flow_rts(struct zmcu_usart *usart)
+usart_disable_hardware_flow_rts(struct sdk_usart *usart)
 {
 	usart->CTL2 &= ~USART_CTL2_RTSEN;
 }
 
 void
-usart_disable_hardware_flow_cts(struct zmcu_usart *usart)
+usart_disable_hardware_flow_cts(struct sdk_usart *usart)
 {
 	usart->CTL2 &= ~USART_CTL2_CTSEN;
 }

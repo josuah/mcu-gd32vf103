@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define DBG ((struct zmcu_dbg *)0xE0042000)
+#define DBG ((struct sdk_dbg *)0xE0042000)
 
-struct zmcu_dbg {
+struct sdk_dbg {
 
 	/* 0x00 */
 	uint8_t volatile RESERVED0[0x04-0x00];

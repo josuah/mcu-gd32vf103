@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define BKP ((struct zmcu_bkp *)0x40006C00)
+#define BKP ((struct sdk_bkp *)0x40006C00)
 
-struct zmcu_bkp {
+struct sdk_bkp {
 	/* 0x00 */
 	uint8_t volatile RESERVED0[0x04-0x00];
 

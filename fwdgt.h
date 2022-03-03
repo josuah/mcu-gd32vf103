@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define FWDGT ((struct zmcu_fwdgt *)0x40003000)
+#define FWDGT ((struct sdk_fwdgt *)0x40003000)
 
-struct zmcu_fwdgt {
+struct sdk_fwdgt {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;

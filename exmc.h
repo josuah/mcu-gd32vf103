@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define EXMC ((struct zmcu_exmc *)0xA0000000)
+#define EXMC ((struct sdk_exmc *)0xA0000000)
 
-struct zmcu_exmc {
+struct sdk_exmc {
 
 	/* 0x00: SRAM/NOR Flash control registers */
 	uint32_t volatile SNCTLx;

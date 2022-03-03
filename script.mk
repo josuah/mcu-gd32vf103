@@ -1,15 +1,16 @@
 OBJCOPY = llvm-objcopy
 OBJDUMP = llvm-objdump
+CPP = clang-cpp
 CC = clang --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
+AS = llvm-as --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
+LD = llvm-link --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
 AR = llvm-ar
 GDB = riscv64-unknown-elf-gdb
 OPENOCD = openocd -f interface/ftdi/minimodule.cfg -c "adapter speed 1000" -c "ftdi_device_desc {Dual RS232}" -f target/gd32vf103.cfg
 DFUUTIL = dfu-util -d 28e9:0189 -a 0 -s 0x08000000
-
 SDK_OBJ = ${SDK}/init.o ${SDK}/usart.o
 SDK_CFLAGS = -ffunction-sections -fdata-sections
-SDK_LDFLAGS = -Wl,-Map=firmware.map -Wl,--gc-sections -T${SDK}/script.ld \
-	-nostartfiles -nostdlib -static
+SDK_LDFLAGS = -Map=firmware.map --gc-sections -T${SDK}/script.ld -nostdlib -static
 SDK_CPPFLAGS = -I${SDK}
 SDK_ASFLAGS = -I${SDK}
 
@@ -45,7 +46,7 @@ flash.openocd: firmware.hex
 .S.o:
 
 .c.s:
-	${CC} ${SDK_CPPFLAGS} ${CPPFLAGS} ${SDK_CFLAGS} ${CFLAGS} -c -o $@ $<
+	${CC} ${SDK_CPPFLAGS} ${CPPFLAGS} ${SDK_CFLAGS} ${CFLAGS} -S -o $@ $<
 
 .S.s:
 	${CPP} ${SDK_CPPFLAGS} ${CPPFLAGS} -o $@ $<

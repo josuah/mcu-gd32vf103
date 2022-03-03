@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define EXTI ((struct zmcu_exti *)0x40010400)
+#define EXTI ((struct sdk_exti *)0x40010400)
 
-struct zmcu_exti {
+struct sdk_exti {
 
 	/* 0x00: Interrupt enable register */
 	uint32_t volatile INTEN;

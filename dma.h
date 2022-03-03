@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define DMA0 ((struct zmcu_dma *)0x40020000)
-#define DMA1 ((struct zmcu_dma *)0x40020400)
+#define DMA0 ((struct sdk_dma *)0x40020000)
+#define DMA1 ((struct sdk_dma *)0x40020400)
 
-struct zmcu_dma {
+struct sdk_dma {
 
 	/* 0x00: Interrupt flag register */
 	uint32_t volatile INTF;

@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define CAN0 ((struct zmcu_can *)0x40006400)
-#define CAN1 ((struct zmcu_can *)0x40006800)
+#define CAN0 ((struct sdk_can *)0x40006400)
+#define CAN1 ((struct sdk_can *)0x40006800)
 
-struct zmcu_can {
+struct sdk_can {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;

@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define I2C0 ((struct zmcu_i2c *)0x40005400)
-#define I2C1 ((struct zmcu_i2c *)0x40005800)
+#define I2C0 ((struct sdk_i2c *)0x40005400)
+#define I2C1 ((struct sdk_i2c *)0x40005800)
 
-struct zmcu_i2c {
+struct sdk_i2c {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL[2];

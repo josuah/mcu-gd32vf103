@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define AFIO ((struct zmcu_afio *)0x40010000)
+#define AFIO ((struct sdk_afio *)0x40010000)
 
-struct zmcu_afio {
+struct sdk_afio {
 
 	/* 0x00: Event control register */
 	uint32_t volatile EC;

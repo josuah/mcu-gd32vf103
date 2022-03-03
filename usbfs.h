@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define USBFS ((struct zmcu_usbfs *)0x50000000)
+#define USBFS ((struct sdk_usbfs *)0x50000000)
 
-struct zmcu_usbfs {
+struct sdk_usbfs {
 
 	/* 0x000: Global OTG control and status register */ uint32_t volatile GOTGCS;
 	/* 0x004: Global OTG interrupt flag register */

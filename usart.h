@@ -2,13 +2,13 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define USART0 ((struct zmcu_usart *)0x40013800)
-#define USART1 ((struct zmcu_usart *)0x40004400)
-#define USART2 ((struct zmcu_usart *)0x40004800)
-#define UART3 ((struct zmcu_usart *)0x40004C00)
-#define UART4 ((struct zmcu_usart *)0x40005000)
+#define USART0 ((struct sdk_usart *)0x40013800)
+#define USART1 ((struct sdk_usart *)0x40004400)
+#define USART2 ((struct sdk_usart *)0x40004800)
+#define UART3 ((struct sdk_usart *)0x40004C00)
+#define UART4 ((struct sdk_usart *)0x40005000)
 
-struct zmcu_usart {
+struct sdk_usart {
 
 	/* 0x00: Status register */
 	uint32_t volatile STAT;
@@ -89,26 +89,26 @@ struct zmcu_usart {
 };
 
 /* set the baud rate to an accurate approximation of `baud_rate` */
-void usart_set_baud_rate(struct zmcu_usart *usart, uint32_t baud_rate);
+void usart_set_baud_rate(struct sdk_usart *usart, uint32_t baud_rate);
 
 /* set the word length to `len` (8 or 9) */
-void usart_set_word_length(struct zmcu_usart *usart, uint8_t len);
+void usart_set_word_length(struct sdk_usart *usart, uint8_t len);
 
 /* set the number of stop bits, 5 for 0.5, 10 for 1.0, 15 for 1.5... */
-void usart_set_stop_bits(struct zmcu_usart *usart, uint8_t stop_bits);
+void usart_set_stop_bits(struct sdk_usart *usart, uint8_t stop_bits);
 #define USART_STOP_BITS_0_5			USART_CTL1_STB_0_5
 #define USART_STOP_BITS_1_0			USART_CTL1_STB_1_0
 #define USART_STOP_BITS_1_5			USART_CTL1_STB_1_5
 #define USART_STOP_BITS_2_0			USART_CTL1_STB_2_0
 
 /* enable parity checking with an odd parity mode */
-void usart_mode_parity_odd(struct zmcu_usart *usart);
+void usart_mode_parity_odd(struct sdk_usart *usart);
 
 /* enable parity checking with an even parity mode */
-void usart_mode_parity_even(struct zmcu_usart *usart);
+void usart_mode_parity_even(struct sdk_usart *usart);
 
 /* disable parity checking */
-void usart_mode_parity_off(struct zmcu_usart *usart);
+void usart_mode_parity_off(struct sdk_usart *usart);
 
 /* enable the usart clock */
 void usart_clock_enable(void);
@@ -117,28 +117,28 @@ void usart_clock_enable(void);
 void usart_clock_disable(void);
 
 /* enable the usart module */
-void usart_enable(struct zmcu_usart *usart);
+void usart_enable(struct sdk_usart *usart);
 
 /* enable the transmit buffer */
-void usart_transmit_enable(struct zmcu_usart *usart);
+void usart_transmit_enable(struct sdk_usart *usart);
 
 /* enable the receive buffer */
-void usart_receive_enable(struct zmcu_usart *usart);
+void usart_receive_enable(struct sdk_usart *usart);
 
 /* whether the transmit buffer is ready to be filled */
-int usart_transmit_ready(struct zmcu_usart *usart);
+int usart_transmit_ready(struct sdk_usart *usart);
 
 /* whether the transmission is complete */
-int usart_transmit_done(struct zmcu_usart *usart);
+int usart_transmit_done(struct sdk_usart *usart);
 
 /* send a break frame */
-void usart_transmit_break(struct zmcu_usart *usart);
+void usart_transmit_break(struct sdk_usart *usart);
 
 /* enqueue a data frame */
-void usart_transmit_byte(struct zmcu_usart *usart, uint8_t byte);
+void usart_transmit_byte(struct sdk_usart *usart, uint8_t byte);
 
 /* disable hardware flow control */
-void usart_disable_hardware_flow_rts(struct zmcu_usart *usart);
+void usart_disable_hardware_flow_rts(struct sdk_usart *usart);
 
 /* disable hardware flow control */
-void usart_disable_hardware_flow_cts(struct zmcu_usart *usart);
+void usart_disable_hardware_flow_cts(struct sdk_usart *usart);

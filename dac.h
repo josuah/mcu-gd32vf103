@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define DAC ((struct zmcu_dac *)0x40007400)
+#define DAC ((struct sdk_dac *)0x40007400)
 
-struct zmcu_dac {
+struct sdk_dac {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;

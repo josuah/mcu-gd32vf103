@@ -2,13 +2,13 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define SPI0 ((struct zmcu_spi_i2s *)0x40013000)
-#define SPI1 ((struct zmcu_spi_i2s *)0x40003800)
-#define I2S1 ((struct zmcu_spi_i2s *)0x40003800)
-#define SPI2 ((struct zmcu_spi_i2s *)0x40003C00)
-#define I2S2 ((struct zmcu_spi_i2s *)0x40003C00)
+#define SPI0 ((struct sdk_spi_i2s *)0x40013000)
+#define SPI1 ((struct sdk_spi_i2s *)0x40003800)
+#define I2S1 ((struct sdk_spi_i2s *)0x40003800)
+#define SPI2 ((struct sdk_spi_i2s *)0x40003C00)
+#define I2S2 ((struct sdk_spi_i2s *)0x40003C00)
 
-struct zmcu_spi_i2s {
+struct sdk_spi_i2s {
 
 	/* 0x00: Control register 0 */
 	uint32_t volatile CTL0;

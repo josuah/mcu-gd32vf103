@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define WWDGT ((struct zmcu_wwdgt *)0x40002C00)
+#define WWDGT ((struct sdk_wwdgt *)0x40002C00)
 
-struct zmcu_wwdgt {
+struct sdk_wwdgt {
 
 	/* 0x00: Control register */ uint32_t volatile CTL;
 	/* 0x04: Configuration register */

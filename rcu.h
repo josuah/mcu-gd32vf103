@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define RCU ((struct zmcu_rcu *)0x40021000)
+#define RCU ((struct sdk_rcu *)0x40021000)
 
-struct zmcu_rcu {
+struct sdk_rcu {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;

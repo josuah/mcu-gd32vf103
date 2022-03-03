@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include "binary.h"
 
-#define PMU ((struct zmcu_pmu *)0x40007000)
+#define PMU ((struct sdk_pmu *)0x40007000)
 
-struct zmcu_pmu {
+struct sdk_pmu {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;
