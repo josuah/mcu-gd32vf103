@@ -10,11 +10,11 @@ void (*__vectors[])(void) = {
 	NULL,				/* 0x0000 */
 	NULL,				/* 0x0004 */
 	NULL,				/* 0x0008 */
-	__stop_program, 		/* 0x000C: interrupt_clic_int_sft */
+	__stop_program, 		/* 0x000C CLIC_INT_SFT */
 	NULL, 				/* 0x0010 */
 	NULL, 				/* 0x0014 */
 	NULL, 				/* 0x0018 */
-	__stop_program, 		/* 0x001C: interrupt_clic_int_tmr */
+	__stop_program, 		/* 0x001C CLIC_INT_TMR */
 	NULL, 				/* 0x0020 */
 	NULL, 				/* 0x0024 */
 	NULL, 				/* 0x0028 */
@@ -24,51 +24,51 @@ void (*__vectors[])(void) = {
 	NULL, 				/* 0x0038 */
 	NULL, 				/* 0x003C */
 	NULL, 				/* 0x0040 */
-	__stop_program, 		/* 0x0044: interrupt_clic_int_bwei */
-	__stop_program, 		/* 0x0048: interrupt_clic_int_pmovi */
-	__stop_program, 		/* 0x004C: interrupt_wwdgt */
-	__stop_program, 		/* 0x0050: interrupt_lvd */
-	__stop_program, 		/* 0x0054: interrupt_tamper */
-	__stop_program, 		/* 0x0058: interrupt_rtc */
-	__stop_program, 		/* 0x005C: interrupt_fmc */
-	__stop_program, 		/* 0x0060: interrupt_rcu */
-	__stop_program, 		/* 0x0064: interrupt_exti_line0 */
-	__stop_program, 		/* 0x0068: interrupt_exti_line1 */
-	__stop_program, 		/* 0x006C: interrupt_exti_line2 */
-	__stop_program, 		/* 0x0070: interrupt_exti_line3 */
-	__stop_program, 		/* 0x0074: interrupt_exti_line4 */
-	__stop_program, 		/* 0x0078: interrupt_dma0_chan0 */
-	__stop_program, 		/* 0x007C: interrupt_dma0_chan1 */
-	__stop_program, 		/* 0x0080: interrupt_dma0_chan2 */
-	__stop_program, 		/* 0x0084: interrupt_dma0_chan3 */
-	__stop_program, 		/* 0x0088: interrupt_dma0_chan4 */
-	__stop_program, 		/* 0x008C: interrupt_dma0_chan5 */
-	__stop_program, 		/* 0x0090: interrupt_dma0_chan6 */
-	__stop_program, 		/* 0x0094: interrupt_adc0_chan1 */
-	__stop_program, 		/* 0x0098: interrupt_can0_tx */
-	__stop_program, 		/* 0x009C: interrupt_can0_rx0 */
-	__stop_program, 		/* 0x00A0: interrupt_can0_rx1 */
-	__stop_program, 		/* 0x00A4: interrupt_can0_ewmc */
-	__stop_program, 		/* 0x00A8: interrupt_exti_line5to9 */
-	__stop_program, 		/* 0x00AC: interrupt_timer0_break */
-	__stop_program, 		/* 0x00B0: interrupt_timer0_update */
-	__stop_program, 		/* 0x00B4: interrupt_timer0_trigger */
-	__stop_program, 		/* 0x00B8: interrupt_timer0_capture */
-	__stop_program, 		/* 0x00BC: interrupt_timer1 */
-	__stop_program, 		/* 0x00C0: interrupt_timer2 */
-	__stop_program, 		/* 0x00C4: interrupt_timer3 */
-	__stop_program, 		/* 0x00C8: interrupt_i2c0_event */
-	__stop_program, 		/* 0x00CC: interrupt_i2c0_error */
-	__stop_program, 		/* 0x00D0: interrupt_i2c1_event */
-	__stop_program, 		/* 0x00D4: interrupt_i2c1_error */
-	__stop_program, 		/* 0x00D8: interrupt_spi0 */
-	__stop_program, 		/* 0x00DC: interrupt_spi1 */
-	__stop_program, 		/* 0x00E0: interrupt_usart0 */
-	__stop_program, 		/* 0x00E4: interrupt_usart1 */
-	__stop_program, 		/* 0x00E8: interrupt_usart2 */
-	__stop_program, 		/* 0x00EC: interrupt_exti_line10to15 */
-	__stop_program, 		/* 0x00F0: interrupt_rtc_alarm */
-	__stop_program, 		/* 0x00F4: interrupt_usbfs_wakeup */
+	__stop_program, 		/* 0x0044 CLIC_INT_BWEI */
+	__stop_program, 		/* 0x0048 CLIC_INT_PMOVI */
+	__stop_program, 		/* 0x004C WWDGT */
+	__stop_program, 		/* 0x0050 LVD */
+	__stop_program, 		/* 0x0054 TAMPER */
+	__stop_program, 		/* 0x0058 RTC */
+	__stop_program, 		/* 0x005C FMC */
+	__stop_program, 		/* 0x0060 RCU */
+	__stop_program, 		/* 0x0064 EXTI_LINE0 */
+	__stop_program, 		/* 0x0068 EXTI_LINE1 */
+	__stop_program, 		/* 0x006C EXTI_LINE2 */
+	__stop_program, 		/* 0x0070 EXTI_LINE3 */
+	__stop_program, 		/* 0x0074 EXTI_LINE4 */
+	__stop_program, 		/* 0x0078 DMA0_CHAN0 */
+	__stop_program, 		/* 0x007C DMA0_CHAN1 */
+	__stop_program, 		/* 0x0080 DMA0_CHAN2 */
+	__stop_program, 		/* 0x0084 DMA0_CHAN3 */
+	__stop_program, 		/* 0x0088 DMA0_CHAN4 */
+	__stop_program, 		/* 0x008C DMA0_CHAN5 */
+	__stop_program, 		/* 0x0090 DMA0_CHAN6 */
+	__stop_program, 		/* 0x0094 ADC0_CHAN1 */
+	__stop_program, 		/* 0x0098 CAN0_TX */
+	__stop_program, 		/* 0x009C CAN0_RX0 */
+	__stop_program, 		/* 0x00A0 CAN0_RX1 */
+	__stop_program, 		/* 0x00A4 CAN0_EWMC */
+	__stop_program, 		/* 0x00A8 EXTI_LINE5TO9 */
+	__stop_program, 		/* 0x00AC TIMER0_BREAK */
+	__stop_program, 		/* 0x00B0 TIMER0_UPDATE */
+	__stop_program, 		/* 0x00B4 TIMER0_TRIGGER */
+	__stop_program, 		/* 0x00B8 TIMER0_CAPTURE */
+	__stop_program, 		/* 0x00BC TIMER1 */
+	__stop_program, 		/* 0x00C0 TIMER2 */
+	__stop_program, 		/* 0x00C4 TIMER3 */
+	__stop_program, 		/* 0x00C8 I2C0_EVENT */
+	__stop_program, 		/* 0x00CC I2C0_ERROR */
+	__stop_program, 		/* 0x00D0 I2C1_EVENT */
+	__stop_program, 		/* 0x00D4 I2C1_ERROR */
+	__stop_program, 		/* 0x00D8 SPI0 */
+	__stop_program, 		/* 0x00DC SPI1 */
+	__stop_program, 		/* 0x00E0 USART0 */
+	__stop_program, 		/* 0x00E4 USART1 */
+	__stop_program, 		/* 0x00E8 USART2 */
+	__stop_program, 		/* 0x00EC EXTI_LINE10TO15 */
+	__stop_program, 		/* 0x00F0 RTC_ALARM */
+	__stop_program, 		/* 0x00F4 USBFS_WAKEUP */
 	NULL, 				/* 0x00F8 */
 	NULL, 				/* 0x00FC */
 	NULL, 				/* 0x0100 */
@@ -76,24 +76,24 @@ void (*__vectors[])(void) = {
 	NULL, 				/* 0x0108 */
 	NULL, 				/* 0x010C */
 	NULL, 				/* 0x0110 */
-	__stop_program, 		/* 0x0114: interrupt_timer4 */
-	__stop_program, 		/* 0x0118: interrupt_spi2 */
-	__stop_program, 		/* 0x011C: interrupt_uart3 */
-	__stop_program, 		/* 0x0120: interrupt_uart4 */
-	__stop_program, 		/* 0x0124: interrupt_timer5 */
-	__stop_program, 		/* 0x0128: interrupt_timer6 */
-	__stop_program, 		/* 0x012C: interrupt_dma1_chan0 */
-	__stop_program, 		/* 0x0130: interrupt_dma1_chan1 */
-	__stop_program, 		/* 0x0134: interrupt_dma1_chan2 */
-	__stop_program, 		/* 0x0138: interrupt_dma1_chan3 */
-	__stop_program, 		/* 0x013C: interrupt_dma1_chan4 */
+	__stop_program, 		/* 0x0114 TIMER4 */
+	__stop_program, 		/* 0x0118 SPI2 */
+	__stop_program, 		/* 0x011C UART3 */
+	__stop_program, 		/* 0x0120 UART4 */
+	__stop_program, 		/* 0x0124 TIMER5 */
+	__stop_program, 		/* 0x0128 TIMER6 */
+	__stop_program, 		/* 0x012C DMA1_CHAN0 */
+	__stop_program, 		/* 0x0130 DMA1_CHAN1 */
+	__stop_program, 		/* 0x0134 DMA1_CHAN2 */
+	__stop_program, 		/* 0x0138 DMA1_CHAN3 */
+	__stop_program, 		/* 0x013C DMA1_CHAN4 */
 	NULL, 				/* 0x0140 */
 	NULL, 				/* 0x0144 */
-	__stop_program, 		/* 0x0148: interrupt_can1_tx */
-	__stop_program, 		/* 0x014C: interrupt_can1_rx0 */
-	__stop_program, 		/* 0x0150: interrupt_can1_rx1 */
-	__stop_program, 		/* 0x0154: interrupt_can1_ewmc */
-	__stop_program, 		/* 0x0158: interrupt_usbfs */
+	__stop_program, 		/* 0x0148 CAN1_TX */
+	__stop_program, 		/* 0x014C CAN1_RX0 */
+	__stop_program, 		/* 0x0150 CAN1_RX1 */
+	__stop_program, 		/* 0x0154 CAN1_EWMC */
+	__stop_program, 		/* 0x0158 USBFS */
 };
 
 void
