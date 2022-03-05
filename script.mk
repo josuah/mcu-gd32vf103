@@ -2,7 +2,7 @@ OBJCOPY = llvm-objcopy
 OBJDUMP = llvm-objdump
 CPP = clang-cpp
 CC = clang --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
-AS = llvm-as --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
+AS = clang --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
 LD = llvm-link --target=riscv32-unknown-elf -march=rv32imac -mabi=ilp32
 AR = llvm-ar
 GDB = riscv64-unknown-elf-gdb

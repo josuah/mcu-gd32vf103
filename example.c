@@ -1,7 +1,6 @@
-#include <main.h>
-#include <rcu.h>
-#include <gpio.h>
-#include <usart.h>
+#include "libc.h"
+#include "registers.h"
+#include "functions.h"
 
 #define LED_R_PORT		GPIOC
 #define LED_R_PIN		13u

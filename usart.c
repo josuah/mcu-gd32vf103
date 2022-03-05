@@ -1,6 +1,6 @@
-#include "main.h"
-#include "rcu.h"
-#include "usart.h"
+#include "libc.h"
+#include "registers.h"
+#include "functions.h"
 
 #define USART0_TX_PORT		GPIOA
 #define USART0_TX_PIN		9u

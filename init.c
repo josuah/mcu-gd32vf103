@@ -1,4 +1,6 @@
-#include "main.h"
+#include "libc.h"
+#include "registers.h"
+#include "functions.h"
 
 extern int main(void);
 extern void __reset_handler(void);
