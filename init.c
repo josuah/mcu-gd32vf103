@@ -3,117 +3,112 @@
 #include "functions.h"
 
 extern int main(void);
-extern void __reset_handler(void);
-
 extern char __data_start, __data_end, __data_load_start;
 extern char __bss_start, __bss_end, __stack_top;
-
-void (*__vectors[])(void) = {
-	NULL,				/* 0x0000 */
-	NULL,				/* 0x0004 */
-	NULL,				/* 0x0008 */
-	__stop_program, 		/* 0x000C CLIC_INT_SFT */
-	NULL, 				/* 0x0010 */
-	NULL, 				/* 0x0014 */
-	NULL, 				/* 0x0018 */
-	__stop_program, 		/* 0x001C CLIC_INT_TMR */
-	NULL, 				/* 0x0020 */
-	NULL, 				/* 0x0024 */
-	NULL, 				/* 0x0028 */
-	NULL, 				/* 0x002C */
-	NULL, 				/* 0x0030 */
-	NULL, 				/* 0x0034 */
-	NULL, 				/* 0x0038 */
-	NULL, 				/* 0x003C */
-	NULL, 				/* 0x0040 */
-	__stop_program, 		/* 0x0044 CLIC_INT_BWEI */
-	__stop_program, 		/* 0x0048 CLIC_INT_PMOVI */
-	__stop_program, 		/* 0x004C WWDGT */
-	__stop_program, 		/* 0x0050 LVD */
-	__stop_program, 		/* 0x0054 TAMPER */
-	__stop_program, 		/* 0x0058 RTC */
-	__stop_program, 		/* 0x005C FMC */
-	__stop_program, 		/* 0x0060 RCU */
-	__stop_program, 		/* 0x0064 EXTI_LINE0 */
-	__stop_program, 		/* 0x0068 EXTI_LINE1 */
-	__stop_program, 		/* 0x006C EXTI_LINE2 */
-	__stop_program, 		/* 0x0070 EXTI_LINE3 */
-	__stop_program, 		/* 0x0074 EXTI_LINE4 */
-	__stop_program, 		/* 0x0078 DMA0_CHAN0 */
-	__stop_program, 		/* 0x007C DMA0_CHAN1 */
-	__stop_program, 		/* 0x0080 DMA0_CHAN2 */
-	__stop_program, 		/* 0x0084 DMA0_CHAN3 */
-	__stop_program, 		/* 0x0088 DMA0_CHAN4 */
-	__stop_program, 		/* 0x008C DMA0_CHAN5 */
-	__stop_program, 		/* 0x0090 DMA0_CHAN6 */
-	__stop_program, 		/* 0x0094 ADC0_CHAN1 */
-	__stop_program, 		/* 0x0098 CAN0_TX */
-	__stop_program, 		/* 0x009C CAN0_RX0 */
-	__stop_program, 		/* 0x00A0 CAN0_RX1 */
-	__stop_program, 		/* 0x00A4 CAN0_EWMC */
-	__stop_program, 		/* 0x00A8 EXTI_LINE5TO9 */
-	__stop_program, 		/* 0x00AC TIMER0_BREAK */
-	__stop_program, 		/* 0x00B0 TIMER0_UPDATE */
-	__stop_program, 		/* 0x00B4 TIMER0_TRIGGER */
-	__stop_program, 		/* 0x00B8 TIMER0_CAPTURE */
-	__stop_program, 		/* 0x00BC TIMER1 */
-	__stop_program, 		/* 0x00C0 TIMER2 */
-	__stop_program, 		/* 0x00C4 TIMER3 */
-	__stop_program, 		/* 0x00C8 I2C0_EVENT */
-	__stop_program, 		/* 0x00CC I2C0_ERROR */
-	__stop_program, 		/* 0x00D0 I2C1_EVENT */
-	__stop_program, 		/* 0x00D4 I2C1_ERROR */
-	__stop_program, 		/* 0x00D8 SPI0 */
-	__stop_program, 		/* 0x00DC SPI1 */
-	__stop_program, 		/* 0x00E0 USART0 */
-	__stop_program, 		/* 0x00E4 USART1 */
-	__stop_program, 		/* 0x00E8 USART2 */
-	__stop_program, 		/* 0x00EC EXTI_LINE10TO15 */
-	__stop_program, 		/* 0x00F0 RTC_ALARM */
-	__stop_program, 		/* 0x00F4 USBFS_WAKEUP */
-	NULL, 				/* 0x00F8 */
-	NULL, 				/* 0x00FC */
-	NULL, 				/* 0x0100 */
-	NULL, 				/* 0x0104 */
-	NULL, 				/* 0x0108 */
-	NULL, 				/* 0x010C */
-	NULL, 				/* 0x0110 */
-	__stop_program, 		/* 0x0114 TIMER4 */
-	__stop_program, 		/* 0x0118 SPI2 */
-	__stop_program, 		/* 0x011C UART3 */
-	__stop_program, 		/* 0x0120 UART4 */
-	__stop_program, 		/* 0x0124 TIMER5 */
-	__stop_program, 		/* 0x0128 TIMER6 */
-	__stop_program, 		/* 0x012C DMA1_CHAN0 */
-	__stop_program, 		/* 0x0130 DMA1_CHAN1 */
-	__stop_program, 		/* 0x0134 DMA1_CHAN2 */
-	__stop_program, 		/* 0x0138 DMA1_CHAN3 */
-	__stop_program, 		/* 0x013C DMA1_CHAN4 */
-	NULL, 				/* 0x0140 */
-	NULL, 				/* 0x0144 */
-	__stop_program, 		/* 0x0148 CAN1_TX */
-	__stop_program, 		/* 0x014C CAN1_RX0 */
-	__stop_program, 		/* 0x0150 CAN1_RX1 */
-	__stop_program, 		/* 0x0154 CAN1_EWMC */
-	__stop_program, 		/* 0x0158 USBFS */
-};
 
 void
 __reset_handler(void)
 {
-	volatile char *src, *dst;
+	volatile char *dst, *src = &__data_load_start;
 
-	/* fill initialised and uninitialised variables */
-	src = &__data_load_start;
 	for (dst = &__data_start; dst < &__data_end; *dst++ = *src++);
 	for (dst = &__bss_start; dst < &__bss_end; *dst++ = 0);
-
 	main();
-	__stop_program();
-}
-
-void
-__stop_program(void)
-{
 	for (int volatile i = 0 ;; i++);
 }
+
+/* so that the debugger can immediately see which fault was triggered */
+void __null_handler(void)		{ for (int volatile i = 0;; i++); }
+void __isr_clic_int_sft(void)		{ for (int volatile i = 0;; i++); }
+void __isr_clic_int_bwei(void)		{ for (int volatile i = 0;; i++); }
+void __isr_clic_int_pmovi(void)		{ for (int volatile i = 0;; i++); }
+
+void (*__vectors[])(void) = {
+	NULL,				/* 0x000 Assembly */
+	NULL,				/* 0x004 Assembly */
+	NULL,				/* 0x008 Assembly */
+	__isr_clic_int_sft, 		/* 0x00C #3 CLIC_INT_SFT */
+	__null_handler,			/* 0x010 #4 Reserved */
+	__null_handler,			/* 0x014 #5 Reserved */
+	__null_handler,			/* 0x018 #6 Reserved */
+	__isr_clic_int_tmr, 		/* 0x01C #7 CLIC_INT_TMR */
+	__null_handler, 		/* 0x020 #8 Reserved */
+	__null_handler, 		/* 0x024 #9 Reserved */
+	__null_handler, 		/* 0x028 #10 Reserved */
+	__null_handler, 		/* 0x02C #11 Reserved */
+	__null_handler, 		/* 0x030 #12 Reserved */
+	__null_handler, 		/* 0x034 #13 Reserved */
+	__null_handler, 		/* 0x038 #14 Reserved */
+	__null_handler, 		/* 0x03C #15 Reserved */
+	__null_handler, 		/* 0x040 #16 Reserved */
+	__isr_clic_int_bwei, 		/* 0x044 #17 CLIC_INT_BWEI */
+	__isr_clic_int_pmovi, 		/* 0x048 #18 CLIC_INT_PMOVI */
+	__null_handler, 		/* 0x04C #19 WWDGT */
+	__null_handler, 		/* 0x050 #20 LVD */
+	__null_handler, 		/* 0x054 #21 TAMPER */
+	__null_handler, 		/* 0x058 #22 RTC */
+	__null_handler, 		/* 0x05C #23 FMC */
+	__null_handler, 		/* 0x060 #24 RCU */
+	__null_handler, 		/* 0x064 #25 EXTI_LINE0 */
+	__null_handler, 		/* 0x068 #26 EXTI_LINE1 */
+	__null_handler, 		/* 0x06C #27 EXTI_LINE2 */
+	__null_handler, 		/* 0x070 #28 EXTI_LINE3 */
+	__null_handler, 		/* 0x074 #29 EXTI_LINE4 */
+	__null_handler, 		/* 0x078 #30 DMA0_CHAN0 */
+	__null_handler, 		/* 0x07C #31 DMA0_CHAN1 */
+	__null_handler, 		/* 0x080 #32 DMA0_CHAN2 */
+	__null_handler, 		/* 0x084 #33 DMA0_CHAN3 */
+	__null_handler, 		/* 0x088 #34 DMA0_CHAN4 */
+	__null_handler, 		/* 0x08C #35 DMA0_CHAN5 */
+	__null_handler, 		/* 0x090 #36 DMA0_CHAN6 */
+	__null_handler, 		/* 0x094 #37 ADC0_CHAN1 */
+	__null_handler, 		/* 0x098 #38 CAN0_TX */
+	__null_handler, 		/* 0x09C #39 CAN0_RX0 */
+	__null_handler, 		/* 0x0A0 #40 CAN0_RX1 */
+	__null_handler, 		/* 0x0A4 #41 CAN0_EWMC */
+	__null_handler, 		/* 0x0A8 #42 EXTI_LINE5TO9 */
+	__null_handler, 		/* 0x0AC #43 TIMER0_BREAK */
+	__null_handler, 		/* 0x0B0 #44 TIMER0_UPDATE */
+	__null_handler, 		/* 0x0B4 #45 TIMER0_TRIGGER */
+	__null_handler, 		/* 0x0B8 #46 TIMER0_CAPTURE */
+	__null_handler, 		/* 0x0BC #47 TIMER1 */
+	__null_handler, 		/* 0x0C0 #48 TIMER2 */
+	__null_handler, 		/* 0x0C4 #49 TIMER3 */
+	__null_handler, 		/* 0x0C8 #50 I2C0_EVENT */
+	__null_handler, 		/* 0x0CC #51 I2C0_ERROR */
+	__null_handler, 		/* 0x0D0 #52 I2C1_EVENT */
+	__null_handler, 		/* 0x0D4 #53 I2C1_ERROR */
+	__null_handler, 		/* 0x0D8 #54 SPI0 */
+	__null_handler, 		/* 0x0DC #55 SPI1 */
+	__null_handler, 		/* 0x0E0 #56 USART0 */
+	__null_handler, 		/* 0x0E4 #57 USART1 */
+	__null_handler, 		/* 0x0E8 #58 USART2 */
+	__null_handler, 		/* 0x0EC #59 EXTI_LINE10TO15 */
+	__null_handler, 		/* 0x0F0 #60 RTC_ALARM */
+	__null_handler, 		/* 0x0F4 #61 USBFS_WAKEUP */
+	NULL, 				/* 0x0F8 #62 Reserved */
+	NULL, 				/* 0x0FC #63 Reserved */
+	NULL, 				/* 0x100 #64 Reserved */
+	NULL, 				/* 0x104 #65 Reserved */
+	NULL, 				/* 0x108 #66 Reserved */
+	NULL, 				/* 0x10C #67 Reserved */
+	NULL, 				/* 0x110 #68 Reserved */
+	__null_handler, 		/* 0x114 #69 TIMER4 */
+	__null_handler, 		/* 0x118 #70 SPI2 */
+	__null_handler, 		/* 0x11C #71 UART3 */
+	__null_handler, 		/* 0x120 #72 UART4 */
+	__null_handler, 		/* 0x124 #73 TIMER5 */
+	__null_handler, 		/* 0x128 #74 TIMER6 */
+	__null_handler, 		/* 0x12C #75 DMA1_CHAN0 */
+	__null_handler, 		/* 0x130 #76 DMA1_CHAN1 */
+	__null_handler, 		/* 0x134 #77 DMA1_CHAN2 */
+	__null_handler, 		/* 0x138 #78 DMA1_CHAN3 */
+	__null_handler, 		/* 0x13C #79 DMA1_CHAN4 */
+	NULL, 				/* 0x140 #80 Reserved */
+	NULL, 				/* 0x144 #81 Reserved */
+	__null_handler, 		/* 0x148 #82 CAN1_TX */
+	__null_handler, 		/* 0x14C #83 CAN1_RX0 */
+	__null_handler, 		/* 0x150 #84 CAN1_RX1 */
+	__null_handler, 		/* 0x154 #85 CAN1_EWMC */
+	__null_handler, 		/* 0x158 #86 USBFS */
+};

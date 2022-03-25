@@ -2,9 +2,9 @@
 #define REGISTERS_H
 
 
-#define ADC0 ((struct sdk_adc *)0x40012400)
+#define ADC0 ((struct mcu_adc *)0x40012400)
 
-struct sdk_adc {
+struct mcu_adc {
 
 	/* 0x00: status register */
 	uint32_t volatile STAT;
@@ -29,11 +29,11 @@ struct sdk_adc {
 	/* Inserted channel analog watchdog */
 #define ADC_CTL0_IWDEN						22u
 	/* sync mode selection */
-#define ADC_CTL0_SYNCM_msb					19u
-#define ADC_CTL0_SYNCM_lsb					16u
+#define ADC_CTL0_SYNCM_Msb					19u
+#define ADC_CTL0_SYNCM_Lsb					16u
 	/* Number of conversions in */
-#define ADC_CTL0_DISNUM_msb					15u
-#define ADC_CTL0_DISNUM_lsb					13u
+#define ADC_CTL0_DISNUM_Msb					15u
+#define ADC_CTL0_DISNUM_Lsb					13u
 	/* Discontinuous mode on */
 #define ADC_CTL0_DISIC						12u
 	/* Discontinuous mode on regular */
@@ -51,8 +51,8 @@ struct sdk_adc {
 	/* Interrupt enable for EOC */
 #define ADC_CTL0_EOCIE						5u
 	/* Analog watchdog channel select */
-#define ADC_CTL0_WDCHSEL_msb					4u
-#define ADC_CTL0_WDCHSEL_lsb					0u
+#define ADC_CTL0_WDCHSEL_Msb					4u
+#define ADC_CTL0_WDCHSEL_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -68,13 +68,13 @@ struct sdk_adc {
 	/* External trigger enable for regular channel */
 #define ADC_CTL1_ETERC						20u
 	/* External trigger select for regular channel */
-#define ADC_CTL1_ETSRC_msb					19u
-#define ADC_CTL1_ETSRC_lsb					17u
+#define ADC_CTL1_ETSRC_Msb					19u
+#define ADC_CTL1_ETSRC_Lsb					17u
 	/* External trigger select for inserted channel */
 #define ADC_CTL1_ETEIC						15u
 	/* External trigger select for inserted channel */
-#define ADC_CTL1_ETSIC_msb					14u
-#define ADC_CTL1_ETSIC_lsb					12u
+#define ADC_CTL1_ETSIC_Msb					14u
+#define ADC_CTL1_ETSIC_Lsb					12u
 	/* Data alignment */
 #define ADC_CTL1_DAL						11u
 	/* DMA request enable */
@@ -94,29 +94,29 @@ struct sdk_adc {
 	/* 0x0C: Sample time register 0 */
 	uint32_t volatile SAMPT0;
 	/* Channel 10 sample time */
-#define ADC_SAMPT0_SPT10_msb					2u
-#define ADC_SAMPT0_SPT10_lsb					0u
+#define ADC_SAMPT0_SPT10_Msb					2u
+#define ADC_SAMPT0_SPT10_Lsb					0u
 	/* Channel 11 sample time */
-#define ADC_SAMPT0_SPT11_msb					5u
-#define ADC_SAMPT0_SPT11_lsb					3u
+#define ADC_SAMPT0_SPT11_Msb					5u
+#define ADC_SAMPT0_SPT11_Lsb					3u
 	/* Channel 12 sample time */
-#define ADC_SAMPT0_SPT12_msb					8u
-#define ADC_SAMPT0_SPT12_lsb					6u
+#define ADC_SAMPT0_SPT12_Msb					8u
+#define ADC_SAMPT0_SPT12_Lsb					6u
 	/* Channel 13 sample time */
-#define ADC_SAMPT0_SPT13_msb					11u
-#define ADC_SAMPT0_SPT13_lsb					9u
+#define ADC_SAMPT0_SPT13_Msb					11u
+#define ADC_SAMPT0_SPT13_Lsb					9u
 	/* Channel 14 sample time */
-#define ADC_SAMPT0_SPT14_msb					14u
-#define ADC_SAMPT0_SPT14_lsb					12u
+#define ADC_SAMPT0_SPT14_Msb					14u
+#define ADC_SAMPT0_SPT14_Lsb					12u
 	/* Channel 15 sample time */
-#define ADC_SAMPT0_SPT15_msb					17u
-#define ADC_SAMPT0_SPT15_lsb					15u
+#define ADC_SAMPT0_SPT15_Msb					17u
+#define ADC_SAMPT0_SPT15_Lsb					15u
 	/* Channel 16 sample time */
-#define ADC_SAMPT0_SPT16_msb					20u
-#define ADC_SAMPT0_SPT16_lsb					18u
+#define ADC_SAMPT0_SPT16_Msb					20u
+#define ADC_SAMPT0_SPT16_Lsb					18u
 	/* Channel 17 sample time */
-#define ADC_SAMPT0_SPT17_msb					23u
-#define ADC_SAMPT0_SPT17_lsb					21u
+#define ADC_SAMPT0_SPT17_Msb					23u
+#define ADC_SAMPT0_SPT17_Lsb					21u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -124,35 +124,35 @@ struct sdk_adc {
 	/* 0x10: Sample time register 1 */
 	uint32_t volatile SAMPT1;
 	/* Channel 0 sample time */
-#define ADC_SAMPT1_SPT0_msb					2u
-#define ADC_SAMPT1_SPT0_lsb					0u
+#define ADC_SAMPT1_SPT0_Msb					2u
+#define ADC_SAMPT1_SPT0_Lsb					0u
 	/* Channel 1 sample time */
-#define ADC_SAMPT1_SPT1_msb					5u
-#define ADC_SAMPT1_SPT1_lsb					3u
+#define ADC_SAMPT1_SPT1_Msb					5u
+#define ADC_SAMPT1_SPT1_Lsb					3u
 	/* Channel 2 sample time */
-#define ADC_SAMPT1_SPT2_msb					8u
-#define ADC_SAMPT1_SPT2_lsb					6u
+#define ADC_SAMPT1_SPT2_Msb					8u
+#define ADC_SAMPT1_SPT2_Lsb					6u
 	/* Channel 3 sample time */
-#define ADC_SAMPT1_SPT3_msb					11u
-#define ADC_SAMPT1_SPT3_lsb					9u
+#define ADC_SAMPT1_SPT3_Msb					11u
+#define ADC_SAMPT1_SPT3_Lsb					9u
 	/* Channel 4 sample time */
-#define ADC_SAMPT1_SPT4_msb					14u
-#define ADC_SAMPT1_SPT4_lsb					12u
+#define ADC_SAMPT1_SPT4_Msb					14u
+#define ADC_SAMPT1_SPT4_Lsb					12u
 	/* Channel 5 sample time */
-#define ADC_SAMPT1_SPT5_msb					17u
-#define ADC_SAMPT1_SPT5_lsb					15u
+#define ADC_SAMPT1_SPT5_Msb					17u
+#define ADC_SAMPT1_SPT5_Lsb					15u
 	/* Channel 6 sample time */
-#define ADC_SAMPT1_SPT6_msb					20u
-#define ADC_SAMPT1_SPT6_lsb					18u
+#define ADC_SAMPT1_SPT6_Msb					20u
+#define ADC_SAMPT1_SPT6_Lsb					18u
 	/* Channel 7 sample time */
-#define ADC_SAMPT1_SPT7_msb					23u
-#define ADC_SAMPT1_SPT7_lsb					21u
+#define ADC_SAMPT1_SPT7_Msb					23u
+#define ADC_SAMPT1_SPT7_Lsb					21u
 	/* Channel 8 sample time */
-#define ADC_SAMPT1_SPT8_msb					26u
-#define ADC_SAMPT1_SPT8_lsb					24u
+#define ADC_SAMPT1_SPT8_Msb					26u
+#define ADC_SAMPT1_SPT8_Lsb					24u
 	/* Channel 9 sample time */
-#define ADC_SAMPT1_SPT9_msb					29u
-#define ADC_SAMPT1_SPT9_lsb					27u
+#define ADC_SAMPT1_SPT9_Msb					29u
+#define ADC_SAMPT1_SPT9_Lsb					27u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -160,8 +160,8 @@ struct sdk_adc {
 	/* 0x14: Inserted channel data offset register */
 	uint32_t volatile IOFF0;
 	/* Data offset for inserted channel */
-#define ADC_IOFF0_IOFF_msb					11u
-#define ADC_IOFF0_IOFF_lsb					0u
+#define ADC_IOFF0_IOFF_Msb					11u
+#define ADC_IOFF0_IOFF_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x18u-0x14u];
@@ -169,8 +169,8 @@ struct sdk_adc {
 	/* 0x18: Inserted channel data offset register */
 	uint32_t volatile IOFF1;
 	/* Data offset for inserted channel */
-#define ADC_IOFF1_IOFF_msb					11u
-#define ADC_IOFF1_IOFF_lsb					0u
+#define ADC_IOFF1_IOFF_Msb					11u
+#define ADC_IOFF1_IOFF_Lsb					0u
 
 	/* 0x18 */
 	uint8_t RESERVED6[0x1Cu-0x18u];
@@ -178,8 +178,8 @@ struct sdk_adc {
 	/* 0x1C: Inserted channel data offset register */
 	uint32_t volatile IOFF2;
 	/* Data offset for inserted channel */
-#define ADC_IOFF2_IOFF_msb					11u
-#define ADC_IOFF2_IOFF_lsb					0u
+#define ADC_IOFF2_IOFF_Msb					11u
+#define ADC_IOFF2_IOFF_Lsb					0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -187,8 +187,8 @@ struct sdk_adc {
 	/* 0x20: Inserted channel data offset register */
 	uint32_t volatile IOFF3;
 	/* Data offset for inserted channel */
-#define ADC_IOFF3_IOFF_msb					11u
-#define ADC_IOFF3_IOFF_lsb					0u
+#define ADC_IOFF3_IOFF_Msb					11u
+#define ADC_IOFF3_IOFF_Lsb					0u
 
 	/* 0x20 */
 	uint8_t RESERVED8[0x24u-0x20u];
@@ -196,8 +196,8 @@ struct sdk_adc {
 	/* 0x24: watchdog higher threshold */
 	uint32_t volatile WDHT;
 	/* Analog watchdog higher */
-#define ADC_WDHT_WDHT_msb					11u
-#define ADC_WDHT_WDHT_lsb					0u
+#define ADC_WDHT_WDHT_Msb					11u
+#define ADC_WDHT_WDHT_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED9[0x28u-0x24u];
@@ -205,8 +205,8 @@ struct sdk_adc {
 	/* 0x28: watchdog lower threshold */
 	uint32_t volatile WDLT;
 	/* Analog watchdog lower */
-#define ADC_WDLT_WDLT_msb					11u
-#define ADC_WDLT_WDLT_lsb					0u
+#define ADC_WDLT_WDLT_Msb					11u
+#define ADC_WDLT_WDLT_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED10[0x2Cu-0x28u];
@@ -214,20 +214,20 @@ struct sdk_adc {
 	/* 0x2C: regular sequence register 0 */
 	uint32_t volatile RSQ0;
 	/* Regular channel group */
-#define ADC_RSQ0_RL_msb					23u
-#define ADC_RSQ0_RL_lsb					20u
+#define ADC_RSQ0_RL_Msb					23u
+#define ADC_RSQ0_RL_Lsb					20u
 	/* 16th conversion in regular */
-#define ADC_RSQ0_RSQ15_msb					19u
-#define ADC_RSQ0_RSQ15_lsb					15u
+#define ADC_RSQ0_RSQ15_Msb					19u
+#define ADC_RSQ0_RSQ15_Lsb					15u
 	/* 15th conversion in regular */
-#define ADC_RSQ0_RSQ14_msb					14u
-#define ADC_RSQ0_RSQ14_lsb					10u
+#define ADC_RSQ0_RSQ14_Msb					14u
+#define ADC_RSQ0_RSQ14_Lsb					10u
 	/* 14th conversion in regular */
-#define ADC_RSQ0_RSQ13_msb					9u
-#define ADC_RSQ0_RSQ13_lsb					5u
+#define ADC_RSQ0_RSQ13_Msb					9u
+#define ADC_RSQ0_RSQ13_Lsb					5u
 	/* 13th conversion in regular */
-#define ADC_RSQ0_RSQ12_msb					4u
-#define ADC_RSQ0_RSQ12_lsb					0u
+#define ADC_RSQ0_RSQ12_Msb					4u
+#define ADC_RSQ0_RSQ12_Lsb					0u
 
 	/* 0x2C */
 	uint8_t RESERVED11[0x30u-0x2Cu];
@@ -235,23 +235,23 @@ struct sdk_adc {
 	/* 0x30: regular sequence register 1 */
 	uint32_t volatile RSQ1;
 	/* 12th conversion in regular */
-#define ADC_RSQ1_RSQ11_msb					29u
-#define ADC_RSQ1_RSQ11_lsb					25u
+#define ADC_RSQ1_RSQ11_Msb					29u
+#define ADC_RSQ1_RSQ11_Lsb					25u
 	/* 11th conversion in regular */
-#define ADC_RSQ1_RSQ10_msb					24u
-#define ADC_RSQ1_RSQ10_lsb					20u
+#define ADC_RSQ1_RSQ10_Msb					24u
+#define ADC_RSQ1_RSQ10_Lsb					20u
 	/* 10th conversion in regular */
-#define ADC_RSQ1_RSQ9_msb					19u
-#define ADC_RSQ1_RSQ9_lsb					15u
+#define ADC_RSQ1_RSQ9_Msb					19u
+#define ADC_RSQ1_RSQ9_Lsb					15u
 	/* 9th conversion in regular */
-#define ADC_RSQ1_RSQ8_msb					14u
-#define ADC_RSQ1_RSQ8_lsb					10u
+#define ADC_RSQ1_RSQ8_Msb					14u
+#define ADC_RSQ1_RSQ8_Lsb					10u
 	/* 8th conversion in regular */
-#define ADC_RSQ1_RSQ7_msb					9u
-#define ADC_RSQ1_RSQ7_lsb					5u
+#define ADC_RSQ1_RSQ7_Msb					9u
+#define ADC_RSQ1_RSQ7_Lsb					5u
 	/* 7th conversion in regular */
-#define ADC_RSQ1_RSQ6_msb					4u
-#define ADC_RSQ1_RSQ6_lsb					0u
+#define ADC_RSQ1_RSQ6_Msb					4u
+#define ADC_RSQ1_RSQ6_Lsb					0u
 
 	/* 0x30 */
 	uint8_t RESERVED12[0x34u-0x30u];
@@ -259,23 +259,23 @@ struct sdk_adc {
 	/* 0x34: regular sequence register 2 */
 	uint32_t volatile RSQ2;
 	/* 6th conversion in regular */
-#define ADC_RSQ2_RSQ5_msb					29u
-#define ADC_RSQ2_RSQ5_lsb					25u
+#define ADC_RSQ2_RSQ5_Msb					29u
+#define ADC_RSQ2_RSQ5_Lsb					25u
 	/* 5th conversion in regular */
-#define ADC_RSQ2_RSQ4_msb					24u
-#define ADC_RSQ2_RSQ4_lsb					20u
+#define ADC_RSQ2_RSQ4_Msb					24u
+#define ADC_RSQ2_RSQ4_Lsb					20u
 	/* 4th conversion in regular */
-#define ADC_RSQ2_RSQ3_msb					19u
-#define ADC_RSQ2_RSQ3_lsb					15u
+#define ADC_RSQ2_RSQ3_Msb					19u
+#define ADC_RSQ2_RSQ3_Lsb					15u
 	/* 3rd conversion in regular */
-#define ADC_RSQ2_RSQ2_msb					14u
-#define ADC_RSQ2_RSQ2_lsb					10u
+#define ADC_RSQ2_RSQ2_Msb					14u
+#define ADC_RSQ2_RSQ2_Lsb					10u
 	/* 2nd conversion in regular */
-#define ADC_RSQ2_RSQ1_msb					9u
-#define ADC_RSQ2_RSQ1_lsb					5u
+#define ADC_RSQ2_RSQ1_Msb					9u
+#define ADC_RSQ2_RSQ1_Lsb					5u
 	/* 1st conversion in regular */
-#define ADC_RSQ2_RSQ0_msb					4u
-#define ADC_RSQ2_RSQ0_lsb					0u
+#define ADC_RSQ2_RSQ0_Msb					4u
+#define ADC_RSQ2_RSQ0_Lsb					0u
 
 	/* 0x34 */
 	uint8_t RESERVED13[0x38u-0x34u];
@@ -283,20 +283,20 @@ struct sdk_adc {
 	/* 0x38: Inserted sequence register */
 	uint32_t volatile ISQ;
 	/* Inserted channel group length */
-#define ADC_ISQ_IL_msb						21u
-#define ADC_ISQ_IL_lsb						20u
+#define ADC_ISQ_IL_Msb						21u
+#define ADC_ISQ_IL_Lsb						20u
 	/* 4th conversion in inserted */
-#define ADC_ISQ_ISQ3_msb					19u
-#define ADC_ISQ_ISQ3_lsb					15u
+#define ADC_ISQ_ISQ3_Msb					19u
+#define ADC_ISQ_ISQ3_Lsb					15u
 	/* 3rd conversion in inserted */
-#define ADC_ISQ_ISQ2_msb					14u
-#define ADC_ISQ_ISQ2_lsb					10u
+#define ADC_ISQ_ISQ2_Msb					14u
+#define ADC_ISQ_ISQ2_Lsb					10u
 	/* 2nd conversion in inserted */
-#define ADC_ISQ_ISQ1_msb					9u
-#define ADC_ISQ_ISQ1_lsb					5u
+#define ADC_ISQ_ISQ1_Msb					9u
+#define ADC_ISQ_ISQ1_Lsb					5u
 	/* 1st conversion in inserted */
-#define ADC_ISQ_ISQ0_msb					4u
-#define ADC_ISQ_ISQ0_lsb					0u
+#define ADC_ISQ_ISQ0_Msb					4u
+#define ADC_ISQ_ISQ0_Lsb					0u
 
 	/* 0x38 */
 	uint8_t RESERVED14[0x3Cu-0x38u];
@@ -304,8 +304,8 @@ struct sdk_adc {
 	/* 0x3C: Inserted data register 0 */
 	uint32_t volatile IDATA0;
 	/* Inserted number n conversion data */
-#define ADC_IDATA0_IDATAN_msb					15u
-#define ADC_IDATA0_IDATAN_lsb					0u
+#define ADC_IDATA0_IDATAN_Msb					15u
+#define ADC_IDATA0_IDATAN_Lsb					0u
 
 	/* 0x3C */
 	uint8_t RESERVED15[0x40u-0x3Cu];
@@ -313,8 +313,8 @@ struct sdk_adc {
 	/* 0x40: Inserted data register 1 */
 	uint32_t volatile IDATA1;
 	/* Inserted number n conversion data */
-#define ADC_IDATA1_IDATAN_msb					15u
-#define ADC_IDATA1_IDATAN_lsb					0u
+#define ADC_IDATA1_IDATAN_Msb					15u
+#define ADC_IDATA1_IDATAN_Lsb					0u
 
 	/* 0x40 */
 	uint8_t RESERVED16[0x44u-0x40u];
@@ -322,8 +322,8 @@ struct sdk_adc {
 	/* 0x44: Inserted data register 2 */
 	uint32_t volatile IDATA2;
 	/* Inserted number n conversion data */
-#define ADC_IDATA2_IDATAN_msb					15u
-#define ADC_IDATA2_IDATAN_lsb					0u
+#define ADC_IDATA2_IDATAN_Msb					15u
+#define ADC_IDATA2_IDATAN_Lsb					0u
 
 	/* 0x44 */
 	uint8_t RESERVED17[0x48u-0x44u];
@@ -331,8 +331,8 @@ struct sdk_adc {
 	/* 0x48: Inserted data register 3 */
 	uint32_t volatile IDATA3;
 	/* Inserted number n conversion data */
-#define ADC_IDATA3_IDATAN_msb					15u
-#define ADC_IDATA3_IDATAN_lsb					0u
+#define ADC_IDATA3_IDATAN_Msb					15u
+#define ADC_IDATA3_IDATAN_Lsb					0u
 
 	/* 0x48 */
 	uint8_t RESERVED18[0x4Cu-0x48u];
@@ -340,11 +340,11 @@ struct sdk_adc {
 	/* 0x4C: regular data register */
 	uint32_t volatile RDATA;
 	/* ADC regular channel data */
-#define ADC_RDATA_ADC1RDTR_msb					31u
-#define ADC_RDATA_ADC1RDTR_lsb					16u
+#define ADC_RDATA_ADC1RDTR_Msb					31u
+#define ADC_RDATA_ADC1RDTR_Lsb					16u
 	/* Regular channel data */
-#define ADC_RDATA_RDATA_msb					15u
-#define ADC_RDATA_RDATA_lsb					0u
+#define ADC_RDATA_RDATA_Msb					15u
+#define ADC_RDATA_RDATA_Lsb					0u
 
 	/* 0x4C */
 	uint8_t RESERVED19[0x80u-0x4Cu];
@@ -352,25 +352,25 @@ struct sdk_adc {
 	/* 0x80: Oversample control register */
 	uint32_t volatile OVSAMPCTL;
 	/* ADC resolution */
-#define ADC_OVSAMPCTL_DRES_msb					13u
-#define ADC_OVSAMPCTL_DRES_lsb					12u
+#define ADC_OVSAMPCTL_DRES_Msb					13u
+#define ADC_OVSAMPCTL_DRES_Lsb					12u
 	/* Triggered Oversampling */
 #define ADC_OVSAMPCTL_TOVS					9u
 	/* Oversampling shift */
-#define ADC_OVSAMPCTL_OVSS_msb					8u
-#define ADC_OVSAMPCTL_OVSS_lsb					5u
+#define ADC_OVSAMPCTL_OVSS_Msb					8u
+#define ADC_OVSAMPCTL_OVSS_Lsb					5u
 	/* Oversampling ratio */
-#define ADC_OVSAMPCTL_OVSR_msb					4u
-#define ADC_OVSAMPCTL_OVSR_lsb					2u
+#define ADC_OVSAMPCTL_OVSR_Msb					4u
+#define ADC_OVSAMPCTL_OVSR_Lsb					2u
 	/* Oversampler Enable */
 #define ADC_OVSAMPCTL_OVSEN					0u
 
 };
 
 
-#define ADC1 ((struct sdk_adc1 *)0x40012800)
+#define ADC1 ((struct mcu_adc1 *)0x40012800)
 
-struct sdk_adc1 {
+struct mcu_adc1 {
 
 	/* 0x00: status register */
 	uint32_t volatile STAT;
@@ -395,8 +395,8 @@ struct sdk_adc1 {
 	/* Inserted channel analog watchdog */
 #define ADC1_CTL0_IWDEN						22u
 	/* Number of conversions in */
-#define ADC1_CTL0_DISNUM_msb					15u
-#define ADC1_CTL0_DISNUM_lsb					13u
+#define ADC1_CTL0_DISNUM_Msb					15u
+#define ADC1_CTL0_DISNUM_Lsb					13u
 	/* Discontinuous mode on */
 #define ADC1_CTL0_DISIC						12u
 	/* Discontinuous mode on regular */
@@ -414,8 +414,8 @@ struct sdk_adc1 {
 	/* Interrupt enable for EOC */
 #define ADC1_CTL0_EOCIE						5u
 	/* Analog watchdog channel select */
-#define ADC1_CTL0_WDCHSEL_msb					4u
-#define ADC1_CTL0_WDCHSEL_lsb					0u
+#define ADC1_CTL0_WDCHSEL_Msb					4u
+#define ADC1_CTL0_WDCHSEL_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -429,13 +429,13 @@ struct sdk_adc1 {
 	/* External trigger enable for regular channel */
 #define ADC1_CTL1_ETERC						20u
 	/* External trigger select for regular channel */
-#define ADC1_CTL1_ETSRC_msb					19u
-#define ADC1_CTL1_ETSRC_lsb					17u
+#define ADC1_CTL1_ETSRC_Msb					19u
+#define ADC1_CTL1_ETSRC_Lsb					17u
 	/* External trigger enable for inserted channel */
 #define ADC1_CTL1_ETEIC						15u
 	/* External trigger select for inserted channel */
-#define ADC1_CTL1_ETSIC_msb					14u
-#define ADC1_CTL1_ETSIC_lsb					12u
+#define ADC1_CTL1_ETSIC_Msb					14u
+#define ADC1_CTL1_ETSIC_Lsb					12u
 	/* Data alignment */
 #define ADC1_CTL1_DAL						11u
 	/* DMA request enable */
@@ -455,29 +455,29 @@ struct sdk_adc1 {
 	/* 0x0C: Sample time register 0 */
 	uint32_t volatile SAMPT0;
 	/* Channel 10 sample time */
-#define ADC1_SAMPT0_SPT10_msb					2u
-#define ADC1_SAMPT0_SPT10_lsb					0u
+#define ADC1_SAMPT0_SPT10_Msb					2u
+#define ADC1_SAMPT0_SPT10_Lsb					0u
 	/* Channel 11 sample time */
-#define ADC1_SAMPT0_SPT11_msb					5u
-#define ADC1_SAMPT0_SPT11_lsb					3u
+#define ADC1_SAMPT0_SPT11_Msb					5u
+#define ADC1_SAMPT0_SPT11_Lsb					3u
 	/* Channel 12 sample time */
-#define ADC1_SAMPT0_SPT12_msb					8u
-#define ADC1_SAMPT0_SPT12_lsb					6u
+#define ADC1_SAMPT0_SPT12_Msb					8u
+#define ADC1_SAMPT0_SPT12_Lsb					6u
 	/* Channel 13 sample time */
-#define ADC1_SAMPT0_SPT13_msb					11u
-#define ADC1_SAMPT0_SPT13_lsb					9u
+#define ADC1_SAMPT0_SPT13_Msb					11u
+#define ADC1_SAMPT0_SPT13_Lsb					9u
 	/* Channel 14 sample time */
-#define ADC1_SAMPT0_SPT14_msb					14u
-#define ADC1_SAMPT0_SPT14_lsb					12u
+#define ADC1_SAMPT0_SPT14_Msb					14u
+#define ADC1_SAMPT0_SPT14_Lsb					12u
 	/* Channel 15 sample time */
-#define ADC1_SAMPT0_SPT15_msb					17u
-#define ADC1_SAMPT0_SPT15_lsb					15u
+#define ADC1_SAMPT0_SPT15_Msb					17u
+#define ADC1_SAMPT0_SPT15_Lsb					15u
 	/* Channel 16 sample time */
-#define ADC1_SAMPT0_SPT16_msb					20u
-#define ADC1_SAMPT0_SPT16_lsb					18u
+#define ADC1_SAMPT0_SPT16_Msb					20u
+#define ADC1_SAMPT0_SPT16_Lsb					18u
 	/* Channel 17 sample time */
-#define ADC1_SAMPT0_SPT17_msb					23u
-#define ADC1_SAMPT0_SPT17_lsb					21u
+#define ADC1_SAMPT0_SPT17_Msb					23u
+#define ADC1_SAMPT0_SPT17_Lsb					21u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -485,35 +485,35 @@ struct sdk_adc1 {
 	/* 0x10: Sample time register 1 */
 	uint32_t volatile SAMPT1;
 	/* Channel 0 sample time */
-#define ADC1_SAMPT1_SPT0_msb					2u
-#define ADC1_SAMPT1_SPT0_lsb					0u
+#define ADC1_SAMPT1_SPT0_Msb					2u
+#define ADC1_SAMPT1_SPT0_Lsb					0u
 	/* Channel 1 sample time */
-#define ADC1_SAMPT1_SPT1_msb					5u
-#define ADC1_SAMPT1_SPT1_lsb					3u
+#define ADC1_SAMPT1_SPT1_Msb					5u
+#define ADC1_SAMPT1_SPT1_Lsb					3u
 	/* Channel 2 sample time */
-#define ADC1_SAMPT1_SPT2_msb					8u
-#define ADC1_SAMPT1_SPT2_lsb					6u
+#define ADC1_SAMPT1_SPT2_Msb					8u
+#define ADC1_SAMPT1_SPT2_Lsb					6u
 	/* Channel 3 sample time */
-#define ADC1_SAMPT1_SPT3_msb					11u
-#define ADC1_SAMPT1_SPT3_lsb					9u
+#define ADC1_SAMPT1_SPT3_Msb					11u
+#define ADC1_SAMPT1_SPT3_Lsb					9u
 	/* Channel 4 sample time */
-#define ADC1_SAMPT1_SPT4_msb					14u
-#define ADC1_SAMPT1_SPT4_lsb					12u
+#define ADC1_SAMPT1_SPT4_Msb					14u
+#define ADC1_SAMPT1_SPT4_Lsb					12u
 	/* Channel 5 sample time */
-#define ADC1_SAMPT1_SPT5_msb					17u
-#define ADC1_SAMPT1_SPT5_lsb					15u
+#define ADC1_SAMPT1_SPT5_Msb					17u
+#define ADC1_SAMPT1_SPT5_Lsb					15u
 	/* Channel 6 sample time */
-#define ADC1_SAMPT1_SPT6_msb					20u
-#define ADC1_SAMPT1_SPT6_lsb					18u
+#define ADC1_SAMPT1_SPT6_Msb					20u
+#define ADC1_SAMPT1_SPT6_Lsb					18u
 	/* Channel 7 sample time */
-#define ADC1_SAMPT1_SPT7_msb					23u
-#define ADC1_SAMPT1_SPT7_lsb					21u
+#define ADC1_SAMPT1_SPT7_Msb					23u
+#define ADC1_SAMPT1_SPT7_Lsb					21u
 	/* Channel 8 sample time */
-#define ADC1_SAMPT1_SPT8_msb					26u
-#define ADC1_SAMPT1_SPT8_lsb					24u
+#define ADC1_SAMPT1_SPT8_Msb					26u
+#define ADC1_SAMPT1_SPT8_Lsb					24u
 	/* Channel 9 sample time */
-#define ADC1_SAMPT1_SPT9_msb					29u
-#define ADC1_SAMPT1_SPT9_lsb					27u
+#define ADC1_SAMPT1_SPT9_Msb					29u
+#define ADC1_SAMPT1_SPT9_Lsb					27u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -521,8 +521,8 @@ struct sdk_adc1 {
 	/* 0x14: Inserted channel data offset register */
 	uint32_t volatile IOFF0;
 	/* Data offset for inserted channel */
-#define ADC1_IOFF0_IOFF_msb					11u
-#define ADC1_IOFF0_IOFF_lsb					0u
+#define ADC1_IOFF0_IOFF_Msb					11u
+#define ADC1_IOFF0_IOFF_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x18u-0x14u];
@@ -530,8 +530,8 @@ struct sdk_adc1 {
 	/* 0x18: Inserted channel data offset register */
 	uint32_t volatile IOFF1;
 	/* Data offset for inserted channel */
-#define ADC1_IOFF1_IOFF_msb					11u
-#define ADC1_IOFF1_IOFF_lsb					0u
+#define ADC1_IOFF1_IOFF_Msb					11u
+#define ADC1_IOFF1_IOFF_Lsb					0u
 
 	/* 0x18 */
 	uint8_t RESERVED6[0x1Cu-0x18u];
@@ -539,8 +539,8 @@ struct sdk_adc1 {
 	/* 0x1C: Inserted channel data offset register */
 	uint32_t volatile IOFF2;
 	/* Data offset for inserted channel */
-#define ADC1_IOFF2_IOFF_msb					11u
-#define ADC1_IOFF2_IOFF_lsb					0u
+#define ADC1_IOFF2_IOFF_Msb					11u
+#define ADC1_IOFF2_IOFF_Lsb					0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -548,8 +548,8 @@ struct sdk_adc1 {
 	/* 0x20: Inserted channel data offset register */
 	uint32_t volatile IOFF3;
 	/* Data offset for inserted channel */
-#define ADC1_IOFF3_IOFF_msb					11u
-#define ADC1_IOFF3_IOFF_lsb					0u
+#define ADC1_IOFF3_IOFF_Msb					11u
+#define ADC1_IOFF3_IOFF_Lsb					0u
 
 	/* 0x20 */
 	uint8_t RESERVED8[0x24u-0x20u];
@@ -557,8 +557,8 @@ struct sdk_adc1 {
 	/* 0x24: watchdog higher threshold */
 	uint32_t volatile WDHT;
 	/* Analog watchdog higher */
-#define ADC1_WDHT_WDHT_msb					11u
-#define ADC1_WDHT_WDHT_lsb					0u
+#define ADC1_WDHT_WDHT_Msb					11u
+#define ADC1_WDHT_WDHT_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED9[0x28u-0x24u];
@@ -566,8 +566,8 @@ struct sdk_adc1 {
 	/* 0x28: watchdog lower threshold */
 	uint32_t volatile WDLT;
 	/* Analog watchdog lower */
-#define ADC1_WDLT_WDLT_msb					11u
-#define ADC1_WDLT_WDLT_lsb					0u
+#define ADC1_WDLT_WDLT_Msb					11u
+#define ADC1_WDLT_WDLT_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED10[0x2Cu-0x28u];
@@ -575,20 +575,20 @@ struct sdk_adc1 {
 	/* 0x2C: regular sequence register 0 */
 	uint32_t volatile RSQ0;
 	/* Regular channel group */
-#define ADC1_RSQ0_RL_msb					23u
-#define ADC1_RSQ0_RL_lsb					20u
+#define ADC1_RSQ0_RL_Msb					23u
+#define ADC1_RSQ0_RL_Lsb					20u
 	/* 16th conversion in regular */
-#define ADC1_RSQ0_RSQ15_msb					19u
-#define ADC1_RSQ0_RSQ15_lsb					15u
+#define ADC1_RSQ0_RSQ15_Msb					19u
+#define ADC1_RSQ0_RSQ15_Lsb					15u
 	/* 15th conversion in regular */
-#define ADC1_RSQ0_RSQ14_msb					14u
-#define ADC1_RSQ0_RSQ14_lsb					10u
+#define ADC1_RSQ0_RSQ14_Msb					14u
+#define ADC1_RSQ0_RSQ14_Lsb					10u
 	/* 14th conversion in regular */
-#define ADC1_RSQ0_RSQ13_msb					9u
-#define ADC1_RSQ0_RSQ13_lsb					5u
+#define ADC1_RSQ0_RSQ13_Msb					9u
+#define ADC1_RSQ0_RSQ13_Lsb					5u
 	/* 13th conversion in regular */
-#define ADC1_RSQ0_RSQ12_msb					4u
-#define ADC1_RSQ0_RSQ12_lsb					0u
+#define ADC1_RSQ0_RSQ12_Msb					4u
+#define ADC1_RSQ0_RSQ12_Lsb					0u
 
 	/* 0x2C */
 	uint8_t RESERVED11[0x30u-0x2Cu];
@@ -596,23 +596,23 @@ struct sdk_adc1 {
 	/* 0x30: regular sequence register 1 */
 	uint32_t volatile RSQ1;
 	/* 12th conversion in regular */
-#define ADC1_RSQ1_RSQ11_msb					29u
-#define ADC1_RSQ1_RSQ11_lsb					25u
+#define ADC1_RSQ1_RSQ11_Msb					29u
+#define ADC1_RSQ1_RSQ11_Lsb					25u
 	/* 11th conversion in regular */
-#define ADC1_RSQ1_RSQ10_msb					24u
-#define ADC1_RSQ1_RSQ10_lsb					20u
+#define ADC1_RSQ1_RSQ10_Msb					24u
+#define ADC1_RSQ1_RSQ10_Lsb					20u
 	/* 10th conversion in regular */
-#define ADC1_RSQ1_RSQ9_msb					19u
-#define ADC1_RSQ1_RSQ9_lsb					15u
+#define ADC1_RSQ1_RSQ9_Msb					19u
+#define ADC1_RSQ1_RSQ9_Lsb					15u
 	/* 9th conversion in regular */
-#define ADC1_RSQ1_RSQ8_msb					14u
-#define ADC1_RSQ1_RSQ8_lsb					10u
+#define ADC1_RSQ1_RSQ8_Msb					14u
+#define ADC1_RSQ1_RSQ8_Lsb					10u
 	/* 8th conversion in regular */
-#define ADC1_RSQ1_RSQ7_msb					9u
-#define ADC1_RSQ1_RSQ7_lsb					5u
+#define ADC1_RSQ1_RSQ7_Msb					9u
+#define ADC1_RSQ1_RSQ7_Lsb					5u
 	/* 7th conversion in regular */
-#define ADC1_RSQ1_RSQ6_msb					4u
-#define ADC1_RSQ1_RSQ6_lsb					0u
+#define ADC1_RSQ1_RSQ6_Msb					4u
+#define ADC1_RSQ1_RSQ6_Lsb					0u
 
 	/* 0x30 */
 	uint8_t RESERVED12[0x34u-0x30u];
@@ -620,23 +620,23 @@ struct sdk_adc1 {
 	/* 0x34: regular sequence register 2 */
 	uint32_t volatile RSQ2;
 	/* 6th conversion in regular */
-#define ADC1_RSQ2_RSQ5_msb					29u
-#define ADC1_RSQ2_RSQ5_lsb					25u
+#define ADC1_RSQ2_RSQ5_Msb					29u
+#define ADC1_RSQ2_RSQ5_Lsb					25u
 	/* 5th conversion in regular */
-#define ADC1_RSQ2_RSQ4_msb					24u
-#define ADC1_RSQ2_RSQ4_lsb					20u
+#define ADC1_RSQ2_RSQ4_Msb					24u
+#define ADC1_RSQ2_RSQ4_Lsb					20u
 	/* 4th conversion in regular */
-#define ADC1_RSQ2_RSQ3_msb					19u
-#define ADC1_RSQ2_RSQ3_lsb					15u
+#define ADC1_RSQ2_RSQ3_Msb					19u
+#define ADC1_RSQ2_RSQ3_Lsb					15u
 	/* 3rd conversion in regular */
-#define ADC1_RSQ2_RSQ2_msb					14u
-#define ADC1_RSQ2_RSQ2_lsb					10u
+#define ADC1_RSQ2_RSQ2_Msb					14u
+#define ADC1_RSQ2_RSQ2_Lsb					10u
 	/* 2nd conversion in regular */
-#define ADC1_RSQ2_RSQ1_msb					9u
-#define ADC1_RSQ2_RSQ1_lsb					5u
+#define ADC1_RSQ2_RSQ1_Msb					9u
+#define ADC1_RSQ2_RSQ1_Lsb					5u
 	/* 1st conversion in regular */
-#define ADC1_RSQ2_RSQ0_msb					4u
-#define ADC1_RSQ2_RSQ0_lsb					0u
+#define ADC1_RSQ2_RSQ0_Msb					4u
+#define ADC1_RSQ2_RSQ0_Lsb					0u
 
 	/* 0x34 */
 	uint8_t RESERVED13[0x38u-0x34u];
@@ -644,20 +644,20 @@ struct sdk_adc1 {
 	/* 0x38: Inserted sequence register */
 	uint32_t volatile ISQ;
 	/* Inserted channel group length */
-#define ADC1_ISQ_IL_msb						21u
-#define ADC1_ISQ_IL_lsb						20u
+#define ADC1_ISQ_IL_Msb						21u
+#define ADC1_ISQ_IL_Lsb						20u
 	/* 4th conversion in inserted */
-#define ADC1_ISQ_ISQ3_msb					19u
-#define ADC1_ISQ_ISQ3_lsb					15u
+#define ADC1_ISQ_ISQ3_Msb					19u
+#define ADC1_ISQ_ISQ3_Lsb					15u
 	/* 3rd conversion in inserted */
-#define ADC1_ISQ_ISQ2_msb					14u
-#define ADC1_ISQ_ISQ2_lsb					10u
+#define ADC1_ISQ_ISQ2_Msb					14u
+#define ADC1_ISQ_ISQ2_Lsb					10u
 	/* 2nd conversion in inserted */
-#define ADC1_ISQ_ISQ1_msb					9u
-#define ADC1_ISQ_ISQ1_lsb					5u
+#define ADC1_ISQ_ISQ1_Msb					9u
+#define ADC1_ISQ_ISQ1_Lsb					5u
 	/* 1st conversion in inserted */
-#define ADC1_ISQ_ISQ0_msb					4u
-#define ADC1_ISQ_ISQ0_lsb					0u
+#define ADC1_ISQ_ISQ0_Msb					4u
+#define ADC1_ISQ_ISQ0_Lsb					0u
 
 	/* 0x38 */
 	uint8_t RESERVED14[0x3Cu-0x38u];
@@ -665,8 +665,8 @@ struct sdk_adc1 {
 	/* 0x3C: Inserted data register 0 */
 	uint32_t volatile IDATA0;
 	/* Inserted number n conversion data */
-#define ADC1_IDATA0_IDATAN_msb					15u
-#define ADC1_IDATA0_IDATAN_lsb					0u
+#define ADC1_IDATA0_IDATAN_Msb					15u
+#define ADC1_IDATA0_IDATAN_Lsb					0u
 
 	/* 0x3C */
 	uint8_t RESERVED15[0x40u-0x3Cu];
@@ -674,8 +674,8 @@ struct sdk_adc1 {
 	/* 0x40: Inserted data register 1 */
 	uint32_t volatile IDATA1;
 	/* Inserted number n conversion data */
-#define ADC1_IDATA1_IDATAN_msb					15u
-#define ADC1_IDATA1_IDATAN_lsb					0u
+#define ADC1_IDATA1_IDATAN_Msb					15u
+#define ADC1_IDATA1_IDATAN_Lsb					0u
 
 	/* 0x40 */
 	uint8_t RESERVED16[0x44u-0x40u];
@@ -683,8 +683,8 @@ struct sdk_adc1 {
 	/* 0x44: Inserted data register 2 */
 	uint32_t volatile IDATA2;
 	/* Inserted number n conversion data */
-#define ADC1_IDATA2_IDATAN_msb					15u
-#define ADC1_IDATA2_IDATAN_lsb					0u
+#define ADC1_IDATA2_IDATAN_Msb					15u
+#define ADC1_IDATA2_IDATAN_Lsb					0u
 
 	/* 0x44 */
 	uint8_t RESERVED17[0x48u-0x44u];
@@ -692,8 +692,8 @@ struct sdk_adc1 {
 	/* 0x48: Inserted data register 3 */
 	uint32_t volatile IDATA3;
 	/* Inserted number n conversion data */
-#define ADC1_IDATA3_IDATAN_msb					15u
-#define ADC1_IDATA3_IDATAN_lsb					0u
+#define ADC1_IDATA3_IDATAN_Msb					15u
+#define ADC1_IDATA3_IDATAN_Lsb					0u
 
 	/* 0x48 */
 	uint8_t RESERVED18[0x4Cu-0x48u];
@@ -701,26 +701,26 @@ struct sdk_adc1 {
 	/* 0x4C: regular data register */
 	uint32_t volatile RDATA;
 	/* Regular channel data */
-#define ADC1_RDATA_RDATA_msb					15u
-#define ADC1_RDATA_RDATA_lsb					0u
+#define ADC1_RDATA_RDATA_Msb					15u
+#define ADC1_RDATA_RDATA_Lsb					0u
 
 };
 
 
-#define AFIO ((struct sdk_afio *)0x40010000)
+#define AFIO ((struct mcu_afio *)0x40010000)
 
-struct sdk_afio {
+struct mcu_afio {
 
 	/* 0x00: Event control register */
 	uint32_t volatile EC;
 	/* Event output enable */
 #define AFIO_EC_EOE						7u
 	/* Event output port selection */
-#define AFIO_EC_PORT_msb					6u
-#define AFIO_EC_PORT_lsb					4u
+#define AFIO_EC_PORT_Msb					6u
+#define AFIO_EC_PORT_Lsb					4u
 	/* Event output pin selection */
-#define AFIO_EC_PIN_msb						3u
-#define AFIO_EC_PIN_lsb						0u
+#define AFIO_EC_PIN_Msb						3u
+#define AFIO_EC_PIN_Lsb						0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -732,8 +732,8 @@ struct sdk_afio {
 	/*  */
 #define AFIO_PCF0_SPI2_REMAP					28u
 	/* Serial wire JTAG configuration */
-#define AFIO_PCF0_SWJ_CFG_msb					26u
-#define AFIO_PCF0_SWJ_CFG_lsb					24u
+#define AFIO_PCF0_SWJ_CFG_Msb					26u
+#define AFIO_PCF0_SWJ_CFG_Lsb					24u
 	/* CAN1 I/O remapping */
 #define AFIO_PCF0_CAN1_REMAP					22u
 	/* TIMER4 channel3 internal remapping */
@@ -741,22 +741,22 @@ struct sdk_afio {
 	/* Port D0/Port D1 mapping on OSC_IN/OSC_OUT */
 #define AFIO_PCF0_PD01_REMAP					15u
 	/* CAN0 alternate interface remapping */
-#define AFIO_PCF0_CAN0_REMAP_msb				14u
-#define AFIO_PCF0_CAN0_REMAP_lsb				13u
+#define AFIO_PCF0_CAN0_REMAP_Msb				14u
+#define AFIO_PCF0_CAN0_REMAP_Lsb				13u
 	/* TIMER3 remapping */
 #define AFIO_PCF0_TIMER3_REMAP					12u
 	/* TIMER2 remapping */
-#define AFIO_PCF0_TIMER2_REMAP_msb				11u
-#define AFIO_PCF0_TIMER2_REMAP_lsb				10u
+#define AFIO_PCF0_TIMER2_REMAP_Msb				11u
+#define AFIO_PCF0_TIMER2_REMAP_Lsb				10u
 	/* TIMER1 remapping */
-#define AFIO_PCF0_TIMER1_REMAP_msb				9u
-#define AFIO_PCF0_TIMER1_REMAP_lsb				8u
+#define AFIO_PCF0_TIMER1_REMAP_Msb				9u
+#define AFIO_PCF0_TIMER1_REMAP_Lsb				8u
 	/* TIMER0 remapping */
-#define AFIO_PCF0_TIMER0_REMAP_msb				7u
-#define AFIO_PCF0_TIMER0_REMAP_lsb				6u
+#define AFIO_PCF0_TIMER0_REMAP_Msb				7u
+#define AFIO_PCF0_TIMER0_REMAP_Lsb				6u
 	/* USART2 remapping */
-#define AFIO_PCF0_USART2_REMAP_msb				5u
-#define AFIO_PCF0_USART2_REMAP_lsb				4u
+#define AFIO_PCF0_USART2_REMAP_Msb				5u
+#define AFIO_PCF0_USART2_REMAP_Lsb				4u
 	/* USART1 remapping */
 #define AFIO_PCF0_USART1_REMAP					3u
 	/* USART0 remapping */
@@ -772,17 +772,17 @@ struct sdk_afio {
 	/* 0x08: EXTI sources selection register 0 */
 	uint32_t volatile EXTISS0;
 	/* EXTI 3 sources selection */
-#define AFIO_EXTISS0_EXTI3_SS_msb				15u
-#define AFIO_EXTISS0_EXTI3_SS_lsb				12u
+#define AFIO_EXTISS0_EXTI3_SS_Msb				15u
+#define AFIO_EXTISS0_EXTI3_SS_Lsb				12u
 	/* EXTI 2 sources selection */
-#define AFIO_EXTISS0_EXTI2_SS_msb				11u
-#define AFIO_EXTISS0_EXTI2_SS_lsb				8u
+#define AFIO_EXTISS0_EXTI2_SS_Msb				11u
+#define AFIO_EXTISS0_EXTI2_SS_Lsb				8u
 	/* EXTI 1 sources selection */
-#define AFIO_EXTISS0_EXTI1_SS_msb				7u
-#define AFIO_EXTISS0_EXTI1_SS_lsb				4u
+#define AFIO_EXTISS0_EXTI1_SS_Msb				7u
+#define AFIO_EXTISS0_EXTI1_SS_Lsb				4u
 	/* EXTI 0 sources selection */
-#define AFIO_EXTISS0_EXTI0_SS_msb				3u
-#define AFIO_EXTISS0_EXTI0_SS_lsb				0u
+#define AFIO_EXTISS0_EXTI0_SS_Msb				3u
+#define AFIO_EXTISS0_EXTI0_SS_Lsb				0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -790,17 +790,17 @@ struct sdk_afio {
 	/* 0x0C: EXTI sources selection register 1 */
 	uint32_t volatile EXTISS1;
 	/* EXTI 7 sources selection */
-#define AFIO_EXTISS1_EXTI7_SS_msb				15u
-#define AFIO_EXTISS1_EXTI7_SS_lsb				12u
+#define AFIO_EXTISS1_EXTI7_SS_Msb				15u
+#define AFIO_EXTISS1_EXTI7_SS_Lsb				12u
 	/* EXTI 6 sources selection */
-#define AFIO_EXTISS1_EXTI6_SS_msb				11u
-#define AFIO_EXTISS1_EXTI6_SS_lsb				8u
+#define AFIO_EXTISS1_EXTI6_SS_Msb				11u
+#define AFIO_EXTISS1_EXTI6_SS_Lsb				8u
 	/* EXTI 5 sources selection */
-#define AFIO_EXTISS1_EXTI5_SS_msb				7u
-#define AFIO_EXTISS1_EXTI5_SS_lsb				4u
+#define AFIO_EXTISS1_EXTI5_SS_Msb				7u
+#define AFIO_EXTISS1_EXTI5_SS_Lsb				4u
 	/* EXTI 4 sources selection */
-#define AFIO_EXTISS1_EXTI4_SS_msb				3u
-#define AFIO_EXTISS1_EXTI4_SS_lsb				0u
+#define AFIO_EXTISS1_EXTI4_SS_Msb				3u
+#define AFIO_EXTISS1_EXTI4_SS_Lsb				0u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -808,17 +808,17 @@ struct sdk_afio {
 	/* 0x10: EXTI sources selection register 2 */
 	uint32_t volatile EXTISS2;
 	/* EXTI 11 sources selection */
-#define AFIO_EXTISS2_EXTI11_SS_msb				15u
-#define AFIO_EXTISS2_EXTI11_SS_lsb				12u
+#define AFIO_EXTISS2_EXTI11_SS_Msb				15u
+#define AFIO_EXTISS2_EXTI11_SS_Lsb				12u
 	/* EXTI 10 sources selection */
-#define AFIO_EXTISS2_EXTI10_SS_msb				11u
-#define AFIO_EXTISS2_EXTI10_SS_lsb				8u
+#define AFIO_EXTISS2_EXTI10_SS_Msb				11u
+#define AFIO_EXTISS2_EXTI10_SS_Lsb				8u
 	/* EXTI 9 sources selection */
-#define AFIO_EXTISS2_EXTI9_SS_msb				7u
-#define AFIO_EXTISS2_EXTI9_SS_lsb				4u
+#define AFIO_EXTISS2_EXTI9_SS_Msb				7u
+#define AFIO_EXTISS2_EXTI9_SS_Lsb				4u
 	/* EXTI 8 sources selection */
-#define AFIO_EXTISS2_EXTI8_SS_msb				3u
-#define AFIO_EXTISS2_EXTI8_SS_lsb				0u
+#define AFIO_EXTISS2_EXTI8_SS_Msb				3u
+#define AFIO_EXTISS2_EXTI8_SS_Lsb				0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -826,17 +826,17 @@ struct sdk_afio {
 	/* 0x14: EXTI sources selection register 3 */
 	uint32_t volatile EXTISS3;
 	/* EXTI 15 sources selection */
-#define AFIO_EXTISS3_EXTI15_SS_msb				15u
-#define AFIO_EXTISS3_EXTI15_SS_lsb				12u
+#define AFIO_EXTISS3_EXTI15_SS_Msb				15u
+#define AFIO_EXTISS3_EXTI15_SS_Lsb				12u
 	/* EXTI 14 sources selection */
-#define AFIO_EXTISS3_EXTI14_SS_msb				11u
-#define AFIO_EXTISS3_EXTI14_SS_lsb				8u
+#define AFIO_EXTISS3_EXTI14_SS_Msb				11u
+#define AFIO_EXTISS3_EXTI14_SS_Lsb				8u
 	/* EXTI 13 sources selection */
-#define AFIO_EXTISS3_EXTI13_SS_msb				7u
-#define AFIO_EXTISS3_EXTI13_SS_lsb				4u
+#define AFIO_EXTISS3_EXTI13_SS_Msb				7u
+#define AFIO_EXTISS3_EXTI13_SS_Lsb				4u
 	/* EXTI 12 sources selection */
-#define AFIO_EXTISS3_EXTI12_SS_msb				3u
-#define AFIO_EXTISS3_EXTI12_SS_lsb				0u
+#define AFIO_EXTISS3_EXTI12_SS_Msb				3u
+#define AFIO_EXTISS3_EXTI12_SS_Lsb				0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x1Cu-0x14u];
@@ -849,15 +849,15 @@ struct sdk_afio {
 };
 
 
-#define BKP ((struct sdk_bkp *)0x40006C00)
+#define BKP ((struct mcu_bkp *)0x40006C00)
 
-struct sdk_bkp {
+struct mcu_bkp {
 
 	/* 0x04: Backup data register 0 */
 	uint32_t volatile DATA0;
 	/* Backup data */
-#define BKP_DATA0_DATA_msb					15u
-#define BKP_DATA0_DATA_lsb					0u
+#define BKP_DATA0_DATA_Msb					15u
+#define BKP_DATA0_DATA_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED0[0x08u-0x04u];
@@ -865,8 +865,8 @@ struct sdk_bkp {
 	/* 0x08: Backup data register 1 */
 	uint32_t volatile DATA1;
 	/* Backup data */
-#define BKP_DATA1_DATA_msb					15u
-#define BKP_DATA1_DATA_lsb					0u
+#define BKP_DATA1_DATA_Msb					15u
+#define BKP_DATA1_DATA_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED1[0x0Cu-0x08u];
@@ -874,8 +874,8 @@ struct sdk_bkp {
 	/* 0x0C: Backup data register 2 */
 	uint32_t volatile DATA2;
 	/* Backup data */
-#define BKP_DATA2_DATA_msb					15u
-#define BKP_DATA2_DATA_lsb					0u
+#define BKP_DATA2_DATA_Msb					15u
+#define BKP_DATA2_DATA_Lsb					0u
 
 	/* 0x0C */
 	uint8_t RESERVED2[0x10u-0x0Cu];
@@ -883,8 +883,8 @@ struct sdk_bkp {
 	/* 0x10: Backup data register 3 */
 	uint32_t volatile DATA3;
 	/* Backup data */
-#define BKP_DATA3_DATA_msb					15u
-#define BKP_DATA3_DATA_lsb					0u
+#define BKP_DATA3_DATA_Msb					15u
+#define BKP_DATA3_DATA_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED3[0x14u-0x10u];
@@ -892,8 +892,8 @@ struct sdk_bkp {
 	/* 0x14: Backup data register 4 */
 	uint32_t volatile DATA4;
 	/* Backup data */
-#define BKP_DATA4_DATA_msb					15u
-#define BKP_DATA4_DATA_lsb					0u
+#define BKP_DATA4_DATA_Msb					15u
+#define BKP_DATA4_DATA_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED4[0x18u-0x14u];
@@ -901,8 +901,8 @@ struct sdk_bkp {
 	/* 0x18: Backup data register 5 */
 	uint32_t volatile DATA5;
 	/* Backup data */
-#define BKP_DATA5_DATA_msb					15u
-#define BKP_DATA5_DATA_lsb					0u
+#define BKP_DATA5_DATA_Msb					15u
+#define BKP_DATA5_DATA_Lsb					0u
 
 	/* 0x18 */
 	uint8_t RESERVED5[0x1Cu-0x18u];
@@ -910,8 +910,8 @@ struct sdk_bkp {
 	/* 0x1C: Backup data register 6 */
 	uint32_t volatile DATA6;
 	/* Backup data */
-#define BKP_DATA6_DATA_msb					15u
-#define BKP_DATA6_DATA_lsb					0u
+#define BKP_DATA6_DATA_Msb					15u
+#define BKP_DATA6_DATA_Lsb					0u
 
 	/* 0x1C */
 	uint8_t RESERVED6[0x20u-0x1Cu];
@@ -919,8 +919,8 @@ struct sdk_bkp {
 	/* 0x20: Backup data register 7 */
 	uint32_t volatile DATA7;
 	/* Backup data */
-#define BKP_DATA7_DATA_msb					15u
-#define BKP_DATA7_DATA_lsb					0u
+#define BKP_DATA7_DATA_Msb					15u
+#define BKP_DATA7_DATA_Lsb					0u
 
 	/* 0x20 */
 	uint8_t RESERVED7[0x24u-0x20u];
@@ -928,8 +928,8 @@ struct sdk_bkp {
 	/* 0x24: Backup data register 8 */
 	uint32_t volatile DATA8;
 	/* Backup data */
-#define BKP_DATA8_DATA_msb					15u
-#define BKP_DATA8_DATA_lsb					0u
+#define BKP_DATA8_DATA_Msb					15u
+#define BKP_DATA8_DATA_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED8[0x28u-0x24u];
@@ -937,8 +937,8 @@ struct sdk_bkp {
 	/* 0x28: Backup data register 9 */
 	uint32_t volatile DATA9;
 	/* Backup data */
-#define BKP_DATA9_DATA_msb					15u
-#define BKP_DATA9_DATA_lsb					0u
+#define BKP_DATA9_DATA_Msb					15u
+#define BKP_DATA9_DATA_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED9[0x40u-0x28u];
@@ -946,8 +946,8 @@ struct sdk_bkp {
 	/* 0x40: Backup data register 10 */
 	uint32_t volatile DATA10;
 	/* Backup data */
-#define BKP_DATA10_DATA_msb					15u
-#define BKP_DATA10_DATA_lsb					0u
+#define BKP_DATA10_DATA_Msb					15u
+#define BKP_DATA10_DATA_Lsb					0u
 
 	/* 0x40 */
 	uint8_t RESERVED10[0x44u-0x40u];
@@ -955,8 +955,8 @@ struct sdk_bkp {
 	/* 0x44: Backup data register 11 */
 	uint32_t volatile DATA11;
 	/* Backup data */
-#define BKP_DATA11_DATA_msb					15u
-#define BKP_DATA11_DATA_lsb					0u
+#define BKP_DATA11_DATA_Msb					15u
+#define BKP_DATA11_DATA_Lsb					0u
 
 	/* 0x44 */
 	uint8_t RESERVED11[0x48u-0x44u];
@@ -964,8 +964,8 @@ struct sdk_bkp {
 	/* 0x48: Backup data register 12 */
 	uint32_t volatile DATA12;
 	/* Backup data */
-#define BKP_DATA12_DATA_msb					15u
-#define BKP_DATA12_DATA_lsb					0u
+#define BKP_DATA12_DATA_Msb					15u
+#define BKP_DATA12_DATA_Lsb					0u
 
 	/* 0x48 */
 	uint8_t RESERVED12[0x4Cu-0x48u];
@@ -973,8 +973,8 @@ struct sdk_bkp {
 	/* 0x4C: Backup data register 13 */
 	uint32_t volatile DATA13;
 	/* Backup data */
-#define BKP_DATA13_DATA_msb					15u
-#define BKP_DATA13_DATA_lsb					0u
+#define BKP_DATA13_DATA_Msb					15u
+#define BKP_DATA13_DATA_Lsb					0u
 
 	/* 0x4C */
 	uint8_t RESERVED13[0x50u-0x4Cu];
@@ -982,8 +982,8 @@ struct sdk_bkp {
 	/* 0x50: Backup data register 14 */
 	uint32_t volatile DATA14;
 	/* Backup data */
-#define BKP_DATA14_DATA_msb					15u
-#define BKP_DATA14_DATA_lsb					0u
+#define BKP_DATA14_DATA_Msb					15u
+#define BKP_DATA14_DATA_Lsb					0u
 
 	/* 0x50 */
 	uint8_t RESERVED14[0x54u-0x50u];
@@ -991,8 +991,8 @@ struct sdk_bkp {
 	/* 0x54: Backup data register 15 */
 	uint32_t volatile DATA15;
 	/* Backup data */
-#define BKP_DATA15_DATA_msb					15u
-#define BKP_DATA15_DATA_lsb					0u
+#define BKP_DATA15_DATA_Msb					15u
+#define BKP_DATA15_DATA_Lsb					0u
 
 	/* 0x54 */
 	uint8_t RESERVED15[0x58u-0x54u];
@@ -1000,8 +1000,8 @@ struct sdk_bkp {
 	/* 0x58: Backup data register 16 */
 	uint32_t volatile DATA16;
 	/* Backup data */
-#define BKP_DATA16_DATA_msb					15u
-#define BKP_DATA16_DATA_lsb					0u
+#define BKP_DATA16_DATA_Msb					15u
+#define BKP_DATA16_DATA_Lsb					0u
 
 	/* 0x58 */
 	uint8_t RESERVED16[0x5Cu-0x58u];
@@ -1009,8 +1009,8 @@ struct sdk_bkp {
 	/* 0x5C: Backup data register 17 */
 	uint32_t volatile DATA17;
 	/* Backup data */
-#define BKP_DATA17_DATA_msb					15u
-#define BKP_DATA17_DATA_lsb					0u
+#define BKP_DATA17_DATA_Msb					15u
+#define BKP_DATA17_DATA_Lsb					0u
 
 	/* 0x5C */
 	uint8_t RESERVED17[0x60u-0x5Cu];
@@ -1018,8 +1018,8 @@ struct sdk_bkp {
 	/* 0x60: Backup data register 18 */
 	uint32_t volatile DATA18;
 	/* Backup data */
-#define BKP_DATA18_DATA_msb					15u
-#define BKP_DATA18_DATA_lsb					0u
+#define BKP_DATA18_DATA_Msb					15u
+#define BKP_DATA18_DATA_Lsb					0u
 
 	/* 0x60 */
 	uint8_t RESERVED18[0x64u-0x60u];
@@ -1027,8 +1027,8 @@ struct sdk_bkp {
 	/* 0x64: Backup data register 19 */
 	uint32_t volatile DATA19;
 	/* Backup data */
-#define BKP_DATA19_DATA_msb					15u
-#define BKP_DATA19_DATA_lsb					0u
+#define BKP_DATA19_DATA_Msb					15u
+#define BKP_DATA19_DATA_Lsb					0u
 
 	/* 0x64 */
 	uint8_t RESERVED19[0x68u-0x64u];
@@ -1036,8 +1036,8 @@ struct sdk_bkp {
 	/* 0x68: Backup data register 20 */
 	uint32_t volatile DATA20;
 	/* Backup data */
-#define BKP_DATA20_DATA_msb					15u
-#define BKP_DATA20_DATA_lsb					0u
+#define BKP_DATA20_DATA_Msb					15u
+#define BKP_DATA20_DATA_Lsb					0u
 
 	/* 0x68 */
 	uint8_t RESERVED20[0x6Cu-0x68u];
@@ -1045,8 +1045,8 @@ struct sdk_bkp {
 	/* 0x6C: Backup data register 21 */
 	uint32_t volatile DATA21;
 	/* Backup data */
-#define BKP_DATA21_DATA_msb					15u
-#define BKP_DATA21_DATA_lsb					0u
+#define BKP_DATA21_DATA_Msb					15u
+#define BKP_DATA21_DATA_Lsb					0u
 
 	/* 0x6C */
 	uint8_t RESERVED21[0x70u-0x6Cu];
@@ -1054,8 +1054,8 @@ struct sdk_bkp {
 	/* 0x70: Backup data register 22 */
 	uint32_t volatile DATA22;
 	/* Backup data */
-#define BKP_DATA22_DATA_msb					15u
-#define BKP_DATA22_DATA_lsb					0u
+#define BKP_DATA22_DATA_Msb					15u
+#define BKP_DATA22_DATA_Lsb					0u
 
 	/* 0x70 */
 	uint8_t RESERVED22[0x74u-0x70u];
@@ -1063,8 +1063,8 @@ struct sdk_bkp {
 	/* 0x74: Backup data register 23 */
 	uint32_t volatile DATA23;
 	/* Backup data */
-#define BKP_DATA23_DATA_msb					15u
-#define BKP_DATA23_DATA_lsb					0u
+#define BKP_DATA23_DATA_Msb					15u
+#define BKP_DATA23_DATA_Lsb					0u
 
 	/* 0x74 */
 	uint8_t RESERVED23[0x78u-0x74u];
@@ -1072,8 +1072,8 @@ struct sdk_bkp {
 	/* 0x78: Backup data register 24 */
 	uint32_t volatile DATA24;
 	/* Backup data */
-#define BKP_DATA24_DATA_msb					15u
-#define BKP_DATA24_DATA_lsb					0u
+#define BKP_DATA24_DATA_Msb					15u
+#define BKP_DATA24_DATA_Lsb					0u
 
 	/* 0x78 */
 	uint8_t RESERVED24[0x7Cu-0x78u];
@@ -1081,8 +1081,8 @@ struct sdk_bkp {
 	/* 0x7C: Backup data register 25 */
 	uint32_t volatile DATA25;
 	/* Backup data */
-#define BKP_DATA25_DATA_msb					15u
-#define BKP_DATA25_DATA_lsb					0u
+#define BKP_DATA25_DATA_Msb					15u
+#define BKP_DATA25_DATA_Lsb					0u
 
 	/* 0x7C */
 	uint8_t RESERVED25[0x80u-0x7Cu];
@@ -1090,8 +1090,8 @@ struct sdk_bkp {
 	/* 0x80: Backup data register 26 */
 	uint32_t volatile DATA26;
 	/* Backup data */
-#define BKP_DATA26_DATA_msb					15u
-#define BKP_DATA26_DATA_lsb					0u
+#define BKP_DATA26_DATA_Msb					15u
+#define BKP_DATA26_DATA_Lsb					0u
 
 	/* 0x80 */
 	uint8_t RESERVED26[0x84u-0x80u];
@@ -1099,8 +1099,8 @@ struct sdk_bkp {
 	/* 0x84: Backup data register 27 */
 	uint32_t volatile DATA27;
 	/* Backup data */
-#define BKP_DATA27_DATA_msb					15u
-#define BKP_DATA27_DATA_lsb					0u
+#define BKP_DATA27_DATA_Msb					15u
+#define BKP_DATA27_DATA_Lsb					0u
 
 	/* 0x84 */
 	uint8_t RESERVED27[0x88u-0x84u];
@@ -1108,8 +1108,8 @@ struct sdk_bkp {
 	/* 0x88: Backup data register 28 */
 	uint32_t volatile DATA28;
 	/* Backup data */
-#define BKP_DATA28_DATA_msb					15u
-#define BKP_DATA28_DATA_lsb					0u
+#define BKP_DATA28_DATA_Msb					15u
+#define BKP_DATA28_DATA_Lsb					0u
 
 	/* 0x88 */
 	uint8_t RESERVED28[0x8Cu-0x88u];
@@ -1117,8 +1117,8 @@ struct sdk_bkp {
 	/* 0x8C: Backup data register 29 */
 	uint32_t volatile DATA29;
 	/* Backup data */
-#define BKP_DATA29_DATA_msb					15u
-#define BKP_DATA29_DATA_lsb					0u
+#define BKP_DATA29_DATA_Msb					15u
+#define BKP_DATA29_DATA_Lsb					0u
 
 	/* 0x8C */
 	uint8_t RESERVED29[0x90u-0x8Cu];
@@ -1126,8 +1126,8 @@ struct sdk_bkp {
 	/* 0x90: Backup data register 30 */
 	uint32_t volatile DATA30;
 	/* Backup data */
-#define BKP_DATA30_DATA_msb					15u
-#define BKP_DATA30_DATA_lsb					0u
+#define BKP_DATA30_DATA_Msb					15u
+#define BKP_DATA30_DATA_Lsb					0u
 
 	/* 0x90 */
 	uint8_t RESERVED30[0x94u-0x90u];
@@ -1135,8 +1135,8 @@ struct sdk_bkp {
 	/* 0x94: Backup data register 31 */
 	uint32_t volatile DATA31;
 	/* Backup data */
-#define BKP_DATA31_DATA_msb					15u
-#define BKP_DATA31_DATA_lsb					0u
+#define BKP_DATA31_DATA_Msb					15u
+#define BKP_DATA31_DATA_Lsb					0u
 
 	/* 0x94 */
 	uint8_t RESERVED31[0x98u-0x94u];
@@ -1144,8 +1144,8 @@ struct sdk_bkp {
 	/* 0x98: Backup data register 32 */
 	uint32_t volatile DATA32;
 	/* Backup data */
-#define BKP_DATA32_DATA_msb					15u
-#define BKP_DATA32_DATA_lsb					0u
+#define BKP_DATA32_DATA_Msb					15u
+#define BKP_DATA32_DATA_Lsb					0u
 
 	/* 0x98 */
 	uint8_t RESERVED32[0x9Cu-0x98u];
@@ -1153,8 +1153,8 @@ struct sdk_bkp {
 	/* 0x9C: Backup data register 33 */
 	uint32_t volatile DATA33;
 	/* Backup data */
-#define BKP_DATA33_DATA_msb					15u
-#define BKP_DATA33_DATA_lsb					0u
+#define BKP_DATA33_DATA_Msb					15u
+#define BKP_DATA33_DATA_Lsb					0u
 
 	/* 0x9C */
 	uint8_t RESERVED33[0xA0u-0x9Cu];
@@ -1162,8 +1162,8 @@ struct sdk_bkp {
 	/* 0xA0: Backup data register 34 */
 	uint32_t volatile DATA34;
 	/* Backup data */
-#define BKP_DATA34_DATA_msb					15u
-#define BKP_DATA34_DATA_lsb					0u
+#define BKP_DATA34_DATA_Msb					15u
+#define BKP_DATA34_DATA_Lsb					0u
 
 	/* 0xA0 */
 	uint8_t RESERVED34[0xA4u-0xA0u];
@@ -1171,8 +1171,8 @@ struct sdk_bkp {
 	/* 0xA4: Backup data register 35 */
 	uint32_t volatile DATA35;
 	/* Backup data */
-#define BKP_DATA35_DATA_msb					15u
-#define BKP_DATA35_DATA_lsb					0u
+#define BKP_DATA35_DATA_Msb					15u
+#define BKP_DATA35_DATA_Lsb					0u
 
 	/* 0xA4 */
 	uint8_t RESERVED35[0xA8u-0xA4u];
@@ -1180,8 +1180,8 @@ struct sdk_bkp {
 	/* 0xA8: Backup data register 36 */
 	uint32_t volatile DATA36;
 	/* Backup data */
-#define BKP_DATA36_DATA_msb					15u
-#define BKP_DATA36_DATA_lsb					0u
+#define BKP_DATA36_DATA_Msb					15u
+#define BKP_DATA36_DATA_Lsb					0u
 
 	/* 0xA8 */
 	uint8_t RESERVED36[0xACu-0xA8u];
@@ -1189,8 +1189,8 @@ struct sdk_bkp {
 	/* 0xAC: Backup data register 37 */
 	uint32_t volatile DATA37;
 	/* Backup data */
-#define BKP_DATA37_DATA_msb					15u
-#define BKP_DATA37_DATA_lsb					0u
+#define BKP_DATA37_DATA_Msb					15u
+#define BKP_DATA37_DATA_Lsb					0u
 
 	/* 0xAC */
 	uint8_t RESERVED37[0xB0u-0xACu];
@@ -1198,8 +1198,8 @@ struct sdk_bkp {
 	/* 0xB0: Backup data register 38 */
 	uint32_t volatile DATA38;
 	/* Backup data */
-#define BKP_DATA38_DATA_msb					15u
-#define BKP_DATA38_DATA_lsb					0u
+#define BKP_DATA38_DATA_Msb					15u
+#define BKP_DATA38_DATA_Lsb					0u
 
 	/* 0xB0 */
 	uint8_t RESERVED38[0xB4u-0xB0u];
@@ -1207,8 +1207,8 @@ struct sdk_bkp {
 	/* 0xB4: Backup data register 39 */
 	uint32_t volatile DATA39;
 	/* Backup data */
-#define BKP_DATA39_DATA_msb					15u
-#define BKP_DATA39_DATA_lsb					0u
+#define BKP_DATA39_DATA_Msb					15u
+#define BKP_DATA39_DATA_Lsb					0u
 
 	/* 0xB4 */
 	uint8_t RESERVED39[0xB8u-0xB4u];
@@ -1216,8 +1216,8 @@ struct sdk_bkp {
 	/* 0xB8: Backup data register 40 */
 	uint32_t volatile DATA40;
 	/* Backup data */
-#define BKP_DATA40_DATA_msb					15u
-#define BKP_DATA40_DATA_lsb					0u
+#define BKP_DATA40_DATA_Msb					15u
+#define BKP_DATA40_DATA_Lsb					0u
 
 	/* 0xB8 */
 	uint8_t RESERVED40[0xBCu-0xB8u];
@@ -1225,8 +1225,8 @@ struct sdk_bkp {
 	/* 0xBC: Backup data register 41 */
 	uint32_t volatile DATA41;
 	/* Backup data */
-#define BKP_DATA41_DATA_msb					15u
-#define BKP_DATA41_DATA_lsb					0u
+#define BKP_DATA41_DATA_Msb					15u
+#define BKP_DATA41_DATA_Lsb					0u
 
 	/* 0x2C: RTC signal output control register */
 	uint32_t volatile OCTL;
@@ -1237,8 +1237,8 @@ struct sdk_bkp {
 	/* RTC clock calibration output enable */
 #define BKP_OCTL_COEN						7u
 	/* RTC clock calibration value */
-#define BKP_OCTL_RCCV_msb					6u
-#define BKP_OCTL_RCCV_lsb					0u
+#define BKP_OCTL_RCCV_Msb					6u
+#define BKP_OCTL_RCCV_Lsb					0u
 
 	/* 0x2C */
 	uint8_t RESERVED41[0x30u-0x2Cu];
@@ -1269,10 +1269,10 @@ struct sdk_bkp {
 };
 
 
-#define CAN0 ((struct sdk_can *)0x40006400)
-#define CAN1 ((struct sdk_can *)0x40006800)
+#define CAN0 ((struct mcu_can *)0x40006400)
+#define CAN1 ((struct mcu_can *)0x40006800)
 
-struct sdk_can {
+struct mcu_can {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;
@@ -1339,8 +1339,8 @@ struct sdk_can {
 	/* Transmit mailbox 0 empty */
 #define CAN_TSTAT_TME0						26u
 	/* number of the transmit FIFO mailbox in */
-#define CAN_TSTAT_NUM_msb					25u
-#define CAN_TSTAT_NUM_lsb					24u
+#define CAN_TSTAT_NUM_Msb					25u
+#define CAN_TSTAT_NUM_Lsb					24u
 	/* Mailbox 2 stop transmitting */
 #define CAN_TSTAT_MST2						23u
 	/* Mailbox 2 transmit error */
@@ -1384,8 +1384,8 @@ struct sdk_can {
 	/* Receive FIFO0 full */
 #define CAN_RFIFO0_RFF0					3u
 	/* Receive FIFO0 length */
-#define CAN_RFIFO0_RFL0_msb					1u
-#define CAN_RFIFO0_RFL0_lsb					0u
+#define CAN_RFIFO0_RFL0_Msb					1u
+#define CAN_RFIFO0_RFL0_Lsb					0u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -1399,8 +1399,8 @@ struct sdk_can {
 	/* Receive FIFO1 full */
 #define CAN_RFIFO1_RFF1					3u
 	/* Receive FIFO1 length */
-#define CAN_RFIFO1_RFL1_msb					1u
-#define CAN_RFIFO1_RFL1_lsb					0u
+#define CAN_RFIFO1_RFL1_Msb					1u
+#define CAN_RFIFO1_RFL1_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -1442,14 +1442,14 @@ struct sdk_can {
 	/* 0x18: Error register */
 	uint32_t volatile ERR;
 	/* Receive Error Count defined */
-#define CAN_ERR_RECNT_msb					31u
-#define CAN_ERR_RECNT_lsb					24u
+#define CAN_ERR_RECNT_Msb					31u
+#define CAN_ERR_RECNT_Lsb					24u
 	/* Transmit Error Count defined */
-#define CAN_ERR_TECNT_msb					23u
-#define CAN_ERR_TECNT_lsb					16u
+#define CAN_ERR_TECNT_Msb					23u
+#define CAN_ERR_TECNT_Lsb					16u
 	/* Error number */
-#define CAN_ERR_ERRN_msb					6u
-#define CAN_ERR_ERRN_lsb					4u
+#define CAN_ERR_ERRN_Msb					6u
+#define CAN_ERR_ERRN_Lsb					4u
 	/* Bus-off error */
 #define CAN_ERR_BOERR						2u
 	/* Passive error */
@@ -1467,17 +1467,17 @@ struct sdk_can {
 	/* Loopback communication mode */
 #define CAN_BT_LCMOD						30u
 	/* Resynchronization jump width */
-#define CAN_BT_SJW_msb						25u
-#define CAN_BT_SJW_lsb						24u
+#define CAN_BT_SJW_Msb						25u
+#define CAN_BT_SJW_Lsb						24u
 	/* Bit segment 2 */
-#define CAN_BT_BS2_msb						22u
-#define CAN_BT_BS2_lsb						20u
+#define CAN_BT_BS2_Msb						22u
+#define CAN_BT_BS2_Lsb						20u
 	/* Bit segment 1 */
-#define CAN_BT_BS1_msb						19u
-#define CAN_BT_BS1_lsb						16u
+#define CAN_BT_BS1_Msb						19u
+#define CAN_BT_BS1_Lsb						16u
 	/* Baud rate prescaler */
-#define CAN_BT_BAUDPSC_msb					9u
-#define CAN_BT_BAUDPSC_lsb					0u
+#define CAN_BT_BAUDPSC_Msb					9u
+#define CAN_BT_BAUDPSC_Lsb					0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x180u-0x1Cu];
@@ -1485,11 +1485,11 @@ struct sdk_can {
 	/* 0x180: Transmit mailbox identifier register 0 */
 	uint32_t volatile TMI0;
 	/* The frame identifier */
-#define CAN_TMI0_SFID_EFID_msb					31u
-#define CAN_TMI0_SFID_EFID_lsb					21u
+#define CAN_TMI0_SFID_EFID_Msb					31u
+#define CAN_TMI0_SFID_EFID_Lsb					21u
 	/* The frame identifier */
-#define CAN_TMI0_EFID_msb					20u
-#define CAN_TMI0_EFID_lsb					3u
+#define CAN_TMI0_EFID_Msb					20u
+#define CAN_TMI0_EFID_Lsb					3u
 	/* Frame format */
 #define CAN_TMI0_FF						2u
 	/* Frame type */
@@ -1503,13 +1503,13 @@ struct sdk_can {
 	/* 0x184: Transmit mailbox property register 0 */
 	uint32_t volatile TMP0;
 	/* Time stamp */
-#define CAN_TMP0_TS_msb					31u
-#define CAN_TMP0_TS_lsb					16u
+#define CAN_TMP0_TS_Msb					31u
+#define CAN_TMP0_TS_Lsb					16u
 	/* Time stamp enable */
 #define CAN_TMP0_TSEN						8u
 	/* Data length code */
-#define CAN_TMP0_DLENC_msb					3u
-#define CAN_TMP0_DLENC_lsb					0u
+#define CAN_TMP0_DLENC_Msb					3u
+#define CAN_TMP0_DLENC_Lsb					0u
 
 	/* 0x184 */
 	uint8_t RESERVED9[0x188u-0x184u];
@@ -1517,17 +1517,17 @@ struct sdk_can {
 	/* 0x188: Transmit mailbox data0 register */
 	uint32_t volatile TMDATA00;
 	/* Data byte 3 */
-#define CAN_TMDATA00_DB3_msb					31u
-#define CAN_TMDATA00_DB3_lsb					24u
+#define CAN_TMDATA00_DB3_Msb					31u
+#define CAN_TMDATA00_DB3_Lsb					24u
 	/* Data byte 2 */
-#define CAN_TMDATA00_DB2_msb					23u
-#define CAN_TMDATA00_DB2_lsb					16u
+#define CAN_TMDATA00_DB2_Msb					23u
+#define CAN_TMDATA00_DB2_Lsb					16u
 	/* Data byte 1 */
-#define CAN_TMDATA00_DB1_msb					15u
-#define CAN_TMDATA00_DB1_lsb					8u
+#define CAN_TMDATA00_DB1_Msb					15u
+#define CAN_TMDATA00_DB1_Lsb					8u
 	/* Data byte 0 */
-#define CAN_TMDATA00_DB0_msb					7u
-#define CAN_TMDATA00_DB0_lsb					0u
+#define CAN_TMDATA00_DB0_Msb					7u
+#define CAN_TMDATA00_DB0_Lsb					0u
 
 	/* 0x188 */
 	uint8_t RESERVED10[0x18Cu-0x188u];
@@ -1535,17 +1535,17 @@ struct sdk_can {
 	/* 0x18C: Transmit mailbox data1 register */
 	uint32_t volatile TMDATA10;
 	/* Data byte 7 */
-#define CAN_TMDATA10_DB7_msb					31u
-#define CAN_TMDATA10_DB7_lsb					24u
+#define CAN_TMDATA10_DB7_Msb					31u
+#define CAN_TMDATA10_DB7_Lsb					24u
 	/* Data byte 6 */
-#define CAN_TMDATA10_DB6_msb					23u
-#define CAN_TMDATA10_DB6_lsb					16u
+#define CAN_TMDATA10_DB6_Msb					23u
+#define CAN_TMDATA10_DB6_Lsb					16u
 	/* Data byte 5 */
-#define CAN_TMDATA10_DB5_msb					15u
-#define CAN_TMDATA10_DB5_lsb					8u
+#define CAN_TMDATA10_DB5_Msb					15u
+#define CAN_TMDATA10_DB5_Lsb					8u
 	/* Data byte 4 */
-#define CAN_TMDATA10_DB4_msb					7u
-#define CAN_TMDATA10_DB4_lsb					0u
+#define CAN_TMDATA10_DB4_Msb					7u
+#define CAN_TMDATA10_DB4_Lsb					0u
 
 	/* 0x18C */
 	uint8_t RESERVED11[0x190u-0x18Cu];
@@ -1553,11 +1553,11 @@ struct sdk_can {
 	/* 0x190: Transmit mailbox identifier register 1 */
 	uint32_t volatile TMI1;
 	/* The frame identifier */
-#define CAN_TMI1_SFID_EFID_msb					31u
-#define CAN_TMI1_SFID_EFID_lsb					21u
+#define CAN_TMI1_SFID_EFID_Msb					31u
+#define CAN_TMI1_SFID_EFID_Lsb					21u
 	/* The frame identifier */
-#define CAN_TMI1_EFID_msb					20u
-#define CAN_TMI1_EFID_lsb					3u
+#define CAN_TMI1_EFID_Msb					20u
+#define CAN_TMI1_EFID_Lsb					3u
 	/* Frame format */
 #define CAN_TMI1_FF						2u
 	/* Frame type */
@@ -1571,13 +1571,13 @@ struct sdk_can {
 	/* 0x194: Transmit mailbox property register 1 */
 	uint32_t volatile TMP1;
 	/* Time stamp */
-#define CAN_TMP1_TS_msb					31u
-#define CAN_TMP1_TS_lsb					16u
+#define CAN_TMP1_TS_Msb					31u
+#define CAN_TMP1_TS_Lsb					16u
 	/* Time stamp enable */
 #define CAN_TMP1_TSEN						8u
 	/* Data length code */
-#define CAN_TMP1_DLENC_msb					3u
-#define CAN_TMP1_DLENC_lsb					0u
+#define CAN_TMP1_DLENC_Msb					3u
+#define CAN_TMP1_DLENC_Lsb					0u
 
 	/* 0x194 */
 	uint8_t RESERVED13[0x198u-0x194u];
@@ -1585,17 +1585,17 @@ struct sdk_can {
 	/* 0x198: Transmit mailbox data0 register */
 	uint32_t volatile TMDATA01;
 	/* Data byte 3 */
-#define CAN_TMDATA01_DB3_msb					31u
-#define CAN_TMDATA01_DB3_lsb					24u
+#define CAN_TMDATA01_DB3_Msb					31u
+#define CAN_TMDATA01_DB3_Lsb					24u
 	/* Data byte 2 */
-#define CAN_TMDATA01_DB2_msb					23u
-#define CAN_TMDATA01_DB2_lsb					16u
+#define CAN_TMDATA01_DB2_Msb					23u
+#define CAN_TMDATA01_DB2_Lsb					16u
 	/* Data byte 1 */
-#define CAN_TMDATA01_DB1_msb					15u
-#define CAN_TMDATA01_DB1_lsb					8u
+#define CAN_TMDATA01_DB1_Msb					15u
+#define CAN_TMDATA01_DB1_Lsb					8u
 	/* Data byte 0 */
-#define CAN_TMDATA01_DB0_msb					7u
-#define CAN_TMDATA01_DB0_lsb					0u
+#define CAN_TMDATA01_DB0_Msb					7u
+#define CAN_TMDATA01_DB0_Lsb					0u
 
 	/* 0x198 */
 	uint8_t RESERVED14[0x19Cu-0x198u];
@@ -1603,17 +1603,17 @@ struct sdk_can {
 	/* 0x19C: Transmit mailbox data1 register */
 	uint32_t volatile TMDATA11;
 	/* Data byte 7 */
-#define CAN_TMDATA11_DB7_msb					31u
-#define CAN_TMDATA11_DB7_lsb					24u
+#define CAN_TMDATA11_DB7_Msb					31u
+#define CAN_TMDATA11_DB7_Lsb					24u
 	/* Data byte 6 */
-#define CAN_TMDATA11_DB6_msb					23u
-#define CAN_TMDATA11_DB6_lsb					16u
+#define CAN_TMDATA11_DB6_Msb					23u
+#define CAN_TMDATA11_DB6_Lsb					16u
 	/* Data byte 5 */
-#define CAN_TMDATA11_DB5_msb					15u
-#define CAN_TMDATA11_DB5_lsb					8u
+#define CAN_TMDATA11_DB5_Msb					15u
+#define CAN_TMDATA11_DB5_Lsb					8u
 	/* Data byte 4 */
-#define CAN_TMDATA11_DB4_msb					7u
-#define CAN_TMDATA11_DB4_lsb					0u
+#define CAN_TMDATA11_DB4_Msb					7u
+#define CAN_TMDATA11_DB4_Lsb					0u
 
 	/* 0x19C */
 	uint8_t RESERVED15[0x1A0u-0x19Cu];
@@ -1621,11 +1621,11 @@ struct sdk_can {
 	/* 0x1A0: Transmit mailbox identifier register 2 */
 	uint32_t volatile TMI2;
 	/* The frame identifier */
-#define CAN_TMI2_SFID_EFID_msb					31u
-#define CAN_TMI2_SFID_EFID_lsb					21u
+#define CAN_TMI2_SFID_EFID_Msb					31u
+#define CAN_TMI2_SFID_EFID_Lsb					21u
 	/* The frame identifier */
-#define CAN_TMI2_EFID_msb					20u
-#define CAN_TMI2_EFID_lsb					3u
+#define CAN_TMI2_EFID_Msb					20u
+#define CAN_TMI2_EFID_Lsb					3u
 	/* Frame format */
 #define CAN_TMI2_FF						2u
 	/* Frame type */
@@ -1639,13 +1639,13 @@ struct sdk_can {
 	/* 0x1A4: Transmit mailbox property register 2 */
 	uint32_t volatile TMP2;
 	/* Time stamp */
-#define CAN_TMP2_TS_msb					31u
-#define CAN_TMP2_TS_lsb					16u
+#define CAN_TMP2_TS_Msb					31u
+#define CAN_TMP2_TS_Lsb					16u
 	/* Time stamp enable */
 #define CAN_TMP2_TSEN						8u
 	/* Data length code */
-#define CAN_TMP2_DLENC_msb					3u
-#define CAN_TMP2_DLENC_lsb					0u
+#define CAN_TMP2_DLENC_Msb					3u
+#define CAN_TMP2_DLENC_Lsb					0u
 
 	/* 0x1A4 */
 	uint8_t RESERVED17[0x1A8u-0x1A4u];
@@ -1653,17 +1653,17 @@ struct sdk_can {
 	/* 0x1A8: Transmit mailbox data0 register */
 	uint32_t volatile TMDATA02;
 	/* Data byte 3 */
-#define CAN_TMDATA02_DB3_msb					31u
-#define CAN_TMDATA02_DB3_lsb					24u
+#define CAN_TMDATA02_DB3_Msb					31u
+#define CAN_TMDATA02_DB3_Lsb					24u
 	/* Data byte 2 */
-#define CAN_TMDATA02_DB2_msb					23u
-#define CAN_TMDATA02_DB2_lsb					16u
+#define CAN_TMDATA02_DB2_Msb					23u
+#define CAN_TMDATA02_DB2_Lsb					16u
 	/* Data byte 1 */
-#define CAN_TMDATA02_DB1_msb					15u
-#define CAN_TMDATA02_DB1_lsb					8u
+#define CAN_TMDATA02_DB1_Msb					15u
+#define CAN_TMDATA02_DB1_Lsb					8u
 	/* Data byte 0 */
-#define CAN_TMDATA02_DB0_msb					7u
-#define CAN_TMDATA02_DB0_lsb					0u
+#define CAN_TMDATA02_DB0_Msb					7u
+#define CAN_TMDATA02_DB0_Lsb					0u
 
 	/* 0x1A8 */
 	uint8_t RESERVED18[0x1ACu-0x1A8u];
@@ -1671,17 +1671,17 @@ struct sdk_can {
 	/* 0x1AC: Transmit mailbox data1 register */
 	uint32_t volatile TMDATA12;
 	/* Data byte 7 */
-#define CAN_TMDATA12_DB7_msb					31u
-#define CAN_TMDATA12_DB7_lsb					24u
+#define CAN_TMDATA12_DB7_Msb					31u
+#define CAN_TMDATA12_DB7_Lsb					24u
 	/* Data byte 6 */
-#define CAN_TMDATA12_DB6_msb					23u
-#define CAN_TMDATA12_DB6_lsb					16u
+#define CAN_TMDATA12_DB6_Msb					23u
+#define CAN_TMDATA12_DB6_Lsb					16u
 	/* Data byte 5 */
-#define CAN_TMDATA12_DB5_msb					15u
-#define CAN_TMDATA12_DB5_lsb					8u
+#define CAN_TMDATA12_DB5_Msb					15u
+#define CAN_TMDATA12_DB5_Lsb					8u
 	/* Data byte 4 */
-#define CAN_TMDATA12_DB4_msb					7u
-#define CAN_TMDATA12_DB4_lsb					0u
+#define CAN_TMDATA12_DB4_Msb					7u
+#define CAN_TMDATA12_DB4_Lsb					0u
 
 	/* 0x1AC */
 	uint8_t RESERVED19[0x1B0u-0x1ACu];
@@ -1689,11 +1689,11 @@ struct sdk_can {
 	/* 0x1B0: Receive FIFO mailbox identifier register */
 	uint32_t volatile RFIFOMI0;
 	/* The frame identifier */
-#define CAN_RFIFOMI0_SFID_EFID_msb				31u
-#define CAN_RFIFOMI0_SFID_EFID_lsb				21u
+#define CAN_RFIFOMI0_SFID_EFID_Msb				31u
+#define CAN_RFIFOMI0_SFID_EFID_Lsb				21u
 	/* The frame identifier */
-#define CAN_RFIFOMI0_EFID_msb					20u
-#define CAN_RFIFOMI0_EFID_lsb					3u
+#define CAN_RFIFOMI0_EFID_Msb					20u
+#define CAN_RFIFOMI0_EFID_Lsb					3u
 	/* Frame format */
 #define CAN_RFIFOMI0_FF					2u
 	/* Frame type */
@@ -1705,14 +1705,14 @@ struct sdk_can {
 	/* 0x1B4: Receive FIFO0 mailbox property register */
 	uint32_t volatile RFIFOMP0;
 	/* Time stamp */
-#define CAN_RFIFOMP0_TS_msb					31u
-#define CAN_RFIFOMP0_TS_lsb					16u
+#define CAN_RFIFOMP0_TS_Msb					31u
+#define CAN_RFIFOMP0_TS_Lsb					16u
 	/* Filtering index */
-#define CAN_RFIFOMP0_FI_msb					15u
-#define CAN_RFIFOMP0_FI_lsb					8u
+#define CAN_RFIFOMP0_FI_Msb					15u
+#define CAN_RFIFOMP0_FI_Lsb					8u
 	/* Data length code */
-#define CAN_RFIFOMP0_DLENC_msb					3u
-#define CAN_RFIFOMP0_DLENC_lsb					0u
+#define CAN_RFIFOMP0_DLENC_Msb					3u
+#define CAN_RFIFOMP0_DLENC_Lsb					0u
 
 	/* 0x1B4 */
 	uint8_t RESERVED21[0x1B8u-0x1B4u];
@@ -1720,17 +1720,17 @@ struct sdk_can {
 	/* 0x1B8: Receive FIFO0 mailbox data0 register */
 	uint32_t volatile RFIFOMDATA00;
 	/* Data byte 3 */
-#define CAN_RFIFOMDATA00_DB3_msb				31u
-#define CAN_RFIFOMDATA00_DB3_lsb				24u
+#define CAN_RFIFOMDATA00_DB3_Msb				31u
+#define CAN_RFIFOMDATA00_DB3_Lsb				24u
 	/* Data byte 2 */
-#define CAN_RFIFOMDATA00_DB2_msb				23u
-#define CAN_RFIFOMDATA00_DB2_lsb				16u
+#define CAN_RFIFOMDATA00_DB2_Msb				23u
+#define CAN_RFIFOMDATA00_DB2_Lsb				16u
 	/* Data byte 1 */
-#define CAN_RFIFOMDATA00_DB1_msb				15u
-#define CAN_RFIFOMDATA00_DB1_lsb				8u
+#define CAN_RFIFOMDATA00_DB1_Msb				15u
+#define CAN_RFIFOMDATA00_DB1_Lsb				8u
 	/* Data byte 0 */
-#define CAN_RFIFOMDATA00_DB0_msb				7u
-#define CAN_RFIFOMDATA00_DB0_lsb				0u
+#define CAN_RFIFOMDATA00_DB0_Msb				7u
+#define CAN_RFIFOMDATA00_DB0_Lsb				0u
 
 	/* 0x1B8 */
 	uint8_t RESERVED22[0x1BCu-0x1B8u];
@@ -1738,17 +1738,17 @@ struct sdk_can {
 	/* 0x1BC: Receive FIFO0 mailbox data1 register */
 	uint32_t volatile RFIFOMDATA10;
 	/* Data byte 7 */
-#define CAN_RFIFOMDATA10_DB7_msb				31u
-#define CAN_RFIFOMDATA10_DB7_lsb				24u
+#define CAN_RFIFOMDATA10_DB7_Msb				31u
+#define CAN_RFIFOMDATA10_DB7_Lsb				24u
 	/* Data byte 6 */
-#define CAN_RFIFOMDATA10_DB6_msb				23u
-#define CAN_RFIFOMDATA10_DB6_lsb				16u
+#define CAN_RFIFOMDATA10_DB6_Msb				23u
+#define CAN_RFIFOMDATA10_DB6_Lsb				16u
 	/* Data byte 5 */
-#define CAN_RFIFOMDATA10_DB5_msb				15u
-#define CAN_RFIFOMDATA10_DB5_lsb				8u
+#define CAN_RFIFOMDATA10_DB5_Msb				15u
+#define CAN_RFIFOMDATA10_DB5_Lsb				8u
 	/* Data byte 4 */
-#define CAN_RFIFOMDATA10_DB4_msb				7u
-#define CAN_RFIFOMDATA10_DB4_lsb				0u
+#define CAN_RFIFOMDATA10_DB4_Msb				7u
+#define CAN_RFIFOMDATA10_DB4_Lsb				0u
 
 	/* 0x1BC */
 	uint8_t RESERVED23[0x1C0u-0x1BCu];
@@ -1756,11 +1756,11 @@ struct sdk_can {
 	/* 0x1C0: Receive FIFO1 mailbox identifier register */
 	uint32_t volatile RFIFOMI1;
 	/* The frame identifier */
-#define CAN_RFIFOMI1_SFID_EFID_msb				31u
-#define CAN_RFIFOMI1_SFID_EFID_lsb				21u
+#define CAN_RFIFOMI1_SFID_EFID_Msb				31u
+#define CAN_RFIFOMI1_SFID_EFID_Lsb				21u
 	/* The frame identifier */
-#define CAN_RFIFOMI1_EFID_msb					20u
-#define CAN_RFIFOMI1_EFID_lsb					3u
+#define CAN_RFIFOMI1_EFID_Msb					20u
+#define CAN_RFIFOMI1_EFID_Lsb					3u
 	/* Frame format */
 #define CAN_RFIFOMI1_FF					2u
 	/* Frame type */
@@ -1772,14 +1772,14 @@ struct sdk_can {
 	/* 0x1C4: Receive FIFO1 mailbox property register */
 	uint32_t volatile RFIFOMP1;
 	/* Time stamp */
-#define CAN_RFIFOMP1_TS_msb					31u
-#define CAN_RFIFOMP1_TS_lsb					16u
+#define CAN_RFIFOMP1_TS_Msb					31u
+#define CAN_RFIFOMP1_TS_Lsb					16u
 	/* Filtering index */
-#define CAN_RFIFOMP1_FI_msb					15u
-#define CAN_RFIFOMP1_FI_lsb					8u
+#define CAN_RFIFOMP1_FI_Msb					15u
+#define CAN_RFIFOMP1_FI_Lsb					8u
 	/* Data length code */
-#define CAN_RFIFOMP1_DLENC_msb					3u
-#define CAN_RFIFOMP1_DLENC_lsb					0u
+#define CAN_RFIFOMP1_DLENC_Msb					3u
+#define CAN_RFIFOMP1_DLENC_Lsb					0u
 
 	/* 0x1C4 */
 	uint8_t RESERVED25[0x1C8u-0x1C4u];
@@ -1787,17 +1787,17 @@ struct sdk_can {
 	/* 0x1C8: Receive FIFO1 mailbox data0 register */
 	uint32_t volatile RFIFOMDATA01;
 	/* Data byte 3 */
-#define CAN_RFIFOMDATA01_DB3_msb				31u
-#define CAN_RFIFOMDATA01_DB3_lsb				24u
+#define CAN_RFIFOMDATA01_DB3_Msb				31u
+#define CAN_RFIFOMDATA01_DB3_Lsb				24u
 	/* Data byte 2 */
-#define CAN_RFIFOMDATA01_DB2_msb				23u
-#define CAN_RFIFOMDATA01_DB2_lsb				16u
+#define CAN_RFIFOMDATA01_DB2_Msb				23u
+#define CAN_RFIFOMDATA01_DB2_Lsb				16u
 	/* Data byte 1 */
-#define CAN_RFIFOMDATA01_DB1_msb				15u
-#define CAN_RFIFOMDATA01_DB1_lsb				8u
+#define CAN_RFIFOMDATA01_DB1_Msb				15u
+#define CAN_RFIFOMDATA01_DB1_Lsb				8u
 	/* Data byte 0 */
-#define CAN_RFIFOMDATA01_DB0_msb				7u
-#define CAN_RFIFOMDATA01_DB0_lsb				0u
+#define CAN_RFIFOMDATA01_DB0_Msb				7u
+#define CAN_RFIFOMDATA01_DB0_Lsb				0u
 
 	/* 0x1C8 */
 	uint8_t RESERVED26[0x1CCu-0x1C8u];
@@ -1805,17 +1805,17 @@ struct sdk_can {
 	/* 0x1CC: Receive FIFO1 mailbox data1 register */
 	uint32_t volatile RFIFOMDATA11;
 	/* Data byte 7 */
-#define CAN_RFIFOMDATA11_DB7_msb				31u
-#define CAN_RFIFOMDATA11_DB7_lsb				24u
+#define CAN_RFIFOMDATA11_DB7_Msb				31u
+#define CAN_RFIFOMDATA11_DB7_Lsb				24u
 	/* Data byte 6 */
-#define CAN_RFIFOMDATA11_DB6_msb				23u
-#define CAN_RFIFOMDATA11_DB6_lsb				16u
+#define CAN_RFIFOMDATA11_DB6_Msb				23u
+#define CAN_RFIFOMDATA11_DB6_Lsb				16u
 	/* Data byte 5 */
-#define CAN_RFIFOMDATA11_DB5_msb				15u
-#define CAN_RFIFOMDATA11_DB5_lsb				8u
+#define CAN_RFIFOMDATA11_DB5_Msb				15u
+#define CAN_RFIFOMDATA11_DB5_Lsb				8u
 	/* Data byte 4 */
-#define CAN_RFIFOMDATA11_DB4_msb				7u
-#define CAN_RFIFOMDATA11_DB4_lsb				0u
+#define CAN_RFIFOMDATA11_DB4_Msb				7u
+#define CAN_RFIFOMDATA11_DB4_Lsb				0u
 
 	/* 0x1CC */
 	uint8_t RESERVED27[0x200u-0x1CCu];
@@ -1823,8 +1823,8 @@ struct sdk_can {
 	/* 0x200: Filter control register */
 	uint32_t volatile FCTL;
 	/* Header bank of CAN1 filter */
-#define CAN_FCTL_HBC1F_msb					13u
-#define CAN_FCTL_HBC1F_lsb					8u
+#define CAN_FCTL_HBC1F_Msb					13u
+#define CAN_FCTL_HBC1F_Lsb					8u
 	/* Filter lock disable */
 #define CAN_FCTL_FLD						0u
 
@@ -5999,15 +5999,15 @@ struct sdk_can {
 };
 
 
-#define CRC ((struct sdk_crc *)0x40023000)
+#define CRC ((struct mcu_crc *)0x40023000)
 
-struct sdk_crc {
+struct mcu_crc {
 
 	/* 0x00: Data register */
 	uint32_t volatile DATA;
 	/* CRC calculation result bits */
-#define CRC_DATA_DATA_msb					31u
-#define CRC_DATA_DATA_lsb					0u
+#define CRC_DATA_DATA_Msb					31u
+#define CRC_DATA_DATA_Lsb					0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -6015,8 +6015,8 @@ struct sdk_crc {
 	/* 0x04: Free data register */
 	uint32_t volatile FDATA;
 	/* Free Data Register bits */
-#define CRC_FDATA_FDATA_msb					7u
-#define CRC_FDATA_FDATA_lsb					0u
+#define CRC_FDATA_FDATA_Msb					7u
+#define CRC_FDATA_FDATA_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -6029,9 +6029,9 @@ struct sdk_crc {
 };
 
 
-#define DAC ((struct sdk_dac *)0x40007400)
+#define DAC ((struct mcu_dac *)0x40007400)
 
-struct sdk_dac {
+struct mcu_dac {
 
 	/* 0x00: control register */
 	uint32_t volatile CTL;
@@ -6042,14 +6042,14 @@ struct sdk_dac {
 	/* DAC0 trigger enable */
 #define DAC_CTL_DTEN0						2u
 	/* DAC0 trigger selection */
-#define DAC_CTL_DTSEL0_msb					5u
-#define DAC_CTL_DTSEL0_lsb					3u
+#define DAC_CTL_DTSEL0_Msb					5u
+#define DAC_CTL_DTSEL0_Lsb					3u
 	/* DAC0 noise wave mode */
-#define DAC_CTL_DWM0_msb					7u
-#define DAC_CTL_DWM0_lsb					6u
+#define DAC_CTL_DWM0_Msb					7u
+#define DAC_CTL_DWM0_Lsb					6u
 	/* DAC0 noise wave bit width */
-#define DAC_CTL_DWBW0_msb					11u
-#define DAC_CTL_DWBW0_lsb					8u
+#define DAC_CTL_DWBW0_Msb					11u
+#define DAC_CTL_DWBW0_Lsb					8u
 	/* DAC0 DMA enable */
 #define DAC_CTL_DDMAEN0						12u
 	/* DAC1 enable */
@@ -6059,14 +6059,14 @@ struct sdk_dac {
 	/* DAC1 trigger enable */
 #define DAC_CTL_DTEN1						18u
 	/* DAC1 trigger selection */
-#define DAC_CTL_DTSEL1_msb					21u
-#define DAC_CTL_DTSEL1_lsb					19u
+#define DAC_CTL_DTSEL1_Msb					21u
+#define DAC_CTL_DTSEL1_Lsb					19u
 	/* DAC1 noise wave mode */
-#define DAC_CTL_DWM1_msb					23u
-#define DAC_CTL_DWM1_lsb					22u
+#define DAC_CTL_DWM1_Msb					23u
+#define DAC_CTL_DWM1_Lsb					22u
 	/* DAC1 noise wave bit width */
-#define DAC_CTL_DWBW1_msb					27u
-#define DAC_CTL_DWBW1_lsb					24u
+#define DAC_CTL_DWBW1_Msb					27u
+#define DAC_CTL_DWBW1_Lsb					24u
 	/* DAC1 DMA enable */
 #define DAC_CTL_DDMAEN1						28u
 
@@ -6086,8 +6086,8 @@ struct sdk_dac {
 	/* 0x08: DAC0 12-bit right-aligned data holding register */
 	uint32_t volatile DAC0_R12DH;
 	/* DAC0 12-bit right-aligned */
-#define DAC_DAC0_R12DH_DAC0_DH_msb				11u
-#define DAC_DAC0_R12DH_DAC0_DH_lsb				0u
+#define DAC_DAC0_R12DH_DAC0_DH_Msb				11u
+#define DAC_DAC0_R12DH_DAC0_DH_Lsb				0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -6095,8 +6095,8 @@ struct sdk_dac {
 	/* 0x0C: DAC0 12-bit left-aligned data holding register */
 	uint32_t volatile DAC0_L12DH;
 	/* DAC0 12-bit left-aligned */
-#define DAC_DAC0_L12DH_DAC0_DH_msb				15u
-#define DAC_DAC0_L12DH_DAC0_DH_lsb				4u
+#define DAC_DAC0_L12DH_DAC0_DH_Msb				15u
+#define DAC_DAC0_L12DH_DAC0_DH_Lsb				4u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -6104,8 +6104,8 @@ struct sdk_dac {
 	/* 0x10: DAC0 8-bit right aligned data holding */
 	uint32_t volatile DAC0_R8DH;
 	/* DAC0 8-bit right-aligned */
-#define DAC_DAC0_R8DH_DAC0_DH_msb				7u
-#define DAC_DAC0_R8DH_DAC0_DH_lsb				0u
+#define DAC_DAC0_R8DH_DAC0_DH_Msb				7u
+#define DAC_DAC0_R8DH_DAC0_DH_Lsb				0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -6113,8 +6113,8 @@ struct sdk_dac {
 	/* 0x14: DAC1 12-bit right-aligned data holding */
 	uint32_t volatile DAC1_R12DH;
 	/* DAC1 12-bit right-aligned */
-#define DAC_DAC1_R12DH_DAC1_DH_msb				11u
-#define DAC_DAC1_R12DH_DAC1_DH_lsb				0u
+#define DAC_DAC1_R12DH_DAC1_DH_Msb				11u
+#define DAC_DAC1_R12DH_DAC1_DH_Lsb				0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x18u-0x14u];
@@ -6122,8 +6122,8 @@ struct sdk_dac {
 	/* 0x18: DAC1 12-bit left aligned data holding */
 	uint32_t volatile DAC1_L12DH;
 	/* DAC1 12-bit left-aligned */
-#define DAC_DAC1_L12DH_DAC1_DH_msb				15u
-#define DAC_DAC1_L12DH_DAC1_DH_lsb				4u
+#define DAC_DAC1_L12DH_DAC1_DH_Msb				15u
+#define DAC_DAC1_L12DH_DAC1_DH_Lsb				4u
 
 	/* 0x18 */
 	uint8_t RESERVED6[0x1Cu-0x18u];
@@ -6131,8 +6131,8 @@ struct sdk_dac {
 	/* 0x1C: DAC1 8-bit right aligned data holding */
 	uint32_t volatile DAC1_R8DH;
 	/* DAC1 8-bit right-aligned */
-#define DAC_DAC1_R8DH_DAC1_DH_msb				7u
-#define DAC_DAC1_R8DH_DAC1_DH_lsb				0u
+#define DAC_DAC1_R8DH_DAC1_DH_Msb				7u
+#define DAC_DAC1_R8DH_DAC1_DH_Lsb				0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -6140,11 +6140,11 @@ struct sdk_dac {
 	/* 0x20: DAC concurrent mode 12-bit right-aligned data holding */
 	uint32_t volatile DACC_R12DH;
 	/* DAC0 12-bit right-aligned */
-#define DAC_DACC_R12DH_DAC0_DH_msb				11u
-#define DAC_DACC_R12DH_DAC0_DH_lsb				0u
+#define DAC_DACC_R12DH_DAC0_DH_Msb				11u
+#define DAC_DACC_R12DH_DAC0_DH_Lsb				0u
 	/* DAC1 12-bit right-aligned */
-#define DAC_DACC_R12DH_DAC1_DH_msb				27u
-#define DAC_DACC_R12DH_DAC1_DH_lsb				16u
+#define DAC_DACC_R12DH_DAC1_DH_Msb				27u
+#define DAC_DACC_R12DH_DAC1_DH_Lsb				16u
 
 	/* 0x20 */
 	uint8_t RESERVED8[0x24u-0x20u];
@@ -6152,11 +6152,11 @@ struct sdk_dac {
 	/* 0x24: DAC concurrent mode 12-bit left aligned data holding */
 	uint32_t volatile DACC_L12DH;
 	/* DAC0 12-bit left-aligned */
-#define DAC_DACC_L12DH_DAC0_DH_msb				15u
-#define DAC_DACC_L12DH_DAC0_DH_lsb				4u
+#define DAC_DACC_L12DH_DAC0_DH_Msb				15u
+#define DAC_DACC_L12DH_DAC0_DH_Lsb				4u
 	/* DAC1 12-bit left-aligned */
-#define DAC_DACC_L12DH_DAC1_DH_msb				31u
-#define DAC_DACC_L12DH_DAC1_DH_lsb				20u
+#define DAC_DACC_L12DH_DAC1_DH_Msb				31u
+#define DAC_DACC_L12DH_DAC1_DH_Lsb				20u
 
 	/* 0x24 */
 	uint8_t RESERVED9[0x28u-0x24u];
@@ -6164,11 +6164,11 @@ struct sdk_dac {
 	/* 0x28: DAC concurrent mode 8-bit right aligned data holding */
 	uint32_t volatile DACC_R8DH;
 	/* DAC0 8-bit right-aligned */
-#define DAC_DACC_R8DH_DAC0_DH_msb				7u
-#define DAC_DACC_R8DH_DAC0_DH_lsb				0u
+#define DAC_DACC_R8DH_DAC0_DH_Msb				7u
+#define DAC_DACC_R8DH_DAC0_DH_Lsb				0u
 	/* DAC1 8-bit right-aligned */
-#define DAC_DACC_R8DH_DAC1_DH_msb				15u
-#define DAC_DACC_R8DH_DAC1_DH_lsb				8u
+#define DAC_DACC_R8DH_DAC1_DH_Msb				15u
+#define DAC_DACC_R8DH_DAC1_DH_Lsb				8u
 
 	/* 0x28 */
 	uint8_t RESERVED10[0x2Cu-0x28u];
@@ -6176,8 +6176,8 @@ struct sdk_dac {
 	/* 0x2C: DAC0 data output register */
 	uint32_t volatile DAC0_DO;
 	/* DAC0 data output */
-#define DAC_DAC0_DO_DAC0_DO_msb					11u
-#define DAC_DAC0_DO_DAC0_DO_lsb					0u
+#define DAC_DAC0_DO_DAC0_DO_Msb					11u
+#define DAC_DAC0_DO_DAC0_DO_Lsb					0u
 
 	/* 0x2C */
 	uint8_t RESERVED11[0x30u-0x2Cu];
@@ -6185,21 +6185,21 @@ struct sdk_dac {
 	/* 0x30: DAC1 data output register */
 	uint32_t volatile DAC1_DO;
 	/* DAC1 data output */
-#define DAC_DAC1_DO_DAC1_DO_msb					11u
-#define DAC_DAC1_DO_DAC1_DO_lsb					0u
+#define DAC_DAC1_DO_DAC1_DO_Msb					11u
+#define DAC_DAC1_DO_DAC1_DO_Lsb					0u
 
 };
 
 
-#define DBG ((struct sdk_dbg *)0xE0042000)
+#define DBG ((struct mcu_dbg *)0xE0042000)
 
-struct sdk_dbg {
+struct mcu_dbg {
 
 	/* 0x00: ID code register */
 	uint32_t volatile ID;
 	/* DBG ID code register */
-#define DBG_ID_ID_CODE_msb					31u
-#define DBG_ID_ID_CODE_lsb					0u
+#define DBG_ID_ID_CODE_Msb					31u
+#define DBG_ID_ID_CODE_Lsb					0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -6242,9 +6242,9 @@ struct sdk_dbg {
 };
 
 
-#define DMA0 ((struct sdk_dma0 *)0x40020000)
+#define DMA0 ((struct mcu_dma0 *)0x40020000)
 
-struct sdk_dma0 {
+struct mcu_dma0 {
 
 	/* 0x00: Interrupt flag register */
 	uint32_t volatile INTF;
@@ -6389,14 +6389,14 @@ struct sdk_dma0 {
 	/* Next address generation algorithm of memory */
 #define DMA0_CH0CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA0_CH0CTL_PWIDTH_msb					9u
-#define DMA0_CH0CTL_PWIDTH_lsb					8u
+#define DMA0_CH0CTL_PWIDTH_Msb					9u
+#define DMA0_CH0CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA0_CH0CTL_MWIDTH_msb					11u
-#define DMA0_CH0CTL_MWIDTH_lsb					10u
+#define DMA0_CH0CTL_MWIDTH_Msb					11u
+#define DMA0_CH0CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA0_CH0CTL_PRIO_msb					13u
-#define DMA0_CH0CTL_PRIO_lsb					12u
+#define DMA0_CH0CTL_PRIO_Msb					13u
+#define DMA0_CH0CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA0_CH0CTL_M2M						14u
 
@@ -6406,8 +6406,8 @@ struct sdk_dma0 {
 	/* 0x0C: Channel 0 counter register */
 	uint32_t volatile CH0CNT;
 	/* Transfer counter */
-#define DMA0_CH0CNT_CNT_msb					15u
-#define DMA0_CH0CNT_CNT_lsb					0u
+#define DMA0_CH0CNT_CNT_Msb					15u
+#define DMA0_CH0CNT_CNT_Lsb					0u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -6415,8 +6415,8 @@ struct sdk_dma0 {
 	/* 0x10: Channel 0 peripheral base address register */
 	uint32_t volatile CH0PADDR;
 	/* Peripheral base address */
-#define DMA0_CH0PADDR_PADDR_msb					31u
-#define DMA0_CH0PADDR_PADDR_lsb					0u
+#define DMA0_CH0PADDR_PADDR_Msb					31u
+#define DMA0_CH0PADDR_PADDR_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -6424,8 +6424,8 @@ struct sdk_dma0 {
 	/* 0x14: Channel 0 memory base address register */
 	uint32_t volatile CH0MADDR;
 	/* Memory base address */
-#define DMA0_CH0MADDR_MADDR_msb					31u
-#define DMA0_CH0MADDR_MADDR_lsb					0u
+#define DMA0_CH0MADDR_MADDR_Msb					31u
+#define DMA0_CH0MADDR_MADDR_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x1Cu-0x14u];
@@ -6449,14 +6449,14 @@ struct sdk_dma0 {
 	/* Next address generation algorithm of memory */
 #define DMA0_CH1CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA0_CH1CTL_PWIDTH_msb					9u
-#define DMA0_CH1CTL_PWIDTH_lsb					8u
+#define DMA0_CH1CTL_PWIDTH_Msb					9u
+#define DMA0_CH1CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA0_CH1CTL_MWIDTH_msb					11u
-#define DMA0_CH1CTL_MWIDTH_lsb					10u
+#define DMA0_CH1CTL_MWIDTH_Msb					11u
+#define DMA0_CH1CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA0_CH1CTL_PRIO_msb					13u
-#define DMA0_CH1CTL_PRIO_lsb					12u
+#define DMA0_CH1CTL_PRIO_Msb					13u
+#define DMA0_CH1CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA0_CH1CTL_M2M						14u
 
@@ -6466,8 +6466,8 @@ struct sdk_dma0 {
 	/* 0x20: Channel 1 counter register */
 	uint32_t volatile CH1CNT;
 	/* Transfer counter */
-#define DMA0_CH1CNT_CNT_msb					15u
-#define DMA0_CH1CNT_CNT_lsb					0u
+#define DMA0_CH1CNT_CNT_Msb					15u
+#define DMA0_CH1CNT_CNT_Lsb					0u
 
 	/* 0x20 */
 	uint8_t RESERVED7[0x24u-0x20u];
@@ -6475,8 +6475,8 @@ struct sdk_dma0 {
 	/* 0x24: Channel 1 peripheral base address register */
 	uint32_t volatile CH1PADDR;
 	/* Peripheral base address */
-#define DMA0_CH1PADDR_PADDR_msb					31u
-#define DMA0_CH1PADDR_PADDR_lsb					0u
+#define DMA0_CH1PADDR_PADDR_Msb					31u
+#define DMA0_CH1PADDR_PADDR_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED8[0x28u-0x24u];
@@ -6484,8 +6484,8 @@ struct sdk_dma0 {
 	/* 0x28: Channel 1 memory base address register */
 	uint32_t volatile CH1MADDR;
 	/* Memory base address */
-#define DMA0_CH1MADDR_MADDR_msb					31u
-#define DMA0_CH1MADDR_MADDR_lsb					0u
+#define DMA0_CH1MADDR_MADDR_Msb					31u
+#define DMA0_CH1MADDR_MADDR_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED9[0x30u-0x28u];
@@ -6509,14 +6509,14 @@ struct sdk_dma0 {
 	/* Next address generation algorithm of memory */
 #define DMA0_CH2CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA0_CH2CTL_PWIDTH_msb					9u
-#define DMA0_CH2CTL_PWIDTH_lsb					8u
+#define DMA0_CH2CTL_PWIDTH_Msb					9u
+#define DMA0_CH2CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA0_CH2CTL_MWIDTH_msb					11u
-#define DMA0_CH2CTL_MWIDTH_lsb					10u
+#define DMA0_CH2CTL_MWIDTH_Msb					11u
+#define DMA0_CH2CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA0_CH2CTL_PRIO_msb					13u
-#define DMA0_CH2CTL_PRIO_lsb					12u
+#define DMA0_CH2CTL_PRIO_Msb					13u
+#define DMA0_CH2CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA0_CH2CTL_M2M						14u
 
@@ -6526,8 +6526,8 @@ struct sdk_dma0 {
 	/* 0x34: Channel 2 counter register */
 	uint32_t volatile CH2CNT;
 	/* Transfer counter */
-#define DMA0_CH2CNT_CNT_msb					15u
-#define DMA0_CH2CNT_CNT_lsb					0u
+#define DMA0_CH2CNT_CNT_Msb					15u
+#define DMA0_CH2CNT_CNT_Lsb					0u
 
 	/* 0x34 */
 	uint8_t RESERVED11[0x38u-0x34u];
@@ -6535,8 +6535,8 @@ struct sdk_dma0 {
 	/* 0x38: Channel 2 peripheral base address register */
 	uint32_t volatile CH2PADDR;
 	/* Peripheral base address */
-#define DMA0_CH2PADDR_PADDR_msb					31u
-#define DMA0_CH2PADDR_PADDR_lsb					0u
+#define DMA0_CH2PADDR_PADDR_Msb					31u
+#define DMA0_CH2PADDR_PADDR_Lsb					0u
 
 	/* 0x38 */
 	uint8_t RESERVED12[0x3Cu-0x38u];
@@ -6544,8 +6544,8 @@ struct sdk_dma0 {
 	/* 0x3C: Channel 2 memory base address register */
 	uint32_t volatile CH2MADDR;
 	/* Memory base address */
-#define DMA0_CH2MADDR_MADDR_msb					31u
-#define DMA0_CH2MADDR_MADDR_lsb					0u
+#define DMA0_CH2MADDR_MADDR_Msb					31u
+#define DMA0_CH2MADDR_MADDR_Lsb					0u
 
 	/* 0x3C */
 	uint8_t RESERVED13[0x44u-0x3Cu];
@@ -6569,14 +6569,14 @@ struct sdk_dma0 {
 	/* Next address generation algorithm of memory */
 #define DMA0_CH3CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA0_CH3CTL_PWIDTH_msb					9u
-#define DMA0_CH3CTL_PWIDTH_lsb					8u
+#define DMA0_CH3CTL_PWIDTH_Msb					9u
+#define DMA0_CH3CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA0_CH3CTL_MWIDTH_msb					11u
-#define DMA0_CH3CTL_MWIDTH_lsb					10u
+#define DMA0_CH3CTL_MWIDTH_Msb					11u
+#define DMA0_CH3CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA0_CH3CTL_PRIO_msb					13u
-#define DMA0_CH3CTL_PRIO_lsb					12u
+#define DMA0_CH3CTL_PRIO_Msb					13u
+#define DMA0_CH3CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA0_CH3CTL_M2M						14u
 
@@ -6586,8 +6586,8 @@ struct sdk_dma0 {
 	/* 0x48: Channel 3 counter register */
 	uint32_t volatile CH3CNT;
 	/* Transfer counter */
-#define DMA0_CH3CNT_CNT_msb					15u
-#define DMA0_CH3CNT_CNT_lsb					0u
+#define DMA0_CH3CNT_CNT_Msb					15u
+#define DMA0_CH3CNT_CNT_Lsb					0u
 
 	/* 0x48 */
 	uint8_t RESERVED15[0x4Cu-0x48u];
@@ -6595,8 +6595,8 @@ struct sdk_dma0 {
 	/* 0x4C: Channel 3 peripheral base address register */
 	uint32_t volatile CH3PADDR;
 	/* Peripheral base address */
-#define DMA0_CH3PADDR_PADDR_msb					31u
-#define DMA0_CH3PADDR_PADDR_lsb					0u
+#define DMA0_CH3PADDR_PADDR_Msb					31u
+#define DMA0_CH3PADDR_PADDR_Lsb					0u
 
 	/* 0x4C */
 	uint8_t RESERVED16[0x50u-0x4Cu];
@@ -6604,8 +6604,8 @@ struct sdk_dma0 {
 	/* 0x50: Channel 3 memory base address register */
 	uint32_t volatile CH3MADDR;
 	/* Memory base address */
-#define DMA0_CH3MADDR_MADDR_msb					31u
-#define DMA0_CH3MADDR_MADDR_lsb					0u
+#define DMA0_CH3MADDR_MADDR_Msb					31u
+#define DMA0_CH3MADDR_MADDR_Lsb					0u
 
 	/* 0x50 */
 	uint8_t RESERVED17[0x58u-0x50u];
@@ -6629,14 +6629,14 @@ struct sdk_dma0 {
 	/* Next address generation algorithm of memory */
 #define DMA0_CH4CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA0_CH4CTL_PWIDTH_msb					9u
-#define DMA0_CH4CTL_PWIDTH_lsb					8u
+#define DMA0_CH4CTL_PWIDTH_Msb					9u
+#define DMA0_CH4CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA0_CH4CTL_MWIDTH_msb					11u
-#define DMA0_CH4CTL_MWIDTH_lsb					10u
+#define DMA0_CH4CTL_MWIDTH_Msb					11u
+#define DMA0_CH4CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA0_CH4CTL_PRIO_msb					13u
-#define DMA0_CH4CTL_PRIO_lsb					12u
+#define DMA0_CH4CTL_PRIO_Msb					13u
+#define DMA0_CH4CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA0_CH4CTL_M2M						14u
 
@@ -6646,8 +6646,8 @@ struct sdk_dma0 {
 	/* 0x5C: Channel 4 counter register */
 	uint32_t volatile CH4CNT;
 	/* Transfer counter */
-#define DMA0_CH4CNT_CNT_msb					15u
-#define DMA0_CH4CNT_CNT_lsb					0u
+#define DMA0_CH4CNT_CNT_Msb					15u
+#define DMA0_CH4CNT_CNT_Lsb					0u
 
 	/* 0x5C */
 	uint8_t RESERVED19[0x60u-0x5Cu];
@@ -6655,8 +6655,8 @@ struct sdk_dma0 {
 	/* 0x60: Channel 4 peripheral base address register */
 	uint32_t volatile CH4PADDR;
 	/* Peripheral base address */
-#define DMA0_CH4PADDR_PADDR_msb					31u
-#define DMA0_CH4PADDR_PADDR_lsb					0u
+#define DMA0_CH4PADDR_PADDR_Msb					31u
+#define DMA0_CH4PADDR_PADDR_Lsb					0u
 
 	/* 0x60 */
 	uint8_t RESERVED20[0x64u-0x60u];
@@ -6664,8 +6664,8 @@ struct sdk_dma0 {
 	/* 0x64: Channel 4 memory base address register */
 	uint32_t volatile CH4MADDR;
 	/* Memory base address */
-#define DMA0_CH4MADDR_MADDR_msb					31u
-#define DMA0_CH4MADDR_MADDR_lsb					0u
+#define DMA0_CH4MADDR_MADDR_Msb					31u
+#define DMA0_CH4MADDR_MADDR_Lsb					0u
 
 	/* 0x64 */
 	uint8_t RESERVED21[0x6Cu-0x64u];
@@ -6689,14 +6689,14 @@ struct sdk_dma0 {
 	/* Next address generation algorithm of memory */
 #define DMA0_CH5CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA0_CH5CTL_PWIDTH_msb					9u
-#define DMA0_CH5CTL_PWIDTH_lsb					8u
+#define DMA0_CH5CTL_PWIDTH_Msb					9u
+#define DMA0_CH5CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA0_CH5CTL_MWIDTH_msb					11u
-#define DMA0_CH5CTL_MWIDTH_lsb					10u
+#define DMA0_CH5CTL_MWIDTH_Msb					11u
+#define DMA0_CH5CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA0_CH5CTL_PRIO_msb					13u
-#define DMA0_CH5CTL_PRIO_lsb					12u
+#define DMA0_CH5CTL_PRIO_Msb					13u
+#define DMA0_CH5CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA0_CH5CTL_M2M						14u
 
@@ -6706,8 +6706,8 @@ struct sdk_dma0 {
 	/* 0x70: Channel 5 counter register */
 	uint32_t volatile CH5CNT;
 	/* Transfer counter */
-#define DMA0_CH5CNT_CNT_msb					15u
-#define DMA0_CH5CNT_CNT_lsb					0u
+#define DMA0_CH5CNT_CNT_Msb					15u
+#define DMA0_CH5CNT_CNT_Lsb					0u
 
 	/* 0x70 */
 	uint8_t RESERVED23[0x74u-0x70u];
@@ -6715,8 +6715,8 @@ struct sdk_dma0 {
 	/* 0x74: Channel 5 peripheral base address register */
 	uint32_t volatile CH5PADDR;
 	/* Peripheral base address */
-#define DMA0_CH5PADDR_PADDR_msb					31u
-#define DMA0_CH5PADDR_PADDR_lsb					0u
+#define DMA0_CH5PADDR_PADDR_Msb					31u
+#define DMA0_CH5PADDR_PADDR_Lsb					0u
 
 	/* 0x74 */
 	uint8_t RESERVED24[0x78u-0x74u];
@@ -6724,8 +6724,8 @@ struct sdk_dma0 {
 	/* 0x78: Channel 5 memory base address register */
 	uint32_t volatile CH5MADDR;
 	/* Memory base address */
-#define DMA0_CH5MADDR_MADDR_msb					31u
-#define DMA0_CH5MADDR_MADDR_lsb					0u
+#define DMA0_CH5MADDR_MADDR_Msb					31u
+#define DMA0_CH5MADDR_MADDR_Lsb					0u
 
 	/* 0x78 */
 	uint8_t RESERVED25[0x80u-0x78u];
@@ -6749,14 +6749,14 @@ struct sdk_dma0 {
 	/* Next address generation algorithm of memory */
 #define DMA0_CH6CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA0_CH6CTL_PWIDTH_msb					9u
-#define DMA0_CH6CTL_PWIDTH_lsb					8u
+#define DMA0_CH6CTL_PWIDTH_Msb					9u
+#define DMA0_CH6CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA0_CH6CTL_MWIDTH_msb					11u
-#define DMA0_CH6CTL_MWIDTH_lsb					10u
+#define DMA0_CH6CTL_MWIDTH_Msb					11u
+#define DMA0_CH6CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA0_CH6CTL_PRIO_msb					13u
-#define DMA0_CH6CTL_PRIO_lsb					12u
+#define DMA0_CH6CTL_PRIO_Msb					13u
+#define DMA0_CH6CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA0_CH6CTL_M2M						14u
 
@@ -6766,8 +6766,8 @@ struct sdk_dma0 {
 	/* 0x84: Channel 6 counter register */
 	uint32_t volatile CH6CNT;
 	/* Transfer counter */
-#define DMA0_CH6CNT_CNT_msb					15u
-#define DMA0_CH6CNT_CNT_lsb					0u
+#define DMA0_CH6CNT_CNT_Msb					15u
+#define DMA0_CH6CNT_CNT_Lsb					0u
 
 	/* 0x84 */
 	uint8_t RESERVED27[0x88u-0x84u];
@@ -6775,8 +6775,8 @@ struct sdk_dma0 {
 	/* 0x88: Channel 6 peripheral base address register */
 	uint32_t volatile CH6PADDR;
 	/* Peripheral base address */
-#define DMA0_CH6PADDR_PADDR_msb					31u
-#define DMA0_CH6PADDR_PADDR_lsb					0u
+#define DMA0_CH6PADDR_PADDR_Msb					31u
+#define DMA0_CH6PADDR_PADDR_Lsb					0u
 
 	/* 0x88 */
 	uint8_t RESERVED28[0x8Cu-0x88u];
@@ -6784,15 +6784,15 @@ struct sdk_dma0 {
 	/* 0x8C: Channel 6 memory base address register */
 	uint32_t volatile CH6MADDR;
 	/* Memory base address */
-#define DMA0_CH6MADDR_MADDR_msb					31u
-#define DMA0_CH6MADDR_MADDR_lsb					0u
+#define DMA0_CH6MADDR_MADDR_Msb					31u
+#define DMA0_CH6MADDR_MADDR_Lsb					0u
 
 };
 
 
-#define DMA1 ((struct sdk_dma1 *)0x40020400)
+#define DMA1 ((struct mcu_dma1 *)0x40020400)
 
-struct sdk_dma1 {
+struct mcu_dma1 {
 
 	/* 0x00: Interrupt flag register */
 	uint32_t volatile INTF;
@@ -6905,14 +6905,14 @@ struct sdk_dma1 {
 	/* Next address generation algorithm of memory */
 #define DMA1_CH0CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA1_CH0CTL_PWIDTH_msb					9u
-#define DMA1_CH0CTL_PWIDTH_lsb					8u
+#define DMA1_CH0CTL_PWIDTH_Msb					9u
+#define DMA1_CH0CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA1_CH0CTL_MWIDTH_msb					11u
-#define DMA1_CH0CTL_MWIDTH_lsb					10u
+#define DMA1_CH0CTL_MWIDTH_Msb					11u
+#define DMA1_CH0CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA1_CH0CTL_PRIO_msb					13u
-#define DMA1_CH0CTL_PRIO_lsb					12u
+#define DMA1_CH0CTL_PRIO_Msb					13u
+#define DMA1_CH0CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA1_CH0CTL_M2M						14u
 
@@ -6922,8 +6922,8 @@ struct sdk_dma1 {
 	/* 0x0C: Channel 0 counter register */
 	uint32_t volatile CH0CNT;
 	/* Transfer counter */
-#define DMA1_CH0CNT_CNT_msb					15u
-#define DMA1_CH0CNT_CNT_lsb					0u
+#define DMA1_CH0CNT_CNT_Msb					15u
+#define DMA1_CH0CNT_CNT_Lsb					0u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -6931,8 +6931,8 @@ struct sdk_dma1 {
 	/* 0x10: Channel 0 peripheral base address register */
 	uint32_t volatile CH0PADDR;
 	/* Peripheral base address */
-#define DMA1_CH0PADDR_PADDR_msb					31u
-#define DMA1_CH0PADDR_PADDR_lsb					0u
+#define DMA1_CH0PADDR_PADDR_Msb					31u
+#define DMA1_CH0PADDR_PADDR_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -6940,8 +6940,8 @@ struct sdk_dma1 {
 	/* 0x14: Channel 0 memory base address register */
 	uint32_t volatile CH0MADDR;
 	/* Memory base address */
-#define DMA1_CH0MADDR_MADDR_msb					31u
-#define DMA1_CH0MADDR_MADDR_lsb					0u
+#define DMA1_CH0MADDR_MADDR_Msb					31u
+#define DMA1_CH0MADDR_MADDR_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x1Cu-0x14u];
@@ -6965,14 +6965,14 @@ struct sdk_dma1 {
 	/* Next address generation algorithm of memory */
 #define DMA1_CH1CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA1_CH1CTL_PWIDTH_msb					9u
-#define DMA1_CH1CTL_PWIDTH_lsb					8u
+#define DMA1_CH1CTL_PWIDTH_Msb					9u
+#define DMA1_CH1CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA1_CH1CTL_MWIDTH_msb					11u
-#define DMA1_CH1CTL_MWIDTH_lsb					10u
+#define DMA1_CH1CTL_MWIDTH_Msb					11u
+#define DMA1_CH1CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA1_CH1CTL_PRIO_msb					13u
-#define DMA1_CH1CTL_PRIO_lsb					12u
+#define DMA1_CH1CTL_PRIO_Msb					13u
+#define DMA1_CH1CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA1_CH1CTL_M2M						14u
 
@@ -6982,8 +6982,8 @@ struct sdk_dma1 {
 	/* 0x20: Channel 1 counter register */
 	uint32_t volatile CH1CNT;
 	/* Transfer counter */
-#define DMA1_CH1CNT_CNT_msb					15u
-#define DMA1_CH1CNT_CNT_lsb					0u
+#define DMA1_CH1CNT_CNT_Msb					15u
+#define DMA1_CH1CNT_CNT_Lsb					0u
 
 	/* 0x20 */
 	uint8_t RESERVED7[0x24u-0x20u];
@@ -6991,8 +6991,8 @@ struct sdk_dma1 {
 	/* 0x24: Channel 1 peripheral base address register */
 	uint32_t volatile CH1PADDR;
 	/* Peripheral base address */
-#define DMA1_CH1PADDR_PADDR_msb					31u
-#define DMA1_CH1PADDR_PADDR_lsb					0u
+#define DMA1_CH1PADDR_PADDR_Msb					31u
+#define DMA1_CH1PADDR_PADDR_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED8[0x28u-0x24u];
@@ -7000,8 +7000,8 @@ struct sdk_dma1 {
 	/* 0x28: Channel 1 memory base address register */
 	uint32_t volatile CH1MADDR;
 	/* Memory base address */
-#define DMA1_CH1MADDR_MADDR_msb					31u
-#define DMA1_CH1MADDR_MADDR_lsb					0u
+#define DMA1_CH1MADDR_MADDR_Msb					31u
+#define DMA1_CH1MADDR_MADDR_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED9[0x30u-0x28u];
@@ -7025,14 +7025,14 @@ struct sdk_dma1 {
 	/* Next address generation algorithm of memory */
 #define DMA1_CH2CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA1_CH2CTL_PWIDTH_msb					9u
-#define DMA1_CH2CTL_PWIDTH_lsb					8u
+#define DMA1_CH2CTL_PWIDTH_Msb					9u
+#define DMA1_CH2CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA1_CH2CTL_MWIDTH_msb					11u
-#define DMA1_CH2CTL_MWIDTH_lsb					10u
+#define DMA1_CH2CTL_MWIDTH_Msb					11u
+#define DMA1_CH2CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA1_CH2CTL_PRIO_msb					13u
-#define DMA1_CH2CTL_PRIO_lsb					12u
+#define DMA1_CH2CTL_PRIO_Msb					13u
+#define DMA1_CH2CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA1_CH2CTL_M2M						14u
 
@@ -7042,8 +7042,8 @@ struct sdk_dma1 {
 	/* 0x34: Channel 2 counter register */
 	uint32_t volatile CH2CNT;
 	/* Transfer counter */
-#define DMA1_CH2CNT_CNT_msb					15u
-#define DMA1_CH2CNT_CNT_lsb					0u
+#define DMA1_CH2CNT_CNT_Msb					15u
+#define DMA1_CH2CNT_CNT_Lsb					0u
 
 	/* 0x34 */
 	uint8_t RESERVED11[0x38u-0x34u];
@@ -7051,8 +7051,8 @@ struct sdk_dma1 {
 	/* 0x38: Channel 2 peripheral base address register */
 	uint32_t volatile CH2PADDR;
 	/* Peripheral base address */
-#define DMA1_CH2PADDR_PADDR_msb					31u
-#define DMA1_CH2PADDR_PADDR_lsb					0u
+#define DMA1_CH2PADDR_PADDR_Msb					31u
+#define DMA1_CH2PADDR_PADDR_Lsb					0u
 
 	/* 0x38 */
 	uint8_t RESERVED12[0x3Cu-0x38u];
@@ -7060,8 +7060,8 @@ struct sdk_dma1 {
 	/* 0x3C: Channel 2 memory base address register */
 	uint32_t volatile CH2MADDR;
 	/* Memory base address */
-#define DMA1_CH2MADDR_MADDR_msb					31u
-#define DMA1_CH2MADDR_MADDR_lsb					0u
+#define DMA1_CH2MADDR_MADDR_Msb					31u
+#define DMA1_CH2MADDR_MADDR_Lsb					0u
 
 	/* 0x3C */
 	uint8_t RESERVED13[0x44u-0x3Cu];
@@ -7085,14 +7085,14 @@ struct sdk_dma1 {
 	/* Next address generation algorithm of memory */
 #define DMA1_CH3CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA1_CH3CTL_PWIDTH_msb					9u
-#define DMA1_CH3CTL_PWIDTH_lsb					8u
+#define DMA1_CH3CTL_PWIDTH_Msb					9u
+#define DMA1_CH3CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA1_CH3CTL_MWIDTH_msb					11u
-#define DMA1_CH3CTL_MWIDTH_lsb					10u
+#define DMA1_CH3CTL_MWIDTH_Msb					11u
+#define DMA1_CH3CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA1_CH3CTL_PRIO_msb					13u
-#define DMA1_CH3CTL_PRIO_lsb					12u
+#define DMA1_CH3CTL_PRIO_Msb					13u
+#define DMA1_CH3CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA1_CH3CTL_M2M						14u
 
@@ -7102,8 +7102,8 @@ struct sdk_dma1 {
 	/* 0x48: Channel 3 counter register */
 	uint32_t volatile CH3CNT;
 	/* Transfer counter */
-#define DMA1_CH3CNT_CNT_msb					15u
-#define DMA1_CH3CNT_CNT_lsb					0u
+#define DMA1_CH3CNT_CNT_Msb					15u
+#define DMA1_CH3CNT_CNT_Lsb					0u
 
 	/* 0x48 */
 	uint8_t RESERVED15[0x4Cu-0x48u];
@@ -7111,8 +7111,8 @@ struct sdk_dma1 {
 	/* 0x4C: Channel 3 peripheral base address register */
 	uint32_t volatile CH3PADDR;
 	/* Peripheral base address */
-#define DMA1_CH3PADDR_PADDR_msb					31u
-#define DMA1_CH3PADDR_PADDR_lsb					0u
+#define DMA1_CH3PADDR_PADDR_Msb					31u
+#define DMA1_CH3PADDR_PADDR_Lsb					0u
 
 	/* 0x4C */
 	uint8_t RESERVED16[0x50u-0x4Cu];
@@ -7120,8 +7120,8 @@ struct sdk_dma1 {
 	/* 0x50: Channel 3 memory base address register */
 	uint32_t volatile CH3MADDR;
 	/* Memory base address */
-#define DMA1_CH3MADDR_MADDR_msb					31u
-#define DMA1_CH3MADDR_MADDR_lsb					0u
+#define DMA1_CH3MADDR_MADDR_Msb					31u
+#define DMA1_CH3MADDR_MADDR_Lsb					0u
 
 	/* 0x50 */
 	uint8_t RESERVED17[0x58u-0x50u];
@@ -7145,14 +7145,14 @@ struct sdk_dma1 {
 	/* Next address generation algorithm of memory */
 #define DMA1_CH4CTL_MNAGA					7u
 	/* Transfer data size of peripheral */
-#define DMA1_CH4CTL_PWIDTH_msb					9u
-#define DMA1_CH4CTL_PWIDTH_lsb					8u
+#define DMA1_CH4CTL_PWIDTH_Msb					9u
+#define DMA1_CH4CTL_PWIDTH_Lsb					8u
 	/* Transfer data size of memory */
-#define DMA1_CH4CTL_MWIDTH_msb					11u
-#define DMA1_CH4CTL_MWIDTH_lsb					10u
+#define DMA1_CH4CTL_MWIDTH_Msb					11u
+#define DMA1_CH4CTL_MWIDTH_Lsb					10u
 	/* Priority level */
-#define DMA1_CH4CTL_PRIO_msb					13u
-#define DMA1_CH4CTL_PRIO_lsb					12u
+#define DMA1_CH4CTL_PRIO_Msb					13u
+#define DMA1_CH4CTL_PRIO_Lsb					12u
 	/* Memory to Memory Mode */
 #define DMA1_CH4CTL_M2M						14u
 
@@ -7162,8 +7162,8 @@ struct sdk_dma1 {
 	/* 0x5C: Channel 4 counter register */
 	uint32_t volatile CH4CNT;
 	/* Transfer counter */
-#define DMA1_CH4CNT_CNT_msb					15u
-#define DMA1_CH4CNT_CNT_lsb					0u
+#define DMA1_CH4CNT_CNT_Msb					15u
+#define DMA1_CH4CNT_CNT_Lsb					0u
 
 	/* 0x5C */
 	uint8_t RESERVED19[0x60u-0x5Cu];
@@ -7171,8 +7171,8 @@ struct sdk_dma1 {
 	/* 0x60: Channel 4 peripheral base address register */
 	uint32_t volatile CH4PADDR;
 	/* Peripheral base address */
-#define DMA1_CH4PADDR_PADDR_msb					31u
-#define DMA1_CH4PADDR_PADDR_lsb					0u
+#define DMA1_CH4PADDR_PADDR_Msb					31u
+#define DMA1_CH4PADDR_PADDR_Lsb					0u
 
 	/* 0x60 */
 	uint8_t RESERVED20[0x64u-0x60u];
@@ -7180,15 +7180,15 @@ struct sdk_dma1 {
 	/* 0x64: Channel 4 memory base address register */
 	uint32_t volatile CH4MADDR;
 	/* Memory base address */
-#define DMA1_CH4MADDR_MADDR_msb					31u
-#define DMA1_CH4MADDR_MADDR_lsb					0u
+#define DMA1_CH4MADDR_MADDR_Msb					31u
+#define DMA1_CH4MADDR_MADDR_Lsb					0u
 
 };
 
 
-#define EXMC ((struct sdk_exmc *)0xA0000000)
+#define EXMC ((struct mcu_exmc *)0xA0000000)
 
-struct sdk_exmc {
+struct mcu_exmc {
 
 	/* 0x00: SRAM/NOR flash control register 0 */
 	uint32_t volatile SNCTL0;
@@ -7203,11 +7203,11 @@ struct sdk_exmc {
 	/* NOR Flash access enable */
 #define EXMC_SNCTL0_NREN					6u
 	/* NOR bank memory data bus width */
-#define EXMC_SNCTL0_NRW_msb					5u
-#define EXMC_SNCTL0_NRW_lsb					4u
+#define EXMC_SNCTL0_NRW_Msb					5u
+#define EXMC_SNCTL0_NRW_Lsb					4u
 	/* NOR bank memory type */
-#define EXMC_SNCTL0_NRTP_msb					3u
-#define EXMC_SNCTL0_NRTP_lsb					2u
+#define EXMC_SNCTL0_NRTP_Msb					3u
+#define EXMC_SNCTL0_NRTP_Lsb					2u
 	/* NOR bank memory address/data multiplexing */
 #define EXMC_SNCTL0_NRMUX					1u
 	/* NOR bank enable */
@@ -7219,17 +7219,17 @@ struct sdk_exmc {
 	/* 0x04: SRAM/NOR flash timing configuration register 0 */
 	uint32_t volatile SNTCFG0;
 	/* Bus latency */
-#define EXMC_SNTCFG0_BUSLAT_msb					19u
-#define EXMC_SNTCFG0_BUSLAT_lsb					16u
+#define EXMC_SNTCFG0_BUSLAT_Msb					19u
+#define EXMC_SNTCFG0_BUSLAT_Lsb					16u
 	/* Data setup time */
-#define EXMC_SNTCFG0_DSET_msb					15u
-#define EXMC_SNTCFG0_DSET_lsb					8u
+#define EXMC_SNTCFG0_DSET_Msb					15u
+#define EXMC_SNTCFG0_DSET_Lsb					8u
 	/* Address hold time */
-#define EXMC_SNTCFG0_AHLD_msb					7u
-#define EXMC_SNTCFG0_AHLD_lsb					4u
+#define EXMC_SNTCFG0_AHLD_Msb					7u
+#define EXMC_SNTCFG0_AHLD_Lsb					4u
 	/* Address setup time */
-#define EXMC_SNTCFG0_ASET_msb					3u
-#define EXMC_SNTCFG0_ASET_lsb					0u
+#define EXMC_SNTCFG0_ASET_Msb					3u
+#define EXMC_SNTCFG0_ASET_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -7247,11 +7247,11 @@ struct sdk_exmc {
 	/* NOR Flash access enable */
 #define EXMC_SNCTL1_NREN					6u
 	/* NOR bank memory data bus width */
-#define EXMC_SNCTL1_NRW_msb					5u
-#define EXMC_SNCTL1_NRW_lsb					4u
+#define EXMC_SNCTL1_NRW_Msb					5u
+#define EXMC_SNCTL1_NRW_Lsb					4u
 	/* NOR bank memory type */
-#define EXMC_SNCTL1_NRTP_msb					3u
-#define EXMC_SNCTL1_NRTP_lsb					2u
+#define EXMC_SNCTL1_NRTP_Msb					3u
+#define EXMC_SNCTL1_NRTP_Lsb					2u
 	/* NOR bank memory address/data multiplexing */
 #define EXMC_SNCTL1_NRMUX					1u
 	/* NOR bank enable */
@@ -7260,9 +7260,9 @@ struct sdk_exmc {
 };
 
 
-#define EXTI ((struct sdk_exti *)0x40010400)
+#define EXTI ((struct mcu_exti *)0x40010400)
 
-struct sdk_exti {
+struct mcu_exti {
 
 	/* 0x00: Interrupt enable register */
 	uint32_t volatile INTEN;
@@ -7528,15 +7528,15 @@ struct sdk_exti {
 };
 
 
-#define FMC ((struct sdk_fmc *)0x40022000)
+#define FMC ((struct mcu_fmc *)0x40022000)
 
-struct sdk_fmc {
+struct mcu_fmc {
 
 	/* 0x00: wait state counter register */
 	uint32_t volatile WS;
 	/* wait state counter register */
-#define FMC_WS_WSCNT_msb					2u
-#define FMC_WS_WSCNT_lsb					0u
+#define FMC_WS_WSCNT_Msb					2u
+#define FMC_WS_WSCNT_Lsb					0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -7544,8 +7544,8 @@ struct sdk_fmc {
 	/* 0x04: Unlock key register 0 */
 	uint32_t volatile KEY0;
 	/* FMC_CTL0 unlock key */
-#define FMC_KEY0_KEY_msb					31u
-#define FMC_KEY0_KEY_lsb					0u
+#define FMC_KEY0_KEY_Msb					31u
+#define FMC_KEY0_KEY_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -7553,8 +7553,8 @@ struct sdk_fmc {
 	/* 0x08: Option byte unlock key register */
 	uint32_t volatile OBKEY;
 	/* FMC_ CTL0 option byte operation unlock register */
-#define FMC_OBKEY_OBKEY_msb					31u
-#define FMC_OBKEY_OBKEY_lsb					0u
+#define FMC_OBKEY_OBKEY_Msb					31u
+#define FMC_OBKEY_OBKEY_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -7602,8 +7602,8 @@ struct sdk_fmc {
 	/* 0x14: Address register 0 */
 	uint32_t volatile ADDR0;
 	/* Flash erase/program command address bits */
-#define FMC_ADDR0_ADDR_msb					31u
-#define FMC_ADDR0_ADDR_lsb					0u
+#define FMC_ADDR0_ADDR_Msb					31u
+#define FMC_ADDR0_ADDR_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x1Cu-0x14u];
@@ -7615,11 +7615,11 @@ struct sdk_fmc {
 	/* Option bytes security protection code */
 #define FMC_OBSTAT_SPC						1u
 	/* Store USER of option bytes block after system reset */
-#define FMC_OBSTAT_USER_msb					9u
-#define FMC_OBSTAT_USER_lsb					2u
+#define FMC_OBSTAT_USER_Msb					9u
+#define FMC_OBSTAT_USER_Lsb					2u
 	/* Store DATA[15:0] of option bytes block after system reset */
-#define FMC_OBSTAT_DATA_msb					25u
-#define FMC_OBSTAT_DATA_lsb					10u
+#define FMC_OBSTAT_DATA_Msb					25u
+#define FMC_OBSTAT_DATA_Lsb					10u
 
 	/* 0x1C */
 	uint8_t RESERVED6[0x20u-0x1Cu];
@@ -7627,8 +7627,8 @@ struct sdk_fmc {
 	/* 0x20: Erase/Program Protection register */
 	uint32_t volatile WP;
 	/* Store WP[31:0] of option bytes block after system reset */
-#define FMC_WP_WP_msb						31u
-#define FMC_WP_WP_lsb						0u
+#define FMC_WP_WP_Msb						31u
+#define FMC_WP_WP_Lsb						0u
 
 	/* 0x20 */
 	uint8_t RESERVED7[0x100u-0x20u];
@@ -7636,21 +7636,21 @@ struct sdk_fmc {
 	/* 0x100: Product ID register */
 	uint32_t volatile PID;
 	/* Product reserved ID code register */
-#define FMC_PID_PID_msb						31u
-#define FMC_PID_PID_lsb						0u
+#define FMC_PID_PID_Msb						31u
+#define FMC_PID_PID_Lsb						0u
 
 };
 
 
-#define FWDGT ((struct sdk_fwdgt *)0x40003000)
+#define FWDGT ((struct mcu_fwdgt *)0x40003000)
 
-struct sdk_fwdgt {
+struct mcu_fwdgt {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;
 	/* Key value */
-#define FWDGT_CTL_CMD_msb					15u
-#define FWDGT_CTL_CMD_lsb					0u
+#define FWDGT_CTL_CMD_Msb					15u
+#define FWDGT_CTL_CMD_Lsb					0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -7658,8 +7658,8 @@ struct sdk_fwdgt {
 	/* 0x04: Prescaler register */
 	uint32_t volatile PSC;
 	/* Free watchdog timer prescaler selection */
-#define FWDGT_PSC_PSC_msb					2u
-#define FWDGT_PSC_PSC_lsb					0u
+#define FWDGT_PSC_PSC_Msb					2u
+#define FWDGT_PSC_PSC_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -7667,8 +7667,8 @@ struct sdk_fwdgt {
 	/* 0x08: Reload register */
 	uint32_t volatile RLD;
 	/* Free watchdog timer counter reload value */
-#define FWDGT_RLD_RLD_msb					11u
-#define FWDGT_RLD_RLD_lsb					0u
+#define FWDGT_RLD_RLD_Msb					11u
+#define FWDGT_RLD_RLD_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -7683,64 +7683,64 @@ struct sdk_fwdgt {
 };
 
 
-#define GPIOA ((struct sdk_gpioa *)0x40010800)
-#define GPIOB ((struct sdk_gpiob *)0x40010C00)
-#define GPIOC ((struct sdk_gpioc *)0x40011000)
-#define GPIOD ((struct sdk_gpiod *)0x40011400)
-#define GPIOE ((struct sdk_gpioe *)0x40011800)
+#define GPIOA ((struct mcu_gpioa *)0x40010800)
+#define GPIOB ((struct mcu_gpiob *)0x40010C00)
+#define GPIOC ((struct mcu_gpioc *)0x40011000)
+#define GPIOD ((struct mcu_gpiod *)0x40011400)
+#define GPIOE ((struct mcu_gpioe *)0x40011800)
 
-struct sdk_gpioa {
+struct mcu_gpioa {
 
 	/* 0x00: port control register 0 */
 	uint32_t volatile CTL0;
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL7_msb					31u
-#define GPIO_CTL0_CTL7_lsb					30u
+#define GPIO_CTL0_CTL7_Msb					31u
+#define GPIO_CTL0_CTL7_Lsb					30u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD7_msb					29u
-#define GPIO_CTL0_MD7_lsb					28u
+#define GPIO_CTL0_MD7_Msb					29u
+#define GPIO_CTL0_MD7_Lsb					28u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL6_msb					27u
-#define GPIO_CTL0_CTL6_lsb					26u
+#define GPIO_CTL0_CTL6_Msb					27u
+#define GPIO_CTL0_CTL6_Lsb					26u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD6_msb					25u
-#define GPIO_CTL0_MD6_lsb					24u
+#define GPIO_CTL0_MD6_Msb					25u
+#define GPIO_CTL0_MD6_Lsb					24u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL5_msb					23u
-#define GPIO_CTL0_CTL5_lsb					22u
+#define GPIO_CTL0_CTL5_Msb					23u
+#define GPIO_CTL0_CTL5_Lsb					22u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD5_msb					21u
-#define GPIO_CTL0_MD5_lsb					20u
+#define GPIO_CTL0_MD5_Msb					21u
+#define GPIO_CTL0_MD5_Lsb					20u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL4_msb					19u
-#define GPIO_CTL0_CTL4_lsb					18u
+#define GPIO_CTL0_CTL4_Msb					19u
+#define GPIO_CTL0_CTL4_Lsb					18u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD4_msb					17u
-#define GPIO_CTL0_MD4_lsb					16u
+#define GPIO_CTL0_MD4_Msb					17u
+#define GPIO_CTL0_MD4_Lsb					16u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL3_msb					15u
-#define GPIO_CTL0_CTL3_lsb					14u
+#define GPIO_CTL0_CTL3_Msb					15u
+#define GPIO_CTL0_CTL3_Lsb					14u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD3_msb					13u
-#define GPIO_CTL0_MD3_lsb					12u
+#define GPIO_CTL0_MD3_Msb					13u
+#define GPIO_CTL0_MD3_Lsb					12u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL2_msb					11u
-#define GPIO_CTL0_CTL2_lsb					10u
+#define GPIO_CTL0_CTL2_Msb					11u
+#define GPIO_CTL0_CTL2_Lsb					10u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD2_msb					9u
-#define GPIO_CTL0_MD2_lsb					8u
+#define GPIO_CTL0_MD2_Msb					9u
+#define GPIO_CTL0_MD2_Lsb					8u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL1_msb					7u
-#define GPIO_CTL0_CTL1_lsb					6u
+#define GPIO_CTL0_CTL1_Msb					7u
+#define GPIO_CTL0_CTL1_Lsb					6u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD1_msb					5u
-#define GPIO_CTL0_MD1_lsb					4u
+#define GPIO_CTL0_MD1_Msb					5u
+#define GPIO_CTL0_MD1_Lsb					4u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL0_CTL0_msb					3u
-#define GPIO_CTL0_CTL0_lsb					2u
+#define GPIO_CTL0_CTL0_Msb					3u
+#define GPIO_CTL0_CTL0_Lsb					2u
 	/* Port x mode bits (x = */
-#define GPIO_CTL0_MD0_msb					1u
-#define GPIO_CTL0_MD0_lsb					0u
+#define GPIO_CTL0_MD0_Msb					1u
+#define GPIO_CTL0_MD0_Lsb					0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -7748,53 +7748,53 @@ struct sdk_gpioa {
 	/* 0x04: port control register 1 */
 	uint32_t volatile CTL1;
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL15_msb					31u
-#define GPIO_CTL1_CTL15_lsb					30u
+#define GPIO_CTL1_CTL15_Msb					31u
+#define GPIO_CTL1_CTL15_Lsb					30u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD15_msb					29u
-#define GPIO_CTL1_MD15_lsb					28u
+#define GPIO_CTL1_MD15_Msb					29u
+#define GPIO_CTL1_MD15_Lsb					28u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL14_msb					27u
-#define GPIO_CTL1_CTL14_lsb					26u
+#define GPIO_CTL1_CTL14_Msb					27u
+#define GPIO_CTL1_CTL14_Lsb					26u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD14_msb					25u
-#define GPIO_CTL1_MD14_lsb					24u
+#define GPIO_CTL1_MD14_Msb					25u
+#define GPIO_CTL1_MD14_Lsb					24u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL13_msb					23u
-#define GPIO_CTL1_CTL13_lsb					22u
+#define GPIO_CTL1_CTL13_Msb					23u
+#define GPIO_CTL1_CTL13_Lsb					22u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD13_msb					21u
-#define GPIO_CTL1_MD13_lsb					20u
+#define GPIO_CTL1_MD13_Msb					21u
+#define GPIO_CTL1_MD13_Lsb					20u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL12_msb					19u
-#define GPIO_CTL1_CTL12_lsb					18u
+#define GPIO_CTL1_CTL12_Msb					19u
+#define GPIO_CTL1_CTL12_Lsb					18u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD12_msb					17u
-#define GPIO_CTL1_MD12_lsb					16u
+#define GPIO_CTL1_MD12_Msb					17u
+#define GPIO_CTL1_MD12_Lsb					16u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL11_msb					15u
-#define GPIO_CTL1_CTL11_lsb					14u
+#define GPIO_CTL1_CTL11_Msb					15u
+#define GPIO_CTL1_CTL11_Lsb					14u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD11_msb					13u
-#define GPIO_CTL1_MD11_lsb					12u
+#define GPIO_CTL1_MD11_Msb					13u
+#define GPIO_CTL1_MD11_Lsb					12u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL10_msb					11u
-#define GPIO_CTL1_CTL10_lsb					10u
+#define GPIO_CTL1_CTL10_Msb					11u
+#define GPIO_CTL1_CTL10_Lsb					10u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD10_msb					9u
-#define GPIO_CTL1_MD10_lsb					8u
+#define GPIO_CTL1_MD10_Msb					9u
+#define GPIO_CTL1_MD10_Lsb					8u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL9_msb					7u
-#define GPIO_CTL1_CTL9_lsb					6u
+#define GPIO_CTL1_CTL9_Msb					7u
+#define GPIO_CTL1_CTL9_Lsb					6u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD9_msb					5u
-#define GPIO_CTL1_MD9_lsb					4u
+#define GPIO_CTL1_MD9_Msb					5u
+#define GPIO_CTL1_MD9_Lsb					4u
 	/* Port x configuration bits (x = */
-#define GPIO_CTL1_CTL8_msb					3u
-#define GPIO_CTL1_CTL8_lsb					2u
+#define GPIO_CTL1_CTL8_Msb					3u
+#define GPIO_CTL1_CTL8_Lsb					2u
 	/* Port x mode bits (x = */
-#define GPIO_CTL1_MD8_msb					1u
-#define GPIO_CTL1_MD8_lsb					0u
+#define GPIO_CTL1_MD8_Msb					1u
+#define GPIO_CTL1_MD8_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -8023,10 +8023,10 @@ struct sdk_gpioa {
 };
 
 
-#define I2C0 ((struct sdk_i2c *)0x40005400)
-#define I2C1 ((struct sdk_i2c *)0x40005800)
+#define I2C0 ((struct mcu_i2c *)0x40005400)
+#define I2C1 ((struct mcu_i2c *)0x40005800)
 
-struct sdk_i2c {
+struct mcu_i2c {
 
 	/* 0x00: Control register 0 */
 	uint32_t volatile CTL0;
@@ -8075,8 +8075,8 @@ struct sdk_i2c {
 	/* Error interrupt enable */
 #define I2C_CTL1_ERRIE						8u
 	/* I2C Peripheral clock frequency */
-#define I2C_CTL1_I2CCLK_msb					5u
-#define I2C_CTL1_I2CCLK_lsb					0u
+#define I2C_CTL1_I2CCLK_Msb					5u
+#define I2C_CTL1_I2CCLK_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -8086,11 +8086,11 @@ struct sdk_i2c {
 	/* Address mode for the I2C slave */
 #define I2C_SADDR0_ADDFORMAT					15u
 	/* Highest two bits of a 10-bit address */
-#define I2C_SADDR0_ADDRESS9_8_msb				9u
-#define I2C_SADDR0_ADDRESS9_8_lsb				8u
+#define I2C_SADDR0_ADDRESS9_8_Msb				9u
+#define I2C_SADDR0_ADDRESS9_8_Lsb				8u
 	/* 7-bit address or bits 7:1 of a 10-bit address */
-#define I2C_SADDR0_ADDRESS7_1_msb				7u
-#define I2C_SADDR0_ADDRESS7_1_lsb				1u
+#define I2C_SADDR0_ADDRESS7_1_Msb				7u
+#define I2C_SADDR0_ADDRESS7_1_Lsb				1u
 	/* Bit 0 of a 10-bit address */
 #define I2C_SADDR0_ADDRESS0					0u
 
@@ -8100,8 +8100,8 @@ struct sdk_i2c {
 	/* 0x0C: Slave address register 1 */
 	uint32_t volatile SADDR1;
 	/* Second I2C address for the slave in Dual-Address mode */
-#define I2C_SADDR1_ADDRESS2_msb				7u
-#define I2C_SADDR1_ADDRESS2_lsb				1u
+#define I2C_SADDR1_ADDRESS2_Msb				7u
+#define I2C_SADDR1_ADDRESS2_Lsb				1u
 	/* Dual-Address mode switch */
 #define I2C_SADDR1_DUADEN					0u
 
@@ -8111,8 +8111,8 @@ struct sdk_i2c {
 	/* 0x10: Transfer buffer register */
 	uint32_t volatile DATA;
 	/* Transmission or reception data buffer register */
-#define I2C_DATA_TRB_msb					7u
-#define I2C_DATA_TRB_lsb					0u
+#define I2C_DATA_TRB_Msb					7u
+#define I2C_DATA_TRB_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -8154,8 +8154,8 @@ struct sdk_i2c {
 	/* 0x18: Transfer status register 1 */
 	uint32_t volatile STAT1;
 	/* Packet Error Checking Value that calculated by hardware when PEC is enabled */
-#define I2C_STAT1_PECV_msb					15u
-#define I2C_STAT1_PECV_lsb					8u
+#define I2C_STAT1_PECV_Msb					15u
+#define I2C_STAT1_PECV_Lsb					8u
 	/* Dual Flag in slave mode */
 #define I2C_STAT1_DUMODF					7u
 	/* SMBus Host Header detected in slave mode */
@@ -8181,8 +8181,8 @@ struct sdk_i2c {
 	/* Duty cycle in fast mode */
 #define I2C_CKCFG_DTCY						14u
 	/* I2C Clock control in master mode */
-#define I2C_CKCFG_CLKC_msb					11u
-#define I2C_CKCFG_CLKC_lsb					0u
+#define I2C_CKCFG_CLKC_Msb					11u
+#define I2C_CKCFG_CLKC_Lsb					0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -8190,21 +8190,21 @@ struct sdk_i2c {
 	/* 0x20: Rise time register */
 	uint32_t volatile RT;
 	/* Maximum rise time in master mode */
-#define I2C_RT_RISETIME_msb					5u
-#define I2C_RT_RISETIME_lsb					0u
+#define I2C_RT_RISETIME_Msb					5u
+#define I2C_RT_RISETIME_Lsb					0u
 
 };
 
 
-#define ECLIC ((struct sdk_eclic *)0xD2000000)
+#define ECLIC ((struct mcu_eclic *)0xD2000000)
 
-struct sdk_eclic {
+struct mcu_eclic {
 
 	/* 0x00: cliccfg Register */
 	uint32_t volatile CLICCFG;
 	/* NLBITS */
-#define ECLIC_CLICCFG_NLBITS_msb				4u
-#define ECLIC_CLICCFG_NLBITS_lsb				1u
+#define ECLIC_CLICCFG_NLBITS_Msb				4u
+#define ECLIC_CLICCFG_NLBITS_Lsb				1u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -8212,14 +8212,14 @@ struct sdk_eclic {
 	/* 0x04: clicinfo Register */
 	uint32_t volatile CLICINFO;
 	/* NUM_INTERRUPT */
-#define ECLIC_CLICINFO_NUM_INTERRUPT_msb			12u
-#define ECLIC_CLICINFO_NUM_INTERRUPT_lsb			0u
+#define ECLIC_CLICINFO_NUM_INTERRUPT_Msb			12u
+#define ECLIC_CLICINFO_NUM_INTERRUPT_Lsb			0u
 	/* VERSION */
-#define ECLIC_CLICINFO_VERSION_msb				20u
-#define ECLIC_CLICINFO_VERSION_lsb				13u
+#define ECLIC_CLICINFO_VERSION_Msb				20u
+#define ECLIC_CLICINFO_VERSION_Lsb				13u
 	/* CLICINTCTLBITS */
-#define ECLIC_CLICINFO_CLICINTCTLBITS_msb			24u
-#define ECLIC_CLICINFO_CLICINTCTLBITS_lsb			21u
+#define ECLIC_CLICINFO_CLICINTCTLBITS_Msb			24u
+#define ECLIC_CLICINFO_CLICINTCTLBITS_Lsb			21u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x0Bu-0x04u];
@@ -8227,8 +8227,8 @@ struct sdk_eclic {
 	/* 0x0B: MTH Register */
 	uint32_t volatile MTH;
 	/* MTH */
-#define ECLIC_MTH_MTH_msb					7u
-#define ECLIC_MTH_MTH_lsb					0u
+#define ECLIC_MTH_MTH_Msb					7u
+#define ECLIC_MTH_MTH_Lsb					0u
 
 	/* 0x0B */
 	uint8_t RESERVED2[0x1000u-0x0Bu];
@@ -9624,8 +9624,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_0_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_0_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_0_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_0_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_0_TRIG_Lsb				1u
 
 	/* 0x1002 */
 	uint8_t RESERVED175[0x1006u-0x1002u];
@@ -9635,8 +9635,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_1_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_1_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_1_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_1_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_1_TRIG_Lsb				1u
 
 	/* 0x1006 */
 	uint8_t RESERVED176[0x100Au-0x1006u];
@@ -9646,8 +9646,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_2_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_2_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_2_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_2_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_2_TRIG_Lsb				1u
 
 	/* 0x100A */
 	uint8_t RESERVED177[0x100Eu-0x100Au];
@@ -9657,8 +9657,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_3_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_3_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_3_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_3_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_3_TRIG_Lsb				1u
 
 	/* 0x100E */
 	uint8_t RESERVED178[0x1012u-0x100Eu];
@@ -9668,8 +9668,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_4_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_4_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_4_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_4_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_4_TRIG_Lsb				1u
 
 	/* 0x1012 */
 	uint8_t RESERVED179[0x1016u-0x1012u];
@@ -9679,8 +9679,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_5_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_5_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_5_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_5_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_5_TRIG_Lsb				1u
 
 	/* 0x1016 */
 	uint8_t RESERVED180[0x101Au-0x1016u];
@@ -9690,8 +9690,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_6_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_6_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_6_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_6_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_6_TRIG_Lsb				1u
 
 	/* 0x101A */
 	uint8_t RESERVED181[0x101Eu-0x101Au];
@@ -9701,8 +9701,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_7_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_7_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_7_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_7_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_7_TRIG_Lsb				1u
 
 	/* 0x101E */
 	uint8_t RESERVED182[0x1022u-0x101Eu];
@@ -9712,8 +9712,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_8_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_8_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_8_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_8_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_8_TRIG_Lsb				1u
 
 	/* 0x1022 */
 	uint8_t RESERVED183[0x1026u-0x1022u];
@@ -9723,8 +9723,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_9_SHV					0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_9_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_9_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_9_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_9_TRIG_Lsb				1u
 
 	/* 0x1026 */
 	uint8_t RESERVED184[0x102Au-0x1026u];
@@ -9734,8 +9734,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_10_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_10_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_10_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_10_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_10_TRIG_Lsb				1u
 
 	/* 0x102A */
 	uint8_t RESERVED185[0x102Eu-0x102Au];
@@ -9745,8 +9745,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_11_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_11_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_11_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_11_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_11_TRIG_Lsb				1u
 
 	/* 0x102E */
 	uint8_t RESERVED186[0x1032u-0x102Eu];
@@ -9756,8 +9756,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_12_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_12_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_12_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_12_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_12_TRIG_Lsb				1u
 
 	/* 0x1032 */
 	uint8_t RESERVED187[0x1036u-0x1032u];
@@ -9767,8 +9767,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_13_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_13_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_13_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_13_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_13_TRIG_Lsb				1u
 
 	/* 0x1036 */
 	uint8_t RESERVED188[0x103Au-0x1036u];
@@ -9778,8 +9778,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_14_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_14_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_14_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_14_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_14_TRIG_Lsb				1u
 
 	/* 0x103A */
 	uint8_t RESERVED189[0x103Eu-0x103Au];
@@ -9789,8 +9789,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_15_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_15_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_15_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_15_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_15_TRIG_Lsb				1u
 
 	/* 0x103E */
 	uint8_t RESERVED190[0x1042u-0x103Eu];
@@ -9800,8 +9800,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_16_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_16_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_16_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_16_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_16_TRIG_Lsb				1u
 
 	/* 0x1042 */
 	uint8_t RESERVED191[0x1046u-0x1042u];
@@ -9811,8 +9811,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_17_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_17_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_17_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_17_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_17_TRIG_Lsb				1u
 
 	/* 0x1046 */
 	uint8_t RESERVED192[0x104Au-0x1046u];
@@ -9822,8 +9822,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_18_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_18_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_18_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_18_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_18_TRIG_Lsb				1u
 
 	/* 0x104A */
 	uint8_t RESERVED193[0x104Eu-0x104Au];
@@ -9833,8 +9833,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_19_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_19_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_19_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_19_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_19_TRIG_Lsb				1u
 
 	/* 0x104E */
 	uint8_t RESERVED194[0x1052u-0x104Eu];
@@ -9844,8 +9844,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_20_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_20_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_20_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_20_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_20_TRIG_Lsb				1u
 
 	/* 0x1052 */
 	uint8_t RESERVED195[0x1056u-0x1052u];
@@ -9855,8 +9855,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_21_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_21_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_21_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_21_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_21_TRIG_Lsb				1u
 
 	/* 0x1056 */
 	uint8_t RESERVED196[0x105Au-0x1056u];
@@ -9866,8 +9866,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_22_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_22_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_22_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_22_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_22_TRIG_Lsb				1u
 
 	/* 0x105A */
 	uint8_t RESERVED197[0x105Eu-0x105Au];
@@ -9877,8 +9877,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_23_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_23_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_23_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_23_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_23_TRIG_Lsb				1u
 
 	/* 0x105E */
 	uint8_t RESERVED198[0x1062u-0x105Eu];
@@ -9888,8 +9888,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_24_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_24_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_24_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_24_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_24_TRIG_Lsb				1u
 
 	/* 0x1062 */
 	uint8_t RESERVED199[0x1066u-0x1062u];
@@ -9899,8 +9899,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_25_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_25_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_25_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_25_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_25_TRIG_Lsb				1u
 
 	/* 0x1066 */
 	uint8_t RESERVED200[0x106Au-0x1066u];
@@ -9910,8 +9910,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_26_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_26_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_26_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_26_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_26_TRIG_Lsb				1u
 
 	/* 0x106A */
 	uint8_t RESERVED201[0x106Eu-0x106Au];
@@ -9921,8 +9921,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_27_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_27_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_27_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_27_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_27_TRIG_Lsb				1u
 
 	/* 0x106E */
 	uint8_t RESERVED202[0x1072u-0x106Eu];
@@ -9932,8 +9932,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_28_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_28_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_28_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_28_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_28_TRIG_Lsb				1u
 
 	/* 0x1072 */
 	uint8_t RESERVED203[0x1076u-0x1072u];
@@ -9943,8 +9943,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_29_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_29_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_29_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_29_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_29_TRIG_Lsb				1u
 
 	/* 0x1076 */
 	uint8_t RESERVED204[0x107Au-0x1076u];
@@ -9954,8 +9954,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_30_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_30_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_30_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_30_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_30_TRIG_Lsb				1u
 
 	/* 0x107A */
 	uint8_t RESERVED205[0x107Eu-0x107Au];
@@ -9965,8 +9965,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_31_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_31_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_31_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_31_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_31_TRIG_Lsb				1u
 
 	/* 0x107E */
 	uint8_t RESERVED206[0x1082u-0x107Eu];
@@ -9976,8 +9976,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_32_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_32_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_32_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_32_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_32_TRIG_Lsb				1u
 
 	/* 0x1082 */
 	uint8_t RESERVED207[0x1086u-0x1082u];
@@ -9987,8 +9987,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_33_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_33_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_33_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_33_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_33_TRIG_Lsb				1u
 
 	/* 0x1086 */
 	uint8_t RESERVED208[0x108Au-0x1086u];
@@ -9998,8 +9998,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_34_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_34_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_34_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_34_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_34_TRIG_Lsb				1u
 
 	/* 0x108A */
 	uint8_t RESERVED209[0x108Eu-0x108Au];
@@ -10009,8 +10009,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_35_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_35_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_35_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_35_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_35_TRIG_Lsb				1u
 
 	/* 0x108E */
 	uint8_t RESERVED210[0x1092u-0x108Eu];
@@ -10020,8 +10020,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_36_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_36_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_36_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_36_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_36_TRIG_Lsb				1u
 
 	/* 0x1092 */
 	uint8_t RESERVED211[0x1096u-0x1092u];
@@ -10031,8 +10031,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_37_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_37_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_37_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_37_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_37_TRIG_Lsb				1u
 
 	/* 0x1096 */
 	uint8_t RESERVED212[0x109Au-0x1096u];
@@ -10042,8 +10042,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_38_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_38_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_38_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_38_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_38_TRIG_Lsb				1u
 
 	/* 0x109A */
 	uint8_t RESERVED213[0x109Eu-0x109Au];
@@ -10053,8 +10053,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_39_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_39_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_39_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_39_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_39_TRIG_Lsb				1u
 
 	/* 0x109E */
 	uint8_t RESERVED214[0x10A2u-0x109Eu];
@@ -10064,8 +10064,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_40_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_40_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_40_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_40_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_40_TRIG_Lsb				1u
 
 	/* 0x10A2 */
 	uint8_t RESERVED215[0x10A6u-0x10A2u];
@@ -10075,8 +10075,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_41_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_41_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_41_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_41_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_41_TRIG_Lsb				1u
 
 	/* 0x10A6 */
 	uint8_t RESERVED216[0x10AAu-0x10A6u];
@@ -10086,8 +10086,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_42_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_42_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_42_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_42_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_42_TRIG_Lsb				1u
 
 	/* 0x10AA */
 	uint8_t RESERVED217[0x10AEu-0x10AAu];
@@ -10097,8 +10097,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_43_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_43_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_43_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_43_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_43_TRIG_Lsb				1u
 
 	/* 0x10AE */
 	uint8_t RESERVED218[0x10B2u-0x10AEu];
@@ -10108,8 +10108,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_44_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_44_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_44_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_44_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_44_TRIG_Lsb				1u
 
 	/* 0x10B2 */
 	uint8_t RESERVED219[0x10B6u-0x10B2u];
@@ -10119,8 +10119,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_45_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_45_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_45_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_45_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_45_TRIG_Lsb				1u
 
 	/* 0x10B6 */
 	uint8_t RESERVED220[0x10BAu-0x10B6u];
@@ -10130,8 +10130,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_46_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_46_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_46_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_46_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_46_TRIG_Lsb				1u
 
 	/* 0x10BA */
 	uint8_t RESERVED221[0x10BEu-0x10BAu];
@@ -10141,8 +10141,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_47_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_47_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_47_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_47_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_47_TRIG_Lsb				1u
 
 	/* 0x10BE */
 	uint8_t RESERVED222[0x10C2u-0x10BEu];
@@ -10152,8 +10152,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_48_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_48_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_48_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_48_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_48_TRIG_Lsb				1u
 
 	/* 0x10C2 */
 	uint8_t RESERVED223[0x10C6u-0x10C2u];
@@ -10163,8 +10163,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_49_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_49_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_49_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_49_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_49_TRIG_Lsb				1u
 
 	/* 0x10C6 */
 	uint8_t RESERVED224[0x10CAu-0x10C6u];
@@ -10174,8 +10174,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_50_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_50_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_50_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_50_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_50_TRIG_Lsb				1u
 
 	/* 0x10CA */
 	uint8_t RESERVED225[0x10CEu-0x10CAu];
@@ -10185,8 +10185,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_51_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_51_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_51_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_51_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_51_TRIG_Lsb				1u
 
 	/* 0x10CE */
 	uint8_t RESERVED226[0x10D2u-0x10CEu];
@@ -10196,8 +10196,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_52_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_52_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_52_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_52_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_52_TRIG_Lsb				1u
 
 	/* 0x10D2 */
 	uint8_t RESERVED227[0x10D6u-0x10D2u];
@@ -10207,8 +10207,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_53_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_53_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_53_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_53_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_53_TRIG_Lsb				1u
 
 	/* 0x10D6 */
 	uint8_t RESERVED228[0x10DAu-0x10D6u];
@@ -10218,8 +10218,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_54_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_54_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_54_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_54_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_54_TRIG_Lsb				1u
 
 	/* 0x10DA */
 	uint8_t RESERVED229[0x10DEu-0x10DAu];
@@ -10229,8 +10229,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_55_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_55_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_55_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_55_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_55_TRIG_Lsb				1u
 
 	/* 0x10DE */
 	uint8_t RESERVED230[0x10E2u-0x10DEu];
@@ -10240,8 +10240,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_56_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_56_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_56_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_56_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_56_TRIG_Lsb				1u
 
 	/* 0x10E2 */
 	uint8_t RESERVED231[0x10E6u-0x10E2u];
@@ -10251,8 +10251,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_57_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_57_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_57_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_57_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_57_TRIG_Lsb				1u
 
 	/* 0x10E6 */
 	uint8_t RESERVED232[0x10EAu-0x10E6u];
@@ -10262,8 +10262,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_58_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_58_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_58_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_58_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_58_TRIG_Lsb				1u
 
 	/* 0x10EA */
 	uint8_t RESERVED233[0x10EEu-0x10EAu];
@@ -10273,8 +10273,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_59_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_59_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_59_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_59_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_59_TRIG_Lsb				1u
 
 	/* 0x10EE */
 	uint8_t RESERVED234[0x10F2u-0x10EEu];
@@ -10284,8 +10284,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_60_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_60_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_60_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_60_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_60_TRIG_Lsb				1u
 
 	/* 0x10F2 */
 	uint8_t RESERVED235[0x10F6u-0x10F2u];
@@ -10295,8 +10295,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_61_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_61_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_61_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_61_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_61_TRIG_Lsb				1u
 
 	/* 0x10F6 */
 	uint8_t RESERVED236[0x10FAu-0x10F6u];
@@ -10306,8 +10306,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_62_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_62_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_62_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_62_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_62_TRIG_Lsb				1u
 
 	/* 0x10FA */
 	uint8_t RESERVED237[0x10FEu-0x10FAu];
@@ -10317,8 +10317,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_63_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_63_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_63_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_63_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_63_TRIG_Lsb				1u
 
 	/* 0x10FE */
 	uint8_t RESERVED238[0x1102u-0x10FEu];
@@ -10328,8 +10328,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_64_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_64_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_64_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_64_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_64_TRIG_Lsb				1u
 
 	/* 0x1102 */
 	uint8_t RESERVED239[0x1106u-0x1102u];
@@ -10339,8 +10339,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_65_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_65_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_65_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_65_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_65_TRIG_Lsb				1u
 
 	/* 0x1106 */
 	uint8_t RESERVED240[0x110Au-0x1106u];
@@ -10350,8 +10350,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_66_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_66_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_66_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_66_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_66_TRIG_Lsb				1u
 
 	/* 0x110A */
 	uint8_t RESERVED241[0x110Eu-0x110Au];
@@ -10361,8 +10361,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_67_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_67_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_67_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_67_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_67_TRIG_Lsb				1u
 
 	/* 0x110E */
 	uint8_t RESERVED242[0x1112u-0x110Eu];
@@ -10372,8 +10372,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_68_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_68_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_68_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_68_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_68_TRIG_Lsb				1u
 
 	/* 0x1112 */
 	uint8_t RESERVED243[0x1116u-0x1112u];
@@ -10383,8 +10383,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_69_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_69_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_69_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_69_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_69_TRIG_Lsb				1u
 
 	/* 0x1116 */
 	uint8_t RESERVED244[0x111Au-0x1116u];
@@ -10394,8 +10394,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_70_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_70_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_70_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_70_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_70_TRIG_Lsb				1u
 
 	/* 0x111A */
 	uint8_t RESERVED245[0x111Eu-0x111Au];
@@ -10405,8 +10405,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_71_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_71_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_71_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_71_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_71_TRIG_Lsb				1u
 
 	/* 0x111E */
 	uint8_t RESERVED246[0x1122u-0x111Eu];
@@ -10416,8 +10416,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_72_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_72_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_72_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_72_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_72_TRIG_Lsb				1u
 
 	/* 0x1122 */
 	uint8_t RESERVED247[0x1126u-0x1122u];
@@ -10427,8 +10427,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_73_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_73_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_73_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_73_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_73_TRIG_Lsb				1u
 
 	/* 0x1126 */
 	uint8_t RESERVED248[0x112Au-0x1126u];
@@ -10438,8 +10438,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_74_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_74_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_74_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_74_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_74_TRIG_Lsb				1u
 
 	/* 0x112A */
 	uint8_t RESERVED249[0x112Eu-0x112Au];
@@ -10449,8 +10449,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_75_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_75_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_75_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_75_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_75_TRIG_Lsb				1u
 
 	/* 0x112E */
 	uint8_t RESERVED250[0x1132u-0x112Eu];
@@ -10460,8 +10460,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_76_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_76_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_76_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_76_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_76_TRIG_Lsb				1u
 
 	/* 0x1132 */
 	uint8_t RESERVED251[0x1136u-0x1132u];
@@ -10471,8 +10471,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_77_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_77_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_77_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_77_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_77_TRIG_Lsb				1u
 
 	/* 0x1136 */
 	uint8_t RESERVED252[0x113Au-0x1136u];
@@ -10482,8 +10482,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_78_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_78_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_78_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_78_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_78_TRIG_Lsb				1u
 
 	/* 0x113A */
 	uint8_t RESERVED253[0x113Eu-0x113Au];
@@ -10493,8 +10493,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_79_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_79_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_79_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_79_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_79_TRIG_Lsb				1u
 
 	/* 0x113E */
 	uint8_t RESERVED254[0x1142u-0x113Eu];
@@ -10504,8 +10504,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_80_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_80_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_80_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_80_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_80_TRIG_Lsb				1u
 
 	/* 0x1142 */
 	uint8_t RESERVED255[0x1146u-0x1142u];
@@ -10515,8 +10515,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_81_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_81_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_81_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_81_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_81_TRIG_Lsb				1u
 
 	/* 0x1146 */
 	uint8_t RESERVED256[0x114Au-0x1146u];
@@ -10526,8 +10526,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_82_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_82_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_82_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_82_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_82_TRIG_Lsb				1u
 
 	/* 0x114A */
 	uint8_t RESERVED257[0x114Eu-0x114Au];
@@ -10537,8 +10537,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_83_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_83_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_83_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_83_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_83_TRIG_Lsb				1u
 
 	/* 0x114E */
 	uint8_t RESERVED258[0x1152u-0x114Eu];
@@ -10548,8 +10548,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_84_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_84_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_84_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_84_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_84_TRIG_Lsb				1u
 
 	/* 0x1152 */
 	uint8_t RESERVED259[0x1156u-0x1152u];
@@ -10559,8 +10559,8 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_85_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_85_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_85_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_85_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_85_TRIG_Lsb				1u
 
 	/* 0x1156 */
 	uint8_t RESERVED260[0x115Au-0x1156u];
@@ -10570,14 +10570,14 @@ struct sdk_eclic {
 	/* SHV */
 #define ECLIC_CLICINTATTR_86_SHV				0u
 	/* TRIG */
-#define ECLIC_CLICINTATTR_86_TRIG_msb				2u
-#define ECLIC_CLICINTATTR_86_TRIG_lsb				1u
+#define ECLIC_CLICINTATTR_86_TRIG_Msb				2u
+#define ECLIC_CLICINTATTR_86_TRIG_Lsb				1u
 
 	/* 0x1003: clicintctl Register */
 	uint32_t volatile CLICINTCTL_0;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_0_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_0_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_0_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_0_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1003 */
 	uint8_t RESERVED261[0x1007u-0x1003u];
@@ -10585,8 +10585,8 @@ struct sdk_eclic {
 	/* 0x1007: clicintctl Register */
 	uint32_t volatile CLICINTCTL_1;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_1_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_1_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_1_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_1_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1007 */
 	uint8_t RESERVED262[0x100Bu-0x1007u];
@@ -10594,8 +10594,8 @@ struct sdk_eclic {
 	/* 0x100B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_2;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_2_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_2_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_2_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_2_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x100B */
 	uint8_t RESERVED263[0x100Fu-0x100Bu];
@@ -10603,8 +10603,8 @@ struct sdk_eclic {
 	/* 0x100F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_3;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_3_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_3_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_3_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_3_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x100F */
 	uint8_t RESERVED264[0x1013u-0x100Fu];
@@ -10612,8 +10612,8 @@ struct sdk_eclic {
 	/* 0x1013: clicintctl Register */
 	uint32_t volatile CLICINTCTL_4;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_4_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_4_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_4_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_4_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1013 */
 	uint8_t RESERVED265[0x1017u-0x1013u];
@@ -10621,8 +10621,8 @@ struct sdk_eclic {
 	/* 0x1017: clicintctl Register */
 	uint32_t volatile CLICINTCTL_5;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_5_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_5_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_5_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_5_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1017 */
 	uint8_t RESERVED266[0x101Bu-0x1017u];
@@ -10630,8 +10630,8 @@ struct sdk_eclic {
 	/* 0x101B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_6;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_6_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_6_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_6_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_6_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x101B */
 	uint8_t RESERVED267[0x101Fu-0x101Bu];
@@ -10639,8 +10639,8 @@ struct sdk_eclic {
 	/* 0x101F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_7;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_7_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_7_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_7_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_7_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x101F */
 	uint8_t RESERVED268[0x1023u-0x101Fu];
@@ -10648,8 +10648,8 @@ struct sdk_eclic {
 	/* 0x1023: clicintctl Register */
 	uint32_t volatile CLICINTCTL_8;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_8_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_8_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_8_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_8_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1023 */
 	uint8_t RESERVED269[0x1027u-0x1023u];
@@ -10657,8 +10657,8 @@ struct sdk_eclic {
 	/* 0x1027: clicintctl Register */
 	uint32_t volatile CLICINTCTL_9;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_9_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_9_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_9_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_9_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1027 */
 	uint8_t RESERVED270[0x102Bu-0x1027u];
@@ -10666,8 +10666,8 @@ struct sdk_eclic {
 	/* 0x102B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_10;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_10_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_10_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_10_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_10_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x102B */
 	uint8_t RESERVED271[0x102Fu-0x102Bu];
@@ -10675,8 +10675,8 @@ struct sdk_eclic {
 	/* 0x102F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_11;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_11_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_11_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_11_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_11_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x102F */
 	uint8_t RESERVED272[0x1033u-0x102Fu];
@@ -10684,8 +10684,8 @@ struct sdk_eclic {
 	/* 0x1033: clicintctl Register */
 	uint32_t volatile CLICINTCTL_12;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_12_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_12_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_12_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_12_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1033 */
 	uint8_t RESERVED273[0x1037u-0x1033u];
@@ -10693,8 +10693,8 @@ struct sdk_eclic {
 	/* 0x1037: clicintctl Register */
 	uint32_t volatile CLICINTCTL_13;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_13_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_13_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_13_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_13_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1037 */
 	uint8_t RESERVED274[0x103Bu-0x1037u];
@@ -10702,8 +10702,8 @@ struct sdk_eclic {
 	/* 0x103B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_14;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_14_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_14_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_14_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_14_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x103B */
 	uint8_t RESERVED275[0x103Fu-0x103Bu];
@@ -10711,8 +10711,8 @@ struct sdk_eclic {
 	/* 0x103F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_15;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_15_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_15_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_15_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_15_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x103F */
 	uint8_t RESERVED276[0x1043u-0x103Fu];
@@ -10720,8 +10720,8 @@ struct sdk_eclic {
 	/* 0x1043: clicintctl Register */
 	uint32_t volatile CLICINTCTL_16;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_16_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_16_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_16_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_16_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1043 */
 	uint8_t RESERVED277[0x1047u-0x1043u];
@@ -10729,8 +10729,8 @@ struct sdk_eclic {
 	/* 0x1047: clicintctl Register */
 	uint32_t volatile CLICINTCTL_17;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_17_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_17_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_17_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_17_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1047 */
 	uint8_t RESERVED278[0x104Bu-0x1047u];
@@ -10738,8 +10738,8 @@ struct sdk_eclic {
 	/* 0x104B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_18;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_18_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_18_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_18_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_18_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x104B */
 	uint8_t RESERVED279[0x104Fu-0x104Bu];
@@ -10747,8 +10747,8 @@ struct sdk_eclic {
 	/* 0x104F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_19;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_19_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_19_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_19_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_19_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x104F */
 	uint8_t RESERVED280[0x1053u-0x104Fu];
@@ -10756,8 +10756,8 @@ struct sdk_eclic {
 	/* 0x1053: clicintctl Register */
 	uint32_t volatile CLICINTCTL_20;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_20_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_20_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_20_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_20_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1053 */
 	uint8_t RESERVED281[0x1057u-0x1053u];
@@ -10765,8 +10765,8 @@ struct sdk_eclic {
 	/* 0x1057: clicintctl Register */
 	uint32_t volatile CLICINTCTL_21;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_21_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_21_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_21_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_21_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1057 */
 	uint8_t RESERVED282[0x105Bu-0x1057u];
@@ -10774,8 +10774,8 @@ struct sdk_eclic {
 	/* 0x105B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_22;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_22_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_22_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_22_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_22_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x105B */
 	uint8_t RESERVED283[0x105Fu-0x105Bu];
@@ -10783,8 +10783,8 @@ struct sdk_eclic {
 	/* 0x105F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_23;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_23_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_23_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_23_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_23_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x105F */
 	uint8_t RESERVED284[0x1063u-0x105Fu];
@@ -10792,8 +10792,8 @@ struct sdk_eclic {
 	/* 0x1063: clicintctl Register */
 	uint32_t volatile CLICINTCTL_24;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_24_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_24_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_24_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_24_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1063 */
 	uint8_t RESERVED285[0x1067u-0x1063u];
@@ -10801,8 +10801,8 @@ struct sdk_eclic {
 	/* 0x1067: clicintctl Register */
 	uint32_t volatile CLICINTCTL_25;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_25_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_25_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_25_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_25_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1067 */
 	uint8_t RESERVED286[0x106Bu-0x1067u];
@@ -10810,8 +10810,8 @@ struct sdk_eclic {
 	/* 0x106B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_26;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_26_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_26_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_26_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_26_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x106B */
 	uint8_t RESERVED287[0x106Fu-0x106Bu];
@@ -10819,8 +10819,8 @@ struct sdk_eclic {
 	/* 0x106F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_27;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_27_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_27_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_27_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_27_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x106F */
 	uint8_t RESERVED288[0x1073u-0x106Fu];
@@ -10828,8 +10828,8 @@ struct sdk_eclic {
 	/* 0x1073: clicintctl Register */
 	uint32_t volatile CLICINTCTL_28;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_28_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_28_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_28_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_28_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1073 */
 	uint8_t RESERVED289[0x1077u-0x1073u];
@@ -10837,8 +10837,8 @@ struct sdk_eclic {
 	/* 0x1077: clicintctl Register */
 	uint32_t volatile CLICINTCTL_29;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_29_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_29_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_29_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_29_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1077 */
 	uint8_t RESERVED290[0x107Bu-0x1077u];
@@ -10846,8 +10846,8 @@ struct sdk_eclic {
 	/* 0x107B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_30;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_30_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_30_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_30_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_30_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x107B */
 	uint8_t RESERVED291[0x107Fu-0x107Bu];
@@ -10855,8 +10855,8 @@ struct sdk_eclic {
 	/* 0x107F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_31;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_31_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_31_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_31_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_31_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x107F */
 	uint8_t RESERVED292[0x1083u-0x107Fu];
@@ -10864,8 +10864,8 @@ struct sdk_eclic {
 	/* 0x1083: clicintctl Register */
 	uint32_t volatile CLICINTCTL_32;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_32_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_32_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_32_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_32_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1083 */
 	uint8_t RESERVED293[0x1087u-0x1083u];
@@ -10873,8 +10873,8 @@ struct sdk_eclic {
 	/* 0x1087: clicintctl Register */
 	uint32_t volatile CLICINTCTL_33;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_33_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_33_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_33_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_33_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1087 */
 	uint8_t RESERVED294[0x108Bu-0x1087u];
@@ -10882,8 +10882,8 @@ struct sdk_eclic {
 	/* 0x108B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_34;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_34_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_34_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_34_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_34_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x108B */
 	uint8_t RESERVED295[0x108Fu-0x108Bu];
@@ -10891,8 +10891,8 @@ struct sdk_eclic {
 	/* 0x108F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_35;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_35_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_35_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_35_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_35_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x108F */
 	uint8_t RESERVED296[0x1093u-0x108Fu];
@@ -10900,8 +10900,8 @@ struct sdk_eclic {
 	/* 0x1093: clicintctl Register */
 	uint32_t volatile CLICINTCTL_36;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_36_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_36_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_36_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_36_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1093 */
 	uint8_t RESERVED297[0x1097u-0x1093u];
@@ -10909,8 +10909,8 @@ struct sdk_eclic {
 	/* 0x1097: clicintctl Register */
 	uint32_t volatile CLICINTCTL_37;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_37_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_37_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_37_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_37_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1097 */
 	uint8_t RESERVED298[0x109Bu-0x1097u];
@@ -10918,8 +10918,8 @@ struct sdk_eclic {
 	/* 0x109B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_38;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_38_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_38_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_38_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_38_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x109B */
 	uint8_t RESERVED299[0x109Fu-0x109Bu];
@@ -10927,8 +10927,8 @@ struct sdk_eclic {
 	/* 0x109F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_39;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_39_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_39_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_39_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_39_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x109F */
 	uint8_t RESERVED300[0x10A3u-0x109Fu];
@@ -10936,8 +10936,8 @@ struct sdk_eclic {
 	/* 0x10A3: clicintctl Register */
 	uint32_t volatile CLICINTCTL_40;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_40_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_40_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_40_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_40_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10A3 */
 	uint8_t RESERVED301[0x10A7u-0x10A3u];
@@ -10945,8 +10945,8 @@ struct sdk_eclic {
 	/* 0x10A7: clicintctl Register */
 	uint32_t volatile CLICINTCTL_41;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_41_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_41_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_41_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_41_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10A7 */
 	uint8_t RESERVED302[0x10ABu-0x10A7u];
@@ -10954,8 +10954,8 @@ struct sdk_eclic {
 	/* 0x10AB: clicintctl Register */
 	uint32_t volatile CLICINTCTL_42;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_42_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_42_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_42_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_42_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10AB */
 	uint8_t RESERVED303[0x10AFu-0x10ABu];
@@ -10963,8 +10963,8 @@ struct sdk_eclic {
 	/* 0x10AF: clicintctl Register */
 	uint32_t volatile CLICINTCTL_43;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_43_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_43_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_43_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_43_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10AF */
 	uint8_t RESERVED304[0x10B3u-0x10AFu];
@@ -10972,8 +10972,8 @@ struct sdk_eclic {
 	/* 0x10B3: clicintctl Register */
 	uint32_t volatile CLICINTCTL_44;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_44_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_44_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_44_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_44_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10B3 */
 	uint8_t RESERVED305[0x10B7u-0x10B3u];
@@ -10981,8 +10981,8 @@ struct sdk_eclic {
 	/* 0x10B7: clicintctl Register */
 	uint32_t volatile CLICINTCTL_45;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_45_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_45_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_45_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_45_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10B7 */
 	uint8_t RESERVED306[0x10BBu-0x10B7u];
@@ -10990,8 +10990,8 @@ struct sdk_eclic {
 	/* 0x10BB: clicintctl Register */
 	uint32_t volatile CLICINTCTL_46;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_46_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_46_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_46_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_46_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10BB */
 	uint8_t RESERVED307[0x10BFu-0x10BBu];
@@ -10999,8 +10999,8 @@ struct sdk_eclic {
 	/* 0x10BF: clicintctl Register */
 	uint32_t volatile CLICINTCTL_47;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_47_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_47_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_47_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_47_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10BF */
 	uint8_t RESERVED308[0x10C3u-0x10BFu];
@@ -11008,8 +11008,8 @@ struct sdk_eclic {
 	/* 0x10C3: clicintctl Register */
 	uint32_t volatile CLICINTCTL_48;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_48_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_48_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_48_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_48_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10C3 */
 	uint8_t RESERVED309[0x10C7u-0x10C3u];
@@ -11017,8 +11017,8 @@ struct sdk_eclic {
 	/* 0x10C7: clicintctl Register */
 	uint32_t volatile CLICINTCTL_49;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_49_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_49_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_49_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_49_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10C7 */
 	uint8_t RESERVED310[0x10CBu-0x10C7u];
@@ -11026,8 +11026,8 @@ struct sdk_eclic {
 	/* 0x10CB: clicintctl Register */
 	uint32_t volatile CLICINTCTL_50;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_50_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_50_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_50_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_50_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10CB */
 	uint8_t RESERVED311[0x10CFu-0x10CBu];
@@ -11035,8 +11035,8 @@ struct sdk_eclic {
 	/* 0x10CF: clicintctl Register */
 	uint32_t volatile CLICINTCTL_51;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_51_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_51_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_51_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_51_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10CF */
 	uint8_t RESERVED312[0x10D3u-0x10CFu];
@@ -11044,8 +11044,8 @@ struct sdk_eclic {
 	/* 0x10D3: clicintctl Register */
 	uint32_t volatile CLICINTCTL_52;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_52_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_52_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_52_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_52_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10D3 */
 	uint8_t RESERVED313[0x10D7u-0x10D3u];
@@ -11053,8 +11053,8 @@ struct sdk_eclic {
 	/* 0x10D7: clicintctl Register */
 	uint32_t volatile CLICINTCTL_53;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_53_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_53_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_53_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_53_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10D7 */
 	uint8_t RESERVED314[0x10DBu-0x10D7u];
@@ -11062,8 +11062,8 @@ struct sdk_eclic {
 	/* 0x10DB: clicintctl Register */
 	uint32_t volatile CLICINTCTL_54;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_54_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_54_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_54_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_54_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10DB */
 	uint8_t RESERVED315[0x10DFu-0x10DBu];
@@ -11071,8 +11071,8 @@ struct sdk_eclic {
 	/* 0x10DF: clicintctl Register */
 	uint32_t volatile CLICINTCTL_55;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_55_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_55_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_55_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_55_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10DF */
 	uint8_t RESERVED316[0x10E3u-0x10DFu];
@@ -11080,8 +11080,8 @@ struct sdk_eclic {
 	/* 0x10E3: clicintctl Register */
 	uint32_t volatile CLICINTCTL_56;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_56_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_56_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_56_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_56_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10E3 */
 	uint8_t RESERVED317[0x10E7u-0x10E3u];
@@ -11089,8 +11089,8 @@ struct sdk_eclic {
 	/* 0x10E7: clicintctl Register */
 	uint32_t volatile CLICINTCTL_57;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_57_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_57_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_57_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_57_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10E7 */
 	uint8_t RESERVED318[0x10EBu-0x10E7u];
@@ -11098,8 +11098,8 @@ struct sdk_eclic {
 	/* 0x10EB: clicintctl Register */
 	uint32_t volatile CLICINTCTL_58;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_58_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_58_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_58_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_58_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10EB */
 	uint8_t RESERVED319[0x10EFu-0x10EBu];
@@ -11107,8 +11107,8 @@ struct sdk_eclic {
 	/* 0x10EF: clicintctl Register */
 	uint32_t volatile CLICINTCTL_59;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_59_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_59_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_59_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_59_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10EF */
 	uint8_t RESERVED320[0x10F3u-0x10EFu];
@@ -11116,8 +11116,8 @@ struct sdk_eclic {
 	/* 0x10F3: clicintctl Register */
 	uint32_t volatile CLICINTCTL_60;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_60_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_60_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_60_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_60_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10F3 */
 	uint8_t RESERVED321[0x10F7u-0x10F3u];
@@ -11125,8 +11125,8 @@ struct sdk_eclic {
 	/* 0x10F7: clicintctl Register */
 	uint32_t volatile CLICINTCTL_61;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_61_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_61_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_61_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_61_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10F7 */
 	uint8_t RESERVED322[0x10FBu-0x10F7u];
@@ -11134,8 +11134,8 @@ struct sdk_eclic {
 	/* 0x10FB: clicintctl Register */
 	uint32_t volatile CLICINTCTL_62;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_62_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_62_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_62_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_62_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10FB */
 	uint8_t RESERVED323[0x10FFu-0x10FBu];
@@ -11143,8 +11143,8 @@ struct sdk_eclic {
 	/* 0x10FF: clicintctl Register */
 	uint32_t volatile CLICINTCTL_63;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_63_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_63_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_63_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_63_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x10FF */
 	uint8_t RESERVED324[0x1103u-0x10FFu];
@@ -11152,8 +11152,8 @@ struct sdk_eclic {
 	/* 0x1103: clicintctl Register */
 	uint32_t volatile CLICINTCTL_64;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_64_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_64_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_64_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_64_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1103 */
 	uint8_t RESERVED325[0x1107u-0x1103u];
@@ -11161,8 +11161,8 @@ struct sdk_eclic {
 	/* 0x1107: clicintctl Register */
 	uint32_t volatile CLICINTCTL_65;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_65_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_65_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_65_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_65_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1107 */
 	uint8_t RESERVED326[0x110Bu-0x1107u];
@@ -11170,8 +11170,8 @@ struct sdk_eclic {
 	/* 0x110B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_66;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_66_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_66_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_66_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_66_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x110B */
 	uint8_t RESERVED327[0x110Fu-0x110Bu];
@@ -11179,8 +11179,8 @@ struct sdk_eclic {
 	/* 0x110F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_67;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_67_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_67_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_67_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_67_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x110F */
 	uint8_t RESERVED328[0x1113u-0x110Fu];
@@ -11188,8 +11188,8 @@ struct sdk_eclic {
 	/* 0x1113: clicintctl Register */
 	uint32_t volatile CLICINTCTL_68;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_68_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_68_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_68_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_68_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1113 */
 	uint8_t RESERVED329[0x1117u-0x1113u];
@@ -11197,8 +11197,8 @@ struct sdk_eclic {
 	/* 0x1117: clicintctl Register */
 	uint32_t volatile CLICINTCTL_69;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_69_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_69_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_69_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_69_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1117 */
 	uint8_t RESERVED330[0x111Bu-0x1117u];
@@ -11206,8 +11206,8 @@ struct sdk_eclic {
 	/* 0x111B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_70;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_70_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_70_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_70_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_70_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x111B */
 	uint8_t RESERVED331[0x111Fu-0x111Bu];
@@ -11215,8 +11215,8 @@ struct sdk_eclic {
 	/* 0x111F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_71;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_71_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_71_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_71_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_71_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x111F */
 	uint8_t RESERVED332[0x1123u-0x111Fu];
@@ -11224,8 +11224,8 @@ struct sdk_eclic {
 	/* 0x1123: clicintctl Register */
 	uint32_t volatile CLICINTCTL_72;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_72_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_72_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_72_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_72_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1123 */
 	uint8_t RESERVED333[0x1127u-0x1123u];
@@ -11233,8 +11233,8 @@ struct sdk_eclic {
 	/* 0x1127: clicintctl Register */
 	uint32_t volatile CLICINTCTL_73;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_73_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_73_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_73_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_73_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1127 */
 	uint8_t RESERVED334[0x112Bu-0x1127u];
@@ -11242,8 +11242,8 @@ struct sdk_eclic {
 	/* 0x112B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_74;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_74_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_74_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_74_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_74_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x112B */
 	uint8_t RESERVED335[0x112Fu-0x112Bu];
@@ -11251,8 +11251,8 @@ struct sdk_eclic {
 	/* 0x112F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_75;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_75_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_75_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_75_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_75_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x112F */
 	uint8_t RESERVED336[0x1133u-0x112Fu];
@@ -11260,8 +11260,8 @@ struct sdk_eclic {
 	/* 0x1133: clicintctl Register */
 	uint32_t volatile CLICINTCTL_76;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_76_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_76_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_76_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_76_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1133 */
 	uint8_t RESERVED337[0x1137u-0x1133u];
@@ -11269,8 +11269,8 @@ struct sdk_eclic {
 	/* 0x1137: clicintctl Register */
 	uint32_t volatile CLICINTCTL_77;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_77_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_77_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_77_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_77_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1137 */
 	uint8_t RESERVED338[0x113Bu-0x1137u];
@@ -11278,8 +11278,8 @@ struct sdk_eclic {
 	/* 0x113B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_78;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_78_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_78_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_78_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_78_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x113B */
 	uint8_t RESERVED339[0x113Fu-0x113Bu];
@@ -11287,8 +11287,8 @@ struct sdk_eclic {
 	/* 0x113F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_79;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_79_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_79_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_79_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_79_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x113F */
 	uint8_t RESERVED340[0x1143u-0x113Fu];
@@ -11296,8 +11296,8 @@ struct sdk_eclic {
 	/* 0x1143: clicintctl Register */
 	uint32_t volatile CLICINTCTL_80;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_80_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_80_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_80_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_80_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1143 */
 	uint8_t RESERVED341[0x1147u-0x1143u];
@@ -11305,8 +11305,8 @@ struct sdk_eclic {
 	/* 0x1147: clicintctl Register */
 	uint32_t volatile CLICINTCTL_81;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_81_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_81_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_81_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_81_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1147 */
 	uint8_t RESERVED342[0x114Bu-0x1147u];
@@ -11314,8 +11314,8 @@ struct sdk_eclic {
 	/* 0x114B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_82;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_82_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_82_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_82_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_82_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x114B */
 	uint8_t RESERVED343[0x114Fu-0x114Bu];
@@ -11323,8 +11323,8 @@ struct sdk_eclic {
 	/* 0x114F: clicintctl Register */
 	uint32_t volatile CLICINTCTL_83;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_83_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_83_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_83_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_83_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x114F */
 	uint8_t RESERVED344[0x1153u-0x114Fu];
@@ -11332,8 +11332,8 @@ struct sdk_eclic {
 	/* 0x1153: clicintctl Register */
 	uint32_t volatile CLICINTCTL_84;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_84_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_84_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_84_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_84_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1153 */
 	uint8_t RESERVED345[0x1157u-0x1153u];
@@ -11341,8 +11341,8 @@ struct sdk_eclic {
 	/* 0x1157: clicintctl Register */
 	uint32_t volatile CLICINTCTL_85;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_85_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_85_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_85_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_85_LEVEL_PRIORITY_Lsb			0u
 
 	/* 0x1157 */
 	uint8_t RESERVED346[0x115Bu-0x1157u];
@@ -11350,23 +11350,23 @@ struct sdk_eclic {
 	/* 0x115B: clicintctl Register */
 	uint32_t volatile CLICINTCTL_86;
 	/* LEVEL_PRIORITY */
-#define ECLIC_CLICINTCTL_86_LEVEL_PRIORITY_msb			7u
-#define ECLIC_CLICINTCTL_86_LEVEL_PRIORITY_lsb			0u
+#define ECLIC_CLICINTCTL_86_LEVEL_PRIORITY_Msb			7u
+#define ECLIC_CLICINTCTL_86_LEVEL_PRIORITY_Lsb			0u
 
 };
 
 
-#define PMU ((struct sdk_pmu *)0x40007000)
+#define PMU ((struct mcu_pmu *)0x40007000)
 
-struct sdk_pmu {
+struct mcu_pmu {
 
 	/* 0x00: power control register */
 	uint32_t volatile CTL;
 	/* Backup Domain Write Enable */
 #define PMU_CTL_BKPWEN						8u
 	/* Low Voltage Detector Threshold */
-#define PMU_CTL_LVDT_msb					7u
-#define PMU_CTL_LVDT_lsb					5u
+#define PMU_CTL_LVDT_Msb					7u
+#define PMU_CTL_LVDT_Lsb					5u
 	/* Low Voltage Detector Enable */
 #define PMU_CTL_LVDEN						4u
 	/* Standby Flag Reset */
@@ -11395,9 +11395,9 @@ struct sdk_pmu {
 };
 
 
-#define RCU ((struct sdk_rcu *)0x40021000)
+#define RCU ((struct mcu_rcu *)0x40021000)
 
-struct sdk_rcu {
+struct mcu_rcu {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;
@@ -11406,11 +11406,11 @@ struct sdk_rcu {
 	/* IRC8M Internal 8MHz RC Oscillator stabilization Flag */
 #define RCU_CTL_IRC8MSTB					1u
 	/* Internal 8MHz RC Oscillator clock trim adjust value */
-#define RCU_CTL_IRC8MADJ_msb					7u
-#define RCU_CTL_IRC8MADJ_lsb					3u
+#define RCU_CTL_IRC8MADJ_Msb					7u
+#define RCU_CTL_IRC8MADJ_Lsb					3u
 	/* Internal 8MHz RC Oscillator calibration value register */
-#define RCU_CTL_IRC8MCALIB_msb					15u
-#define RCU_CTL_IRC8MCALIB_lsb					8u
+#define RCU_CTL_IRC8MCALIB_Msb					15u
+#define RCU_CTL_IRC8MCALIB_Lsb					8u
 	/* External High Speed oscillator Enable */
 #define RCU_CTL_HXTALEN						16u
 	/* External crystal oscillator (HXTAL) clock stabilization flag */
@@ -11438,36 +11438,36 @@ struct sdk_rcu {
 	/* 0x04: Clock configuration register 0 */
 	uint32_t volatile CFG0;
 	/* System clock switch */
-#define RCU_CFG0_SCS_msb					1u
-#define RCU_CFG0_SCS_lsb					0u
+#define RCU_CFG0_SCS_Msb					1u
+#define RCU_CFG0_SCS_Lsb					0u
 	/* System clock switch status */
-#define RCU_CFG0_SCSS_msb					3u
-#define RCU_CFG0_SCSS_lsb					2u
+#define RCU_CFG0_SCSS_Msb					3u
+#define RCU_CFG0_SCSS_Lsb					2u
 	/* AHB prescaler selection */
-#define RCU_CFG0_AHBPSC_msb					7u
-#define RCU_CFG0_AHBPSC_lsb					4u
+#define RCU_CFG0_AHBPSC_Msb					7u
+#define RCU_CFG0_AHBPSC_Lsb					4u
 	/* APB1 prescaler selection */
-#define RCU_CFG0_APB1PSC_msb					10u
-#define RCU_CFG0_APB1PSC_lsb					8u
+#define RCU_CFG0_APB1PSC_Msb					10u
+#define RCU_CFG0_APB1PSC_Lsb					8u
 	/* APB2 prescaler selection */
-#define RCU_CFG0_APB2PSC_msb					13u
-#define RCU_CFG0_APB2PSC_lsb					11u
+#define RCU_CFG0_APB2PSC_Msb					13u
+#define RCU_CFG0_APB2PSC_Lsb					11u
 	/* ADC clock prescaler selection */
-#define RCU_CFG0_ADCPSC_1_0_msb					15u
-#define RCU_CFG0_ADCPSC_1_0_lsb					14u
+#define RCU_CFG0_ADCPSC_1_0_Msb					15u
+#define RCU_CFG0_ADCPSC_1_0_Lsb					14u
 	/* PLL Clock Source Selection */
 #define RCU_CFG0_PLLSEL						16u
 	/* The LSB of PREDV0 division factor */
 #define RCU_CFG0_PREDV0_LSB					17u
 	/* The PLL clock multiplication factor */
-#define RCU_CFG0_PLLMF_3_0_msb					21u
-#define RCU_CFG0_PLLMF_3_0_lsb					18u
+#define RCU_CFG0_PLLMF_3_0_Msb					21u
+#define RCU_CFG0_PLLMF_3_0_Lsb					18u
 	/* USBFS clock prescaler selection */
-#define RCU_CFG0_USBFSPSC_msb					23u
-#define RCU_CFG0_USBFSPSC_lsb					22u
+#define RCU_CFG0_USBFSPSC_Msb					23u
+#define RCU_CFG0_USBFSPSC_Lsb					22u
 	/* CKOUT0 Clock Source Selection */
-#define RCU_CFG0_CKOUT0SEL_msb					27u
-#define RCU_CFG0_CKOUT0SEL_lsb					24u
+#define RCU_CFG0_CKOUT0SEL_Msb					27u
+#define RCU_CFG0_CKOUT0SEL_Lsb					24u
 	/* Bit 2 of ADCPSC */
 #define RCU_CFG0_ADCPSC_2					28u
 	/* Bit 4 of PLLMF */
@@ -11705,8 +11705,8 @@ struct sdk_rcu {
 	/* LXTAL bypass mode enable */
 #define RCU_BDCTL_LXTALBPS					2u
 	/* RTC clock entry selection */
-#define RCU_BDCTL_RTCSRC_msb					9u
-#define RCU_BDCTL_RTCSRC_lsb					8u
+#define RCU_BDCTL_RTCSRC_Msb					9u
+#define RCU_BDCTL_RTCSRC_Lsb					8u
 	/* RTC clock enable */
 #define RCU_BDCTL_RTCEN						15u
 	/* Backup domain reset */
@@ -11750,17 +11750,17 @@ struct sdk_rcu {
 	/* 0x2C: Clock Configuration register 1 */
 	uint32_t volatile CFG1;
 	/* PREDV0 division factor */
-#define RCU_CFG1_PREDV0_msb					3u
-#define RCU_CFG1_PREDV0_lsb					0u
+#define RCU_CFG1_PREDV0_Msb					3u
+#define RCU_CFG1_PREDV0_Lsb					0u
 	/* PREDV1 division factor */
-#define RCU_CFG1_PREDV1_msb					7u
-#define RCU_CFG1_PREDV1_lsb					4u
+#define RCU_CFG1_PREDV1_Msb					7u
+#define RCU_CFG1_PREDV1_Lsb					4u
 	/* The PLL1 clock multiplication factor */
-#define RCU_CFG1_PLL1MF_msb					11u
-#define RCU_CFG1_PLL1MF_lsb					8u
+#define RCU_CFG1_PLL1MF_Msb					11u
+#define RCU_CFG1_PLL1MF_Lsb					8u
 	/* The PLL2 clock multiplication factor */
-#define RCU_CFG1_PLL2MF_msb					15u
-#define RCU_CFG1_PLL2MF_lsb					12u
+#define RCU_CFG1_PLL2MF_Msb					15u
+#define RCU_CFG1_PLL2MF_Lsb					12u
 	/* PREDV0 input Clock Source Selection */
 #define RCU_CFG1_PREDV0SEL					16u
 	/* I2S1 Clock Source Selection */
@@ -11774,15 +11774,15 @@ struct sdk_rcu {
 	/* 0x34: Deep sleep mode Voltage register */
 	uint32_t volatile DSV;
 	/* Deep-sleep mode voltage select */
-#define RCU_DSV_DSLPVS_msb					1u
-#define RCU_DSV_DSLPVS_lsb					0u
+#define RCU_DSV_DSLPVS_Msb					1u
+#define RCU_DSV_DSLPVS_Lsb					0u
 
 };
 
 
-#define RTC ((struct sdk_rtc *)0x40002800)
+#define RTC ((struct mcu_rtc *)0x40002800)
 
-struct sdk_rtc {
+struct mcu_rtc {
 
 	/* 0x00: RTC interrupt enable register */
 	uint32_t volatile INTEN;
@@ -11817,8 +11817,8 @@ struct sdk_rtc {
 	/* 0x08: RTC prescaler high register */
 	uint32_t volatile PSCH;
 	/* RTC prescaler value high */
-#define RTC_PSCH_PSC_msb					3u
-#define RTC_PSCH_PSC_lsb					0u
+#define RTC_PSCH_PSC_Msb					3u
+#define RTC_PSCH_PSC_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -11826,8 +11826,8 @@ struct sdk_rtc {
 	/* 0x0C:  */
 	uint32_t volatile PSCL;
 	/* RTC prescaler value low */
-#define RTC_PSCL_PSC_msb					15u
-#define RTC_PSCL_PSC_lsb					0u
+#define RTC_PSCL_PSC_Msb					15u
+#define RTC_PSCL_PSC_Lsb					0u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -11835,8 +11835,8 @@ struct sdk_rtc {
 	/* 0x10: RTC divider high register */
 	uint32_t volatile DIVH;
 	/* RTC divider value high */
-#define RTC_DIVH_DIV_msb					3u
-#define RTC_DIVH_DIV_lsb					0u
+#define RTC_DIVH_DIV_Msb					3u
+#define RTC_DIVH_DIV_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -11844,8 +11844,8 @@ struct sdk_rtc {
 	/* 0x14: RTC divider low register */
 	uint32_t volatile DIVL;
 	/* RTC divider value low */
-#define RTC_DIVL_DIV_msb					15u
-#define RTC_DIVL_DIV_lsb					0u
+#define RTC_DIVL_DIV_Msb					15u
+#define RTC_DIVL_DIV_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x18u-0x14u];
@@ -11853,8 +11853,8 @@ struct sdk_rtc {
 	/* 0x18: RTC counter high register */
 	uint32_t volatile CNTH;
 	/* RTC counter value high */
-#define RTC_CNTH_CNT_msb					15u
-#define RTC_CNTH_CNT_lsb					0u
+#define RTC_CNTH_CNT_Msb					15u
+#define RTC_CNTH_CNT_Lsb					0u
 
 	/* 0x18 */
 	uint8_t RESERVED6[0x1Cu-0x18u];
@@ -11862,8 +11862,8 @@ struct sdk_rtc {
 	/* 0x1C: RTC counter low register */
 	uint32_t volatile CNTL;
 	/* RTC counter value low */
-#define RTC_CNTL_CNT_msb					15u
-#define RTC_CNTL_CNT_lsb					0u
+#define RTC_CNTL_CNT_Msb					15u
+#define RTC_CNTL_CNT_Lsb					0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -11871,8 +11871,8 @@ struct sdk_rtc {
 	/* 0x20: Alarm high register */
 	uint32_t volatile ALRMH;
 	/* Alarm  value high */
-#define RTC_ALRMH_ALRM_msb					15u
-#define RTC_ALRMH_ALRM_lsb					0u
+#define RTC_ALRMH_ALRM_Msb					15u
+#define RTC_ALRMH_ALRM_Lsb					0u
 
 	/* 0x20 */
 	uint8_t RESERVED8[0x24u-0x20u];
@@ -11880,17 +11880,17 @@ struct sdk_rtc {
 	/* 0x24: RTC alarm low register */
 	uint32_t volatile ALRML;
 	/* alarm value low */
-#define RTC_ALRML_ALRM_msb					15u
-#define RTC_ALRML_ALRM_lsb					0u
+#define RTC_ALRML_ALRM_Msb					15u
+#define RTC_ALRML_ALRM_Lsb					0u
 
 };
 
 
-#define SPI0 ((struct sdk_spi *)0x40013000)
-#define SPI1 ((struct sdk_spi *)0x40003800)
-#define SPI2 ((struct sdk_spi *)0x40003C00)
+#define SPI0 ((struct mcu_spi *)0x40013000)
+#define SPI1 ((struct mcu_spi *)0x40003800)
+#define SPI2 ((struct mcu_spi *)0x40003C00)
 
-struct sdk_spi {
+struct mcu_spi {
 
 	/* 0x00: control register 0 */
 	uint32_t volatile CTL0;
@@ -11915,8 +11915,8 @@ struct sdk_spi {
 	/* SPI enable */
 #define SPI_CTL0_SPIEN						6u
 	/* Master Clock Prescaler Selection */
-#define SPI_CTL0_PSC_msb					5u
-#define SPI_CTL0_PSC_lsb					3u
+#define SPI_CTL0_PSC_Msb					5u
+#define SPI_CTL0_PSC_Lsb					3u
 	/* Master Mode Enable */
 #define SPI_CTL0_MSTMOD					2u
 	/* Clock polarity Selection */
@@ -11976,8 +11976,8 @@ struct sdk_spi {
 	/* 0x0C: data register */
 	uint32_t volatile DATA;
 	/* Data transfer register */
-#define SPI_DATA_SPI_DATA_msb					15u
-#define SPI_DATA_SPI_DATA_lsb					0u
+#define SPI_DATA_SPI_DATA_Msb					15u
+#define SPI_DATA_SPI_DATA_Lsb					0u
 
 	/* 0x0C */
 	uint8_t RESERVED3[0x10u-0x0Cu];
@@ -11985,8 +11985,8 @@ struct sdk_spi {
 	/* 0x10: CRC polynomial register */
 	uint32_t volatile CRCPOLY;
 	/* CRC polynomial value */
-#define SPI_CRCPOLY_CRCPOLY_msb				15u
-#define SPI_CRCPOLY_CRCPOLY_lsb				0u
+#define SPI_CRCPOLY_CRCPOLY_Msb				15u
+#define SPI_CRCPOLY_CRCPOLY_Lsb				0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -11994,8 +11994,8 @@ struct sdk_spi {
 	/* 0x14: RX CRC register */
 	uint32_t volatile RCRC;
 	/* RX CRC value */
-#define SPI_RCRC_RCRC_msb					15u
-#define SPI_RCRC_RCRC_lsb					0u
+#define SPI_RCRC_RCRC_Msb					15u
+#define SPI_RCRC_RCRC_Lsb					0u
 
 	/* 0x14 */
 	uint8_t RESERVED5[0x18u-0x14u];
@@ -12003,8 +12003,8 @@ struct sdk_spi {
 	/* 0x18: TX CRC register */
 	uint32_t volatile TCRC;
 	/* Tx CRC value */
-#define SPI_TCRC_TCRC_msb					15u
-#define SPI_TCRC_TCRC_lsb					0u
+#define SPI_TCRC_TCRC_Msb					15u
+#define SPI_TCRC_TCRC_Lsb					0u
 
 	/* 0x18 */
 	uint8_t RESERVED6[0x1Cu-0x18u];
@@ -12016,18 +12016,18 @@ struct sdk_spi {
 	/* I2S Enable */
 #define SPI_I2SCTL_I2SEN					10u
 	/* I2S operation mode */
-#define SPI_I2SCTL_I2SOPMOD_msb				9u
-#define SPI_I2SCTL_I2SOPMOD_lsb				8u
+#define SPI_I2SCTL_I2SOPMOD_Msb				9u
+#define SPI_I2SCTL_I2SOPMOD_Lsb				8u
 	/* PCM frame synchronization mode */
 #define SPI_I2SCTL_PCMSMOD					7u
 	/* I2S standard selection */
-#define SPI_I2SCTL_I2SSTD_msb					5u
-#define SPI_I2SCTL_I2SSTD_lsb					4u
+#define SPI_I2SCTL_I2SSTD_Msb					5u
+#define SPI_I2SCTL_I2SSTD_Lsb					4u
 	/* Idle state clock polarity */
 #define SPI_I2SCTL_CKPL					3u
 	/* Data length */
-#define SPI_I2SCTL_DTLEN_msb					2u
-#define SPI_I2SCTL_DTLEN_lsb					1u
+#define SPI_I2SCTL_DTLEN_Msb					2u
+#define SPI_I2SCTL_DTLEN_Lsb					1u
 	/* Channel length (number of bits per audio */
 #define SPI_I2SCTL_CHLEN					0u
 
@@ -12041,26 +12041,26 @@ struct sdk_spi {
 	/* Odd factor for the */
 #define SPI_I2SPSC_OF						8u
 	/* Dividing factor for the prescaler */
-#define SPI_I2SPSC_DIV_msb					7u
-#define SPI_I2SPSC_DIV_lsb					0u
+#define SPI_I2SPSC_DIV_Msb					7u
+#define SPI_I2SPSC_DIV_Lsb					0u
 
 };
 
 
-#define TIMER0 ((struct sdk_timer0 *)0x40012C00)
+#define TIMER0 ((struct mcu_timer0 *)0x40012C00)
 
-struct sdk_timer0 {
+struct mcu_timer0 {
 
 	/* 0x00: control register 0 */
 	uint32_t volatile CTL0;
 	/* Clock division */
-#define TIMER0_CTL0_CKDIV_msb					9u
-#define TIMER0_CTL0_CKDIV_lsb					8u
+#define TIMER0_CTL0_CKDIV_Msb					9u
+#define TIMER0_CTL0_CKDIV_Lsb					8u
 	/* Auto-reload shadow enable */
 #define TIMER0_CTL0_ARSE					7u
 	/* Counter aligns mode */
-#define TIMER0_CTL0_CAM_msb					6u
-#define TIMER0_CTL0_CAM_lsb					5u
+#define TIMER0_CTL0_CAM_Msb					6u
+#define TIMER0_CTL0_CAM_Lsb					5u
 	/* Direction */
 #define TIMER0_CTL0_DIR						4u
 	/* Single pulse mode */
@@ -12094,8 +12094,8 @@ struct sdk_timer0 {
 	/* Channel 0 trigger input selection */
 #define TIMER0_CTL1_TI0S					7u
 	/* Master mode control */
-#define TIMER0_CTL1_MMC_msb					6u
-#define TIMER0_CTL1_MMC_lsb					4u
+#define TIMER0_CTL1_MMC_Msb					6u
+#define TIMER0_CTL1_MMC_Lsb					4u
 	/* DMA request source selection */
 #define TIMER0_CTL1_DMAS					3u
 	/* Commutation control shadow register update control */
@@ -12113,19 +12113,19 @@ struct sdk_timer0 {
 	/* Part of SMC for enable External clock mode1 */
 #define TIMER0_SMCFG_SMC1					14u
 	/* External trigger prescaler */
-#define TIMER0_SMCFG_ETPSC_msb					13u
-#define TIMER0_SMCFG_ETPSC_lsb					12u
+#define TIMER0_SMCFG_ETPSC_Msb					13u
+#define TIMER0_SMCFG_ETPSC_Lsb					12u
 	/* External trigger filter control */
-#define TIMER0_SMCFG_ETFC_msb					11u
-#define TIMER0_SMCFG_ETFC_lsb					8u
+#define TIMER0_SMCFG_ETFC_Msb					11u
+#define TIMER0_SMCFG_ETFC_Lsb					8u
 	/* Master/Slave mode */
 #define TIMER0_SMCFG_MSM					7u
 	/* Trigger selection */
-#define TIMER0_SMCFG_TRGS_msb					6u
-#define TIMER0_SMCFG_TRGS_lsb					4u
+#define TIMER0_SMCFG_TRGS_Msb					6u
+#define TIMER0_SMCFG_TRGS_Lsb					4u
 	/* Slave mode selection */
-#define TIMER0_SMCFG_SMC_msb					2u
-#define TIMER0_SMCFG_SMC_lsb					0u
+#define TIMER0_SMCFG_SMC_Msb					2u
+#define TIMER0_SMCFG_SMC_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -12223,48 +12223,48 @@ struct sdk_timer0 {
 	/* Channel 1 output compare clear enable */
 #define TIMER0_CHCTL0_OUTPUT_CH1COMCEN				15u
 	/* Channel 1 compare output control */
-#define TIMER0_CHCTL0_OUTPUT_CH1COMCTL_msb			14u
-#define TIMER0_CHCTL0_OUTPUT_CH1COMCTL_lsb			12u
+#define TIMER0_CHCTL0_OUTPUT_CH1COMCTL_Msb			14u
+#define TIMER0_CHCTL0_OUTPUT_CH1COMCTL_Lsb			12u
 	/* Channel 1 output compare shadow enable */
 #define TIMER0_CHCTL0_OUTPUT_CH1COMSEN				11u
 	/* Channel 1 output compare fast enable */
 #define TIMER0_CHCTL0_OUTPUT_CH1COMFEN				10u
 	/* Channel 1 mode selection */
-#define TIMER0_CHCTL0_OUTPUT_CH1MS_msb				9u
-#define TIMER0_CHCTL0_OUTPUT_CH1MS_lsb				8u
+#define TIMER0_CHCTL0_OUTPUT_CH1MS_Msb				9u
+#define TIMER0_CHCTL0_OUTPUT_CH1MS_Lsb				8u
 	/* Channel 0 output compare clear enable */
 #define TIMER0_CHCTL0_OUTPUT_CH0COMCEN				7u
 	/* Channel 0 compare output control */
-#define TIMER0_CHCTL0_OUTPUT_CH0COMCTL_msb			6u
-#define TIMER0_CHCTL0_OUTPUT_CH0COMCTL_lsb			4u
+#define TIMER0_CHCTL0_OUTPUT_CH0COMCTL_Msb			6u
+#define TIMER0_CHCTL0_OUTPUT_CH0COMCTL_Lsb			4u
 	/* Channel 0 compare output shadow enable */
 #define TIMER0_CHCTL0_OUTPUT_CH0COMSEN				3u
 	/* Channel 0 output compare fast enable */
 #define TIMER0_CHCTL0_OUTPUT_CH0COMFEN				2u
 	/* Channel 0 I/O mode selection */
-#define TIMER0_CHCTL0_OUTPUT_CH0MS_msb				1u
-#define TIMER0_CHCTL0_OUTPUT_CH0MS_lsb				0u
+#define TIMER0_CHCTL0_OUTPUT_CH0MS_Msb				1u
+#define TIMER0_CHCTL0_OUTPUT_CH0MS_Lsb				0u
 
 	/* 0x18: Channel control register 0 (input */
 	uint32_t volatile CHCTL0_INPUT;
 	/* Channel 1 input capture filter control */
-#define TIMER0_CHCTL0_INPUT_CH1CAPFLT_msb			15u
-#define TIMER0_CHCTL0_INPUT_CH1CAPFLT_lsb			12u
+#define TIMER0_CHCTL0_INPUT_CH1CAPFLT_Msb			15u
+#define TIMER0_CHCTL0_INPUT_CH1CAPFLT_Lsb			12u
 	/* Channel 1 input capture prescaler */
-#define TIMER0_CHCTL0_INPUT_CH1CAPPSC_msb			11u
-#define TIMER0_CHCTL0_INPUT_CH1CAPPSC_lsb			10u
+#define TIMER0_CHCTL0_INPUT_CH1CAPPSC_Msb			11u
+#define TIMER0_CHCTL0_INPUT_CH1CAPPSC_Lsb			10u
 	/* Channel 1 mode selection */
-#define TIMER0_CHCTL0_INPUT_CH1MS_msb				9u
-#define TIMER0_CHCTL0_INPUT_CH1MS_lsb				8u
+#define TIMER0_CHCTL0_INPUT_CH1MS_Msb				9u
+#define TIMER0_CHCTL0_INPUT_CH1MS_Lsb				8u
 	/* Channel 0 input capture filter control */
-#define TIMER0_CHCTL0_INPUT_CH0CAPFLT_msb			7u
-#define TIMER0_CHCTL0_INPUT_CH0CAPFLT_lsb			4u
+#define TIMER0_CHCTL0_INPUT_CH0CAPFLT_Msb			7u
+#define TIMER0_CHCTL0_INPUT_CH0CAPFLT_Lsb			4u
 	/* Channel 0 input capture prescaler */
-#define TIMER0_CHCTL0_INPUT_CH0CAPPSC_msb			3u
-#define TIMER0_CHCTL0_INPUT_CH0CAPPSC_lsb			2u
+#define TIMER0_CHCTL0_INPUT_CH0CAPPSC_Msb			3u
+#define TIMER0_CHCTL0_INPUT_CH0CAPPSC_Lsb			2u
 	/* Channel 0 mode selection */
-#define TIMER0_CHCTL0_INPUT_CH0MS_msb				1u
-#define TIMER0_CHCTL0_INPUT_CH0MS_lsb				0u
+#define TIMER0_CHCTL0_INPUT_CH0MS_Msb				1u
+#define TIMER0_CHCTL0_INPUT_CH0MS_Lsb				0u
 
 	/* 0x18 */
 	uint8_t RESERVED6[0x1Cu-0x18u];
@@ -12274,48 +12274,48 @@ struct sdk_timer0 {
 	/* Channel 3 output compare clear enable */
 #define TIMER0_CHCTL1_OUTPUT_CH3COMCEN				15u
 	/* Channel 3 compare output control */
-#define TIMER0_CHCTL1_OUTPUT_CH3COMCTL_msb			14u
-#define TIMER0_CHCTL1_OUTPUT_CH3COMCTL_lsb			12u
+#define TIMER0_CHCTL1_OUTPUT_CH3COMCTL_Msb			14u
+#define TIMER0_CHCTL1_OUTPUT_CH3COMCTL_Lsb			12u
 	/* Channel 3 output compare shadow enable */
 #define TIMER0_CHCTL1_OUTPUT_CH3COMSEN				11u
 	/* Channel 3 output compare fast enable */
 #define TIMER0_CHCTL1_OUTPUT_CH3COMFEN				10u
 	/* Channel 3 mode selection */
-#define TIMER0_CHCTL1_OUTPUT_CH3MS_msb				9u
-#define TIMER0_CHCTL1_OUTPUT_CH3MS_lsb				8u
+#define TIMER0_CHCTL1_OUTPUT_CH3MS_Msb				9u
+#define TIMER0_CHCTL1_OUTPUT_CH3MS_Lsb				8u
 	/* Channel 2 output compare clear enable */
 #define TIMER0_CHCTL1_OUTPUT_CH2COMCEN				7u
 	/* Channel 2 compare output control */
-#define TIMER0_CHCTL1_OUTPUT_CH2COMCTL_msb			6u
-#define TIMER0_CHCTL1_OUTPUT_CH2COMCTL_lsb			4u
+#define TIMER0_CHCTL1_OUTPUT_CH2COMCTL_Msb			6u
+#define TIMER0_CHCTL1_OUTPUT_CH2COMCTL_Lsb			4u
 	/* Channel 2 compare output shadow enable */
 #define TIMER0_CHCTL1_OUTPUT_CH2COMSEN				3u
 	/* Channel 2 output compare fast enable */
 #define TIMER0_CHCTL1_OUTPUT_CH2COMFEN				2u
 	/* Channel 2 I/O mode selection */
-#define TIMER0_CHCTL1_OUTPUT_CH2MS_msb				1u
-#define TIMER0_CHCTL1_OUTPUT_CH2MS_lsb				0u
+#define TIMER0_CHCTL1_OUTPUT_CH2MS_Msb				1u
+#define TIMER0_CHCTL1_OUTPUT_CH2MS_Lsb				0u
 
 	/* 0x1C: Channel control register 1 (input */
 	uint32_t volatile CHCTL1_INPUT;
 	/* Channel 3 input capture filter control */
-#define TIMER0_CHCTL1_INPUT_CH3CAPFLT_msb			15u
-#define TIMER0_CHCTL1_INPUT_CH3CAPFLT_lsb			12u
+#define TIMER0_CHCTL1_INPUT_CH3CAPFLT_Msb			15u
+#define TIMER0_CHCTL1_INPUT_CH3CAPFLT_Lsb			12u
 	/* Channel 3 input capture prescaler */
-#define TIMER0_CHCTL1_INPUT_CH3CAPPSC_msb			11u
-#define TIMER0_CHCTL1_INPUT_CH3CAPPSC_lsb			10u
+#define TIMER0_CHCTL1_INPUT_CH3CAPPSC_Msb			11u
+#define TIMER0_CHCTL1_INPUT_CH3CAPPSC_Lsb			10u
 	/* Channel 3 mode selection */
-#define TIMER0_CHCTL1_INPUT_CH3MS_msb				9u
-#define TIMER0_CHCTL1_INPUT_CH3MS_lsb				8u
+#define TIMER0_CHCTL1_INPUT_CH3MS_Msb				9u
+#define TIMER0_CHCTL1_INPUT_CH3MS_Lsb				8u
 	/* Channel 2 input capture filter control */
-#define TIMER0_CHCTL1_INPUT_CH2CAPFLT_msb			7u
-#define TIMER0_CHCTL1_INPUT_CH2CAPFLT_lsb			4u
+#define TIMER0_CHCTL1_INPUT_CH2CAPFLT_Msb			7u
+#define TIMER0_CHCTL1_INPUT_CH2CAPFLT_Lsb			4u
 	/* Channel 2 input capture prescaler */
-#define TIMER0_CHCTL1_INPUT_CH2CAPPSC_msb			3u
-#define TIMER0_CHCTL1_INPUT_CH2CAPPSC_lsb			2u
+#define TIMER0_CHCTL1_INPUT_CH2CAPPSC_Msb			3u
+#define TIMER0_CHCTL1_INPUT_CH2CAPPSC_Lsb			2u
 	/* Channel 2 mode selection */
-#define TIMER0_CHCTL1_INPUT_CH2MS_msb				1u
-#define TIMER0_CHCTL1_INPUT_CH2MS_lsb				0u
+#define TIMER0_CHCTL1_INPUT_CH2MS_Msb				1u
+#define TIMER0_CHCTL1_INPUT_CH2MS_Lsb				0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -12357,8 +12357,8 @@ struct sdk_timer0 {
 	/* 0x24: counter */
 	uint32_t volatile CNT;
 	/* current counter value */
-#define TIMER0_CNT_CNT_msb					15u
-#define TIMER0_CNT_CNT_lsb					0u
+#define TIMER0_CNT_CNT_Msb					15u
+#define TIMER0_CNT_CNT_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED9[0x28u-0x24u];
@@ -12366,8 +12366,8 @@ struct sdk_timer0 {
 	/* 0x28: prescaler */
 	uint32_t volatile PSC;
 	/* Prescaler value of the counter clock */
-#define TIMER0_PSC_PSC_msb					15u
-#define TIMER0_PSC_PSC_lsb					0u
+#define TIMER0_PSC_PSC_Msb					15u
+#define TIMER0_PSC_PSC_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED10[0x2Cu-0x28u];
@@ -12375,8 +12375,8 @@ struct sdk_timer0 {
 	/* 0x2C: Counter auto reload register */
 	uint32_t volatile CAR;
 	/* Counter auto reload value */
-#define TIMER0_CAR_CARL_msb					15u
-#define TIMER0_CAR_CARL_lsb					0u
+#define TIMER0_CAR_CARL_Msb					15u
+#define TIMER0_CAR_CARL_Lsb					0u
 
 	/* 0x2C */
 	uint8_t RESERVED11[0x30u-0x2Cu];
@@ -12384,8 +12384,8 @@ struct sdk_timer0 {
 	/* 0x30: Counter repetition register */
 	uint32_t volatile CREP;
 	/* Counter repetition value */
-#define TIMER0_CREP_CREP_msb					7u
-#define TIMER0_CREP_CREP_lsb					0u
+#define TIMER0_CREP_CREP_Msb					7u
+#define TIMER0_CREP_CREP_Lsb					0u
 
 	/* 0x30 */
 	uint8_t RESERVED12[0x34u-0x30u];
@@ -12393,8 +12393,8 @@ struct sdk_timer0 {
 	/* 0x34: Channel 0 capture/compare value register */
 	uint32_t volatile CH0CV;
 	/* Capture or compare value of channel0 */
-#define TIMER0_CH0CV_CH0VAL_msb					15u
-#define TIMER0_CH0CV_CH0VAL_lsb					0u
+#define TIMER0_CH0CV_CH0VAL_Msb					15u
+#define TIMER0_CH0CV_CH0VAL_Lsb					0u
 
 	/* 0x34 */
 	uint8_t RESERVED13[0x38u-0x34u];
@@ -12402,8 +12402,8 @@ struct sdk_timer0 {
 	/* 0x38: Channel 1 capture/compare value register */
 	uint32_t volatile CH1CV;
 	/* Capture or compare value of channel1 */
-#define TIMER0_CH1CV_CH1VAL_msb					15u
-#define TIMER0_CH1CV_CH1VAL_lsb					0u
+#define TIMER0_CH1CV_CH1VAL_Msb					15u
+#define TIMER0_CH1CV_CH1VAL_Lsb					0u
 
 	/* 0x38 */
 	uint8_t RESERVED14[0x3Cu-0x38u];
@@ -12411,8 +12411,8 @@ struct sdk_timer0 {
 	/* 0x3C: Channel 2 capture/compare value register */
 	uint32_t volatile CH2CV;
 	/* Capture or compare value of channel 2 */
-#define TIMER0_CH2CV_CH2VAL_msb					15u
-#define TIMER0_CH2CV_CH2VAL_lsb					0u
+#define TIMER0_CH2CV_CH2VAL_Msb					15u
+#define TIMER0_CH2CV_CH2VAL_Lsb					0u
 
 	/* 0x3C */
 	uint8_t RESERVED15[0x40u-0x3Cu];
@@ -12420,8 +12420,8 @@ struct sdk_timer0 {
 	/* 0x40: Channel 3 capture/compare value register */
 	uint32_t volatile CH3CV;
 	/* Capture or compare value of channel 3 */
-#define TIMER0_CH3CV_CH3VAL_msb					15u
-#define TIMER0_CH3CV_CH3VAL_lsb					0u
+#define TIMER0_CH3CV_CH3VAL_Msb					15u
+#define TIMER0_CH3CV_CH3VAL_Lsb					0u
 
 	/* 0x40 */
 	uint8_t RESERVED16[0x44u-0x40u];
@@ -12441,11 +12441,11 @@ struct sdk_timer0 {
 	/* Idle mode off-state configure */
 #define TIMER0_CCHP_IOS						10u
 	/* Complementary register protect control */
-#define TIMER0_CCHP_PROT_msb					9u
-#define TIMER0_CCHP_PROT_lsb					8u
+#define TIMER0_CCHP_PROT_Msb					9u
+#define TIMER0_CCHP_PROT_Lsb					8u
 	/* Dead time configure */
-#define TIMER0_CCHP_DTCFG_msb					7u
-#define TIMER0_CCHP_DTCFG_lsb					0u
+#define TIMER0_CCHP_DTCFG_Msb					7u
+#define TIMER0_CCHP_DTCFG_Lsb					0u
 
 	/* 0x44 */
 	uint8_t RESERVED17[0x48u-0x44u];
@@ -12453,11 +12453,11 @@ struct sdk_timer0 {
 	/* 0x48: DMA configuration register */
 	uint32_t volatile DMACFG;
 	/* DMA transfer count */
-#define TIMER0_DMACFG_DMATC_msb					12u
-#define TIMER0_DMACFG_DMATC_lsb					8u
+#define TIMER0_DMACFG_DMATC_Msb					12u
+#define TIMER0_DMACFG_DMATC_Lsb					8u
 	/* DMA transfer access start address */
-#define TIMER0_DMACFG_DMATA_msb					4u
-#define TIMER0_DMACFG_DMATA_lsb					0u
+#define TIMER0_DMACFG_DMATA_Msb					4u
+#define TIMER0_DMACFG_DMATA_Lsb					0u
 
 	/* 0x48 */
 	uint8_t RESERVED18[0x4Cu-0x48u];
@@ -12465,29 +12465,29 @@ struct sdk_timer0 {
 	/* 0x4C: DMA transfer buffer register */
 	uint32_t volatile DMATB;
 	/* DMA transfer buffer */
-#define TIMER0_DMATB_DMATB_msb					15u
-#define TIMER0_DMATB_DMATB_lsb					0u
+#define TIMER0_DMATB_DMATB_Msb					15u
+#define TIMER0_DMATB_DMATB_Lsb					0u
 
 };
 
 
-#define TIMER1 ((struct sdk_timer1 *)0x40000000)
-#define TIMER2 ((struct sdk_timer2 *)0x40000400)
-#define TIMER3 ((struct sdk_timer3 *)0x40000800)
-#define TIMER4 ((struct sdk_timer4 *)0x40000C00)
+#define TIMER1 ((struct mcu_timer1 *)0x40000000)
+#define TIMER2 ((struct mcu_timer2 *)0x40000400)
+#define TIMER3 ((struct mcu_timer3 *)0x40000800)
+#define TIMER4 ((struct mcu_timer4 *)0x40000C00)
 
-struct sdk_timer1 {
+struct mcu_timer1 {
 
 	/* 0x00: control register 0 */
 	uint32_t volatile CTL0;
 	/* Clock division */
-#define TIMER1_CTL0_CKDIV_msb					9u
-#define TIMER1_CTL0_CKDIV_lsb					8u
+#define TIMER1_CTL0_CKDIV_Msb					9u
+#define TIMER1_CTL0_CKDIV_Lsb					8u
 	/* Auto-reload shadow enable */
 #define TIMER1_CTL0_ARSE					7u
 	/* Counter aligns mode selection */
-#define TIMER1_CTL0_CAM_msb					6u
-#define TIMER1_CTL0_CAM_lsb					5u
+#define TIMER1_CTL0_CAM_Msb					6u
+#define TIMER1_CTL0_CAM_Lsb					5u
 	/* Direction */
 #define TIMER1_CTL0_DIR						4u
 	/* Single pulse mode */
@@ -12507,8 +12507,8 @@ struct sdk_timer1 {
 	/* Channel 0 trigger input selection */
 #define TIMER1_CTL1_TI0S					7u
 	/* Master mode control */
-#define TIMER1_CTL1_MMC_msb					6u
-#define TIMER1_CTL1_MMC_lsb					4u
+#define TIMER1_CTL1_MMC_Msb					6u
+#define TIMER1_CTL1_MMC_Lsb					4u
 	/* DMA request source selection */
 #define TIMER1_CTL1_DMAS					3u
 
@@ -12522,19 +12522,19 @@ struct sdk_timer1 {
 	/* Part of SMC for enable External clock mode1 */
 #define TIMER1_SMCFG_SMC1					14u
 	/* External trigger prescaler */
-#define TIMER1_SMCFG_ETPSC_msb					13u
-#define TIMER1_SMCFG_ETPSC_lsb					12u
+#define TIMER1_SMCFG_ETPSC_Msb					13u
+#define TIMER1_SMCFG_ETPSC_Lsb					12u
 	/* External trigger filter control */
-#define TIMER1_SMCFG_ETFC_msb					11u
-#define TIMER1_SMCFG_ETFC_lsb					8u
+#define TIMER1_SMCFG_ETFC_Msb					11u
+#define TIMER1_SMCFG_ETFC_Lsb					8u
 	/* Master-slave mode */
 #define TIMER1_SMCFG_MSM					7u
 	/* Trigger selection */
-#define TIMER1_SMCFG_TRGS_msb					6u
-#define TIMER1_SMCFG_TRGS_lsb					4u
+#define TIMER1_SMCFG_TRGS_Msb					6u
+#define TIMER1_SMCFG_TRGS_Lsb					4u
 	/* Slave mode control */
-#define TIMER1_SMCFG_SMC_msb					2u
-#define TIMER1_SMCFG_SMC_lsb					0u
+#define TIMER1_SMCFG_SMC_Msb					2u
+#define TIMER1_SMCFG_SMC_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -12618,48 +12618,48 @@ struct sdk_timer1 {
 	/* Channel 1 output compare clear enable */
 #define TIMER1_CHCTL0_OUTPUT_CH1COMCEN				15u
 	/* Channel 1 compare output control */
-#define TIMER1_CHCTL0_OUTPUT_CH1COMCTL_msb			14u
-#define TIMER1_CHCTL0_OUTPUT_CH1COMCTL_lsb			12u
+#define TIMER1_CHCTL0_OUTPUT_CH1COMCTL_Msb			14u
+#define TIMER1_CHCTL0_OUTPUT_CH1COMCTL_Lsb			12u
 	/* Channel 1 output compare shadow enable */
 #define TIMER1_CHCTL0_OUTPUT_CH1COMSEN				11u
 	/* Channel 1 output compare fast enable */
 #define TIMER1_CHCTL0_OUTPUT_CH1COMFEN				10u
 	/* Channel 1 mode selection */
-#define TIMER1_CHCTL0_OUTPUT_CH1MS_msb				9u
-#define TIMER1_CHCTL0_OUTPUT_CH1MS_lsb				8u
+#define TIMER1_CHCTL0_OUTPUT_CH1MS_Msb				9u
+#define TIMER1_CHCTL0_OUTPUT_CH1MS_Lsb				8u
 	/* Channel 0 output compare clear enable */
 #define TIMER1_CHCTL0_OUTPUT_CH0COMCEN				7u
 	/*  */
-#define TIMER1_CHCTL0_OUTPUT_CH0COMCTL_msb			6u
-#define TIMER1_CHCTL0_OUTPUT_CH0COMCTL_lsb			4u
+#define TIMER1_CHCTL0_OUTPUT_CH0COMCTL_Msb			6u
+#define TIMER1_CHCTL0_OUTPUT_CH0COMCTL_Lsb			4u
 	/* Channel 0 compare output shadow enable */
 #define TIMER1_CHCTL0_OUTPUT_CH0COMSEN				3u
 	/* Channel 0 output compare fast enable */
 #define TIMER1_CHCTL0_OUTPUT_CH0COMFEN				2u
 	/* Channel 0 I/O mode selection */
-#define TIMER1_CHCTL0_OUTPUT_CH0MS_msb				1u
-#define TIMER1_CHCTL0_OUTPUT_CH0MS_lsb				0u
+#define TIMER1_CHCTL0_OUTPUT_CH0MS_Msb				1u
+#define TIMER1_CHCTL0_OUTPUT_CH0MS_Lsb				0u
 
 	/* 0x18: Channel control register 0 (input */
 	uint32_t volatile CHCTL0_INPUT;
 	/* Channel 1 input capture filter control */
-#define TIMER1_CHCTL0_INPUT_CH1CAPFLT_msb			15u
-#define TIMER1_CHCTL0_INPUT_CH1CAPFLT_lsb			12u
+#define TIMER1_CHCTL0_INPUT_CH1CAPFLT_Msb			15u
+#define TIMER1_CHCTL0_INPUT_CH1CAPFLT_Lsb			12u
 	/* Channel 1 input capture prescaler */
-#define TIMER1_CHCTL0_INPUT_CH1CAPPSC_msb			11u
-#define TIMER1_CHCTL0_INPUT_CH1CAPPSC_lsb			10u
+#define TIMER1_CHCTL0_INPUT_CH1CAPPSC_Msb			11u
+#define TIMER1_CHCTL0_INPUT_CH1CAPPSC_Lsb			10u
 	/* Channel 1 mode selection */
-#define TIMER1_CHCTL0_INPUT_CH1MS_msb				9u
-#define TIMER1_CHCTL0_INPUT_CH1MS_lsb				8u
+#define TIMER1_CHCTL0_INPUT_CH1MS_Msb				9u
+#define TIMER1_CHCTL0_INPUT_CH1MS_Lsb				8u
 	/* Channel 0 input capture filter control */
-#define TIMER1_CHCTL0_INPUT_CH0CAPFLT_msb			7u
-#define TIMER1_CHCTL0_INPUT_CH0CAPFLT_lsb			4u
+#define TIMER1_CHCTL0_INPUT_CH0CAPFLT_Msb			7u
+#define TIMER1_CHCTL0_INPUT_CH0CAPFLT_Lsb			4u
 	/* Channel 0 input capture prescaler */
-#define TIMER1_CHCTL0_INPUT_CH0CAPPSC_msb			3u
-#define TIMER1_CHCTL0_INPUT_CH0CAPPSC_lsb			2u
+#define TIMER1_CHCTL0_INPUT_CH0CAPPSC_Msb			3u
+#define TIMER1_CHCTL0_INPUT_CH0CAPPSC_Lsb			2u
 	/* Channel 0 mode selection */
-#define TIMER1_CHCTL0_INPUT_CH0MS_msb				1u
-#define TIMER1_CHCTL0_INPUT_CH0MS_lsb				0u
+#define TIMER1_CHCTL0_INPUT_CH0MS_Msb				1u
+#define TIMER1_CHCTL0_INPUT_CH0MS_Lsb				0u
 
 	/* 0x18 */
 	uint8_t RESERVED6[0x1Cu-0x18u];
@@ -12669,48 +12669,48 @@ struct sdk_timer1 {
 	/* Channel 3 output compare clear enable */
 #define TIMER1_CHCTL1_OUTPUT_CH3COMCEN				15u
 	/* Channel 3 compare output control */
-#define TIMER1_CHCTL1_OUTPUT_CH3COMCTL_msb			14u
-#define TIMER1_CHCTL1_OUTPUT_CH3COMCTL_lsb			12u
+#define TIMER1_CHCTL1_OUTPUT_CH3COMCTL_Msb			14u
+#define TIMER1_CHCTL1_OUTPUT_CH3COMCTL_Lsb			12u
 	/* Channel 3 output compare shadow enable */
 #define TIMER1_CHCTL1_OUTPUT_CH3COMSEN				11u
 	/* Channel 3 output compare fast enable */
 #define TIMER1_CHCTL1_OUTPUT_CH3COMFEN				10u
 	/* Channel 3 mode selection */
-#define TIMER1_CHCTL1_OUTPUT_CH3MS_msb				9u
-#define TIMER1_CHCTL1_OUTPUT_CH3MS_lsb				8u
+#define TIMER1_CHCTL1_OUTPUT_CH3MS_Msb				9u
+#define TIMER1_CHCTL1_OUTPUT_CH3MS_Lsb				8u
 	/* Channel 2 output compare clear enable */
 #define TIMER1_CHCTL1_OUTPUT_CH2COMCEN				7u
 	/* Channel 2 compare output control */
-#define TIMER1_CHCTL1_OUTPUT_CH2COMCTL_msb			6u
-#define TIMER1_CHCTL1_OUTPUT_CH2COMCTL_lsb			4u
+#define TIMER1_CHCTL1_OUTPUT_CH2COMCTL_Msb			6u
+#define TIMER1_CHCTL1_OUTPUT_CH2COMCTL_Lsb			4u
 	/* Channel 2 compare output shadow enable */
 #define TIMER1_CHCTL1_OUTPUT_CH2COMSEN				3u
 	/* Channel 2 output compare fast enable */
 #define TIMER1_CHCTL1_OUTPUT_CH2COMFEN				2u
 	/* Channel 2 I/O mode selection */
-#define TIMER1_CHCTL1_OUTPUT_CH2MS_msb				1u
-#define TIMER1_CHCTL1_OUTPUT_CH2MS_lsb				0u
+#define TIMER1_CHCTL1_OUTPUT_CH2MS_Msb				1u
+#define TIMER1_CHCTL1_OUTPUT_CH2MS_Lsb				0u
 
 	/* 0x1C: Channel control register 1 (input */
 	uint32_t volatile CHCTL1_INPUT;
 	/* Channel 3 input capture filter control */
-#define TIMER1_CHCTL1_INPUT_CH3CAPFLT_msb			15u
-#define TIMER1_CHCTL1_INPUT_CH3CAPFLT_lsb			12u
+#define TIMER1_CHCTL1_INPUT_CH3CAPFLT_Msb			15u
+#define TIMER1_CHCTL1_INPUT_CH3CAPFLT_Lsb			12u
 	/* Channel 3 input capture prescaler */
-#define TIMER1_CHCTL1_INPUT_CH3CAPPSC_msb			11u
-#define TIMER1_CHCTL1_INPUT_CH3CAPPSC_lsb			10u
+#define TIMER1_CHCTL1_INPUT_CH3CAPPSC_Msb			11u
+#define TIMER1_CHCTL1_INPUT_CH3CAPPSC_Lsb			10u
 	/* Channel 3 mode selection */
-#define TIMER1_CHCTL1_INPUT_CH3MS_msb				9u
-#define TIMER1_CHCTL1_INPUT_CH3MS_lsb				8u
+#define TIMER1_CHCTL1_INPUT_CH3MS_Msb				9u
+#define TIMER1_CHCTL1_INPUT_CH3MS_Lsb				8u
 	/* Channel 2 input capture filter control */
-#define TIMER1_CHCTL1_INPUT_CH2CAPFLT_msb			7u
-#define TIMER1_CHCTL1_INPUT_CH2CAPFLT_lsb			4u
+#define TIMER1_CHCTL1_INPUT_CH2CAPFLT_Msb			7u
+#define TIMER1_CHCTL1_INPUT_CH2CAPFLT_Lsb			4u
 	/* Channel 2 input capture prescaler */
-#define TIMER1_CHCTL1_INPUT_CH2CAPPSC_msb			3u
-#define TIMER1_CHCTL1_INPUT_CH2CAPPSC_lsb			2u
+#define TIMER1_CHCTL1_INPUT_CH2CAPPSC_Msb			3u
+#define TIMER1_CHCTL1_INPUT_CH2CAPPSC_Lsb			2u
 	/* Channel 2 mode selection */
-#define TIMER1_CHCTL1_INPUT_CH2MS_msb				1u
-#define TIMER1_CHCTL1_INPUT_CH2MS_lsb				0u
+#define TIMER1_CHCTL1_INPUT_CH2MS_Msb				1u
+#define TIMER1_CHCTL1_INPUT_CH2MS_Lsb				0u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -12740,8 +12740,8 @@ struct sdk_timer1 {
 	/* 0x24: Counter register */
 	uint32_t volatile CNT;
 	/* counter value */
-#define TIMER1_CNT_CNT_msb					15u
-#define TIMER1_CNT_CNT_lsb					0u
+#define TIMER1_CNT_CNT_Msb					15u
+#define TIMER1_CNT_CNT_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED9[0x28u-0x24u];
@@ -12749,8 +12749,8 @@ struct sdk_timer1 {
 	/* 0x28: Prescaler register */
 	uint32_t volatile PSC;
 	/* Prescaler value of the counter clock */
-#define TIMER1_PSC_PSC_msb					15u
-#define TIMER1_PSC_PSC_lsb					0u
+#define TIMER1_PSC_PSC_Msb					15u
+#define TIMER1_PSC_PSC_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED10[0x2Cu-0x28u];
@@ -12758,8 +12758,8 @@ struct sdk_timer1 {
 	/* 0x2C: Counter auto reload register */
 	uint32_t volatile CAR;
 	/* Counter auto reload value */
-#define TIMER1_CAR_CARL_msb					15u
-#define TIMER1_CAR_CARL_lsb					0u
+#define TIMER1_CAR_CARL_Msb					15u
+#define TIMER1_CAR_CARL_Lsb					0u
 
 	/* 0x2C */
 	uint8_t RESERVED11[0x34u-0x2Cu];
@@ -12767,8 +12767,8 @@ struct sdk_timer1 {
 	/* 0x34: Channel 0 capture/compare value register */
 	uint32_t volatile CH0CV;
 	/* Capture or compare value of channel 0 */
-#define TIMER1_CH0CV_CH0VAL_msb					15u
-#define TIMER1_CH0CV_CH0VAL_lsb					0u
+#define TIMER1_CH0CV_CH0VAL_Msb					15u
+#define TIMER1_CH0CV_CH0VAL_Lsb					0u
 
 	/* 0x34 */
 	uint8_t RESERVED12[0x38u-0x34u];
@@ -12776,8 +12776,8 @@ struct sdk_timer1 {
 	/* 0x38: Channel 1 capture/compare value register */
 	uint32_t volatile CH1CV;
 	/* Capture or compare value of channel1 */
-#define TIMER1_CH1CV_CH1VAL_msb					15u
-#define TIMER1_CH1CV_CH1VAL_lsb					0u
+#define TIMER1_CH1CV_CH1VAL_Msb					15u
+#define TIMER1_CH1CV_CH1VAL_Lsb					0u
 
 	/* 0x38 */
 	uint8_t RESERVED13[0x3Cu-0x38u];
@@ -12785,8 +12785,8 @@ struct sdk_timer1 {
 	/* 0x3C: Channel 2 capture/compare value register */
 	uint32_t volatile CH2CV;
 	/* Capture or compare value of channel 2 */
-#define TIMER1_CH2CV_CH2VAL_msb					15u
-#define TIMER1_CH2CV_CH2VAL_lsb					0u
+#define TIMER1_CH2CV_CH2VAL_Msb					15u
+#define TIMER1_CH2CV_CH2VAL_Lsb					0u
 
 	/* 0x3C */
 	uint8_t RESERVED14[0x40u-0x3Cu];
@@ -12794,8 +12794,8 @@ struct sdk_timer1 {
 	/* 0x40: Channel 3 capture/compare value register */
 	uint32_t volatile CH3CV;
 	/* Capture or compare value of channel 3 */
-#define TIMER1_CH3CV_CH3VAL_msb					15u
-#define TIMER1_CH3CV_CH3VAL_lsb					0u
+#define TIMER1_CH3CV_CH3VAL_Msb					15u
+#define TIMER1_CH3CV_CH3VAL_Lsb					0u
 
 	/* 0x40 */
 	uint8_t RESERVED15[0x48u-0x40u];
@@ -12803,11 +12803,11 @@ struct sdk_timer1 {
 	/* 0x48: DMA configuration register */
 	uint32_t volatile DMACFG;
 	/* DMA transfer count */
-#define TIMER1_DMACFG_DMATC_msb					12u
-#define TIMER1_DMACFG_DMATC_lsb					8u
+#define TIMER1_DMACFG_DMATC_Msb					12u
+#define TIMER1_DMACFG_DMATC_Lsb					8u
 	/* DMA transfer access start address */
-#define TIMER1_DMACFG_DMATA_msb					4u
-#define TIMER1_DMACFG_DMATA_lsb					0u
+#define TIMER1_DMACFG_DMATA_Msb					4u
+#define TIMER1_DMACFG_DMATA_Lsb					0u
 
 	/* 0x48 */
 	uint8_t RESERVED16[0x4Cu-0x48u];
@@ -12815,16 +12815,16 @@ struct sdk_timer1 {
 	/* 0x4C: DMA transfer buffer register */
 	uint32_t volatile DMATB;
 	/* DMA transfer buffer */
-#define TIMER1_DMATB_DMATB_msb					15u
-#define TIMER1_DMATB_DMATB_lsb					0u
+#define TIMER1_DMATB_DMATB_Msb					15u
+#define TIMER1_DMATB_DMATB_Lsb					0u
 
 };
 
 
-#define TIMER5 ((struct sdk_timer5 *)0x40001000)
-#define TIMER6 ((struct sdk_timer6 *)0x40001400)
+#define TIMER5 ((struct mcu_timer5 *)0x40001000)
+#define TIMER6 ((struct mcu_timer6 *)0x40001400)
 
-struct sdk_timer5 {
+struct mcu_timer5 {
 
 	/* 0x00: control register 0 */
 	uint32_t volatile CTL0;
@@ -12845,8 +12845,8 @@ struct sdk_timer5 {
 	/* 0x04: control register 1 */
 	uint32_t volatile CTL1;
 	/* Master mode control */
-#define TIMER5_CTL1_MMC_msb					6u
-#define TIMER5_CTL1_MMC_lsb					4u
+#define TIMER5_CTL1_MMC_Msb					6u
+#define TIMER5_CTL1_MMC_Lsb					4u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x0Cu-0x04u];
@@ -12880,8 +12880,8 @@ struct sdk_timer5 {
 	/* 0x24: Counter register */
 	uint32_t volatile CNT;
 	/* Low counter value */
-#define TIMER5_CNT_CNT_msb					15u
-#define TIMER5_CNT_CNT_lsb					0u
+#define TIMER5_CNT_CNT_Msb					15u
+#define TIMER5_CNT_CNT_Lsb					0u
 
 	/* 0x24 */
 	uint8_t RESERVED5[0x28u-0x24u];
@@ -12889,8 +12889,8 @@ struct sdk_timer5 {
 	/* 0x28: Prescaler register */
 	uint32_t volatile PSC;
 	/* Prescaler value of the counter clock */
-#define TIMER5_PSC_PSC_msb					15u
-#define TIMER5_PSC_PSC_lsb					0u
+#define TIMER5_PSC_PSC_Msb					15u
+#define TIMER5_PSC_PSC_Lsb					0u
 
 	/* 0x28 */
 	uint8_t RESERVED6[0x2Cu-0x28u];
@@ -12898,18 +12898,18 @@ struct sdk_timer5 {
 	/* 0x2C: Counter auto reload register */
 	uint32_t volatile CAR;
 	/* Counter auto reload value */
-#define TIMER5_CAR_CARL_msb					15u
-#define TIMER5_CAR_CARL_lsb					0u
+#define TIMER5_CAR_CARL_Msb					15u
+#define TIMER5_CAR_CARL_Lsb					0u
 
 };
 
 
 
-#define USART0 ((struct sdk_usart0 *)0x40013800)
-#define USART1 ((struct sdk_usart1 *)0x40004400)
-#define USART2 ((struct sdk_usart2 *)0x40004800)
+#define USART0 ((struct mcu_usart0 *)0x40013800)
+#define USART1 ((struct mcu_usart1 *)0x40004400)
+#define USART2 ((struct mcu_usart2 *)0x40004800)
 
-struct sdk_usart {
+struct mcu_usart {
 
 	/* 0x00: Status register */
 	uint32_t volatile STAT;
@@ -12940,8 +12940,8 @@ struct sdk_usart {
 	/* 0x04: Data register */
 	uint32_t volatile DATA;
 	/* Transmit or read data value */
-#define USART_DATA_DATA_msb					8u
-#define USART_DATA_DATA_lsb					0u
+#define USART_DATA_DATA_Msb					8u
+#define USART_DATA_DATA_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -12949,11 +12949,11 @@ struct sdk_usart {
 	/* 0x08: Baud rate register */
 	uint32_t volatile BAUD;
 	/* Integer part of baud-rate divider */
-#define USART_BAUD_INTDIV_msb					15u
-#define USART_BAUD_INTDIV_lsb					4u
+#define USART_BAUD_INTDIV_Msb					15u
+#define USART_BAUD_INTDIV_Lsb					4u
 	/* Fraction part of baud-rate divider */
-#define USART_BAUD_FRADIV_msb					3u
-#define USART_BAUD_FRADIV_lsb					0u
+#define USART_BAUD_FRADIV_Msb					3u
+#define USART_BAUD_FRADIV_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -12997,8 +12997,8 @@ struct sdk_usart {
 	/* LIN mode enable */
 #define USART_CTL1_LMEN					14u
 	/* STOP bits length */
-#define USART_CTL1_STB_msb					13u
-#define USART_CTL1_STB_lsb					12u
+#define USART_CTL1_STB_Msb					13u
+#define USART_CTL1_STB_Lsb					12u
 	/* CK pin enable */
 #define USART_CTL1_CKEN					11u
 	/* Clock polarity */
@@ -13012,8 +13012,8 @@ struct sdk_usart {
 	/* LIN break frame length */
 #define USART_CTL1_LBLEN					5u
 	/* Address of the USART */
-#define USART_CTL1_ADDR_msb					3u
-#define USART_CTL1_ADDR_lsb					0u
+#define USART_CTL1_ADDR_Msb					3u
+#define USART_CTL1_ADDR_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -13049,19 +13049,19 @@ struct sdk_usart {
 	/* 0x18: Guard time and prescaler */
 	uint32_t volatile GP;
 	/* Guard time value in Smartcard mode */
-#define USART_GP_GUAT_msb					15u
-#define USART_GP_GUAT_lsb					8u
+#define USART_GP_GUAT_Msb					15u
+#define USART_GP_GUAT_Lsb					8u
 	/* Prescaler value */
-#define USART_GP_PSC_msb					7u
-#define USART_GP_PSC_lsb					0u
+#define USART_GP_PSC_Msb					7u
+#define USART_GP_PSC_Lsb					0u
 
 };
 
 
-#define UART3 ((struct sdk_uart *)0x40004C00)
-#define UART4 ((struct sdk_uart *)0x40005000)
+#define UART3 ((struct mcu_uart *)0x40004C00)
+#define UART4 ((struct mcu_uart *)0x40005000)
 
-struct sdk_uart {
+struct mcu_uart {
 
 	/* 0x00: Status register */
 	uint32_t volatile STAT;
@@ -13090,8 +13090,8 @@ struct sdk_uart {
 	/* 0x04: Data register */
 	uint32_t volatile DATA;
 	/* Transmit or read data value */
-#define UART_DATA_DATA_msb					8u
-#define UART_DATA_DATA_lsb					0u
+#define UART_DATA_DATA_Msb					8u
+#define UART_DATA_DATA_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -13099,11 +13099,11 @@ struct sdk_uart {
 	/* 0x08: Baud rate register */
 	uint32_t volatile BAUD;
 	/* Integer part of baud-rate divider */
-#define UART_BAUD_INTDIV_msb					15u
-#define UART_BAUD_INTDIV_lsb					4u
+#define UART_BAUD_INTDIV_Msb					15u
+#define UART_BAUD_INTDIV_Lsb					4u
 	/* Fraction part of baud-rate divider */
-#define UART_BAUD_FRADIV_msb					3u
-#define UART_BAUD_FRADIV_lsb					0u
+#define UART_BAUD_FRADIV_Msb					3u
+#define UART_BAUD_FRADIV_Lsb					0u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x0Cu-0x08u];
@@ -13147,15 +13147,15 @@ struct sdk_uart {
 	/* LIN mode enable */
 #define UART_CTL1_LMEN						14u
 	/* STOP bits length */
-#define UART_CTL1_STB_msb					13u
-#define UART_CTL1_STB_lsb					12u
+#define UART_CTL1_STB_Msb					13u
+#define UART_CTL1_STB_Lsb					12u
 	/* LIN break detection interrupt */
 #define UART_CTL1_LBDIE					6u
 	/* LIN break frame length */
 #define UART_CTL1_LBLEN					5u
 	/* Address of the USART */
-#define UART_CTL1_ADDR_msb					3u
-#define UART_CTL1_ADDR_lsb					0u
+#define UART_CTL1_ADDR_Msb					3u
+#define UART_CTL1_ADDR_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -13181,15 +13181,15 @@ struct sdk_uart {
 	/* 0x18: Guard time and prescaler */
 	uint32_t volatile GP;
 	/* Prescaler value */
-#define UART_GP_PSC_msb					7u
-#define UART_GP_PSC_lsb					0u
+#define UART_GP_PSC_Msb					7u
+#define UART_GP_PSC_Lsb					0u
 
 };
 
 
-#define USBFS_GLOBAL ((struct sdk_usbfs_global *)0x50000000)
+#define USBFS_GLOBAL ((struct mcu_usbfs_global *)0x50000000)
 
-struct sdk_usbfs_global {
+struct mcu_usbfs_global {
 
 	/* 0x00: Global OTG control and status register */
 	uint32_t volatile GOTGCS;
@@ -13250,15 +13250,15 @@ struct sdk_usbfs_global {
 	/* 0x0C: Global USB control and status register */
 	uint32_t volatile GUSBCS;
 	/* Timeout calibration */
-#define USBFS_GLOBAL_GUSBCS_TOC_msb				2u
-#define USBFS_GLOBAL_GUSBCS_TOC_lsb				0u
+#define USBFS_GLOBAL_GUSBCS_TOC_Msb				2u
+#define USBFS_GLOBAL_GUSBCS_TOC_Lsb				0u
 	/* SRP capability enable */
 #define USBFS_GLOBAL_GUSBCS_SRPCEN				8u
 	/* HNP capability enable */
 #define USBFS_GLOBAL_GUSBCS_HNPCEN				9u
 	/* USB turnaround time */
-#define USBFS_GLOBAL_GUSBCS_UTT_msb				13u
-#define USBFS_GLOBAL_GUSBCS_UTT_lsb				10u
+#define USBFS_GLOBAL_GUSBCS_UTT_Msb				13u
+#define USBFS_GLOBAL_GUSBCS_UTT_Lsb				10u
 	/* Force host mode */
 #define USBFS_GLOBAL_GUSBCS_FHM					29u
 	/* Force device mode */
@@ -13280,8 +13280,8 @@ struct sdk_usbfs_global {
 	/* TxFIFO flush */
 #define USBFS_GLOBAL_GRSTCTL_TXFF				5u
 	/* TxFIFO number */
-#define USBFS_GLOBAL_GRSTCTL_TXFNUM_msb				10u
-#define USBFS_GLOBAL_GRSTCTL_TXFNUM_lsb				6u
+#define USBFS_GLOBAL_GRSTCTL_TXFNUM_Msb				10u
+#define USBFS_GLOBAL_GRSTCTL_TXFNUM_Lsb				6u
 
 	/* 0x10 */
 	uint8_t RESERVED4[0x14u-0x10u];
@@ -13399,32 +13399,32 @@ struct sdk_usbfs_global {
 	/* 0x1C: Global Receive status read(Device */
 	uint32_t volatile GRSTATR_DEVICE;
 	/* Endpoint number */
-#define USBFS_GLOBAL_GRSTATR_DEVICE_EPNUM_msb			3u
-#define USBFS_GLOBAL_GRSTATR_DEVICE_EPNUM_lsb			0u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_EPNUM_Msb			3u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_EPNUM_Lsb			0u
 	/* Byte count */
-#define USBFS_GLOBAL_GRSTATR_DEVICE_BCOUNT_msb			14u
-#define USBFS_GLOBAL_GRSTATR_DEVICE_BCOUNT_lsb			4u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_BCOUNT_Msb			14u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_BCOUNT_Lsb			4u
 	/* Data PID */
-#define USBFS_GLOBAL_GRSTATR_DEVICE_DPID_msb			16u
-#define USBFS_GLOBAL_GRSTATR_DEVICE_DPID_lsb			15u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_DPID_Msb			16u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_DPID_Lsb			15u
 	/* Recieve packet status */
-#define USBFS_GLOBAL_GRSTATR_DEVICE_RPCKST_msb			20u
-#define USBFS_GLOBAL_GRSTATR_DEVICE_RPCKST_lsb			17u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_RPCKST_Msb			20u
+#define USBFS_GLOBAL_GRSTATR_DEVICE_RPCKST_Lsb			17u
 
 	/* 0x1C: Global Receive status read(Host */
 	uint32_t volatile GRSTATR_HOST;
 	/* Channel number */
-#define USBFS_GLOBAL_GRSTATR_HOST_CNUM_msb			3u
-#define USBFS_GLOBAL_GRSTATR_HOST_CNUM_lsb			0u
+#define USBFS_GLOBAL_GRSTATR_HOST_CNUM_Msb			3u
+#define USBFS_GLOBAL_GRSTATR_HOST_CNUM_Lsb			0u
 	/* Byte count */
-#define USBFS_GLOBAL_GRSTATR_HOST_BCOUNT_msb			14u
-#define USBFS_GLOBAL_GRSTATR_HOST_BCOUNT_lsb			4u
+#define USBFS_GLOBAL_GRSTATR_HOST_BCOUNT_Msb			14u
+#define USBFS_GLOBAL_GRSTATR_HOST_BCOUNT_Lsb			4u
 	/* Data PID */
-#define USBFS_GLOBAL_GRSTATR_HOST_DPID_msb			16u
-#define USBFS_GLOBAL_GRSTATR_HOST_DPID_lsb			15u
+#define USBFS_GLOBAL_GRSTATR_HOST_DPID_Msb			16u
+#define USBFS_GLOBAL_GRSTATR_HOST_DPID_Lsb			15u
 	/* Reivece packet status */
-#define USBFS_GLOBAL_GRSTATR_HOST_RPCKST_msb			20u
-#define USBFS_GLOBAL_GRSTATR_HOST_RPCKST_lsb			17u
+#define USBFS_GLOBAL_GRSTATR_HOST_RPCKST_Msb			20u
+#define USBFS_GLOBAL_GRSTATR_HOST_RPCKST_Lsb			17u
 
 	/* 0x1C */
 	uint8_t RESERVED7[0x20u-0x1Cu];
@@ -13432,32 +13432,32 @@ struct sdk_usbfs_global {
 	/* 0x20: Global Receive status pop(Device */
 	uint32_t volatile GRSTATP_DEVICE;
 	/* Endpoint number */
-#define USBFS_GLOBAL_GRSTATP_DEVICE_EPNUM_msb			3u
-#define USBFS_GLOBAL_GRSTATP_DEVICE_EPNUM_lsb			0u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_EPNUM_Msb			3u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_EPNUM_Lsb			0u
 	/* Byte count */
-#define USBFS_GLOBAL_GRSTATP_DEVICE_BCOUNT_msb			14u
-#define USBFS_GLOBAL_GRSTATP_DEVICE_BCOUNT_lsb			4u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_BCOUNT_Msb			14u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_BCOUNT_Lsb			4u
 	/* Data PID */
-#define USBFS_GLOBAL_GRSTATP_DEVICE_DPID_msb			16u
-#define USBFS_GLOBAL_GRSTATP_DEVICE_DPID_lsb			15u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_DPID_Msb			16u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_DPID_Lsb			15u
 	/* Recieve packet status */
-#define USBFS_GLOBAL_GRSTATP_DEVICE_RPCKST_msb			20u
-#define USBFS_GLOBAL_GRSTATP_DEVICE_RPCKST_lsb			17u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_RPCKST_Msb			20u
+#define USBFS_GLOBAL_GRSTATP_DEVICE_RPCKST_Lsb			17u
 
 	/* 0x20: Global Receive status pop(Host */
 	uint32_t volatile GRSTATP_HOST;
 	/* Channel number */
-#define USBFS_GLOBAL_GRSTATP_HOST_CNUM_msb			3u
-#define USBFS_GLOBAL_GRSTATP_HOST_CNUM_lsb			0u
+#define USBFS_GLOBAL_GRSTATP_HOST_CNUM_Msb			3u
+#define USBFS_GLOBAL_GRSTATP_HOST_CNUM_Lsb			0u
 	/* Byte count */
-#define USBFS_GLOBAL_GRSTATP_HOST_BCOUNT_msb			14u
-#define USBFS_GLOBAL_GRSTATP_HOST_BCOUNT_lsb			4u
+#define USBFS_GLOBAL_GRSTATP_HOST_BCOUNT_Msb			14u
+#define USBFS_GLOBAL_GRSTATP_HOST_BCOUNT_Lsb			4u
 	/* Data PID */
-#define USBFS_GLOBAL_GRSTATP_HOST_DPID_msb			16u
-#define USBFS_GLOBAL_GRSTATP_HOST_DPID_lsb			15u
+#define USBFS_GLOBAL_GRSTATP_HOST_DPID_Msb			16u
+#define USBFS_GLOBAL_GRSTATP_HOST_DPID_Lsb			15u
 	/* Reivece packet status */
-#define USBFS_GLOBAL_GRSTATP_HOST_RPCKST_msb			20u
-#define USBFS_GLOBAL_GRSTATP_HOST_RPCKST_lsb			17u
+#define USBFS_GLOBAL_GRSTATP_HOST_RPCKST_Msb			20u
+#define USBFS_GLOBAL_GRSTATP_HOST_RPCKST_Lsb			17u
 
 	/* 0x20 */
 	uint8_t RESERVED8[0x24u-0x20u];
@@ -13465,8 +13465,8 @@ struct sdk_usbfs_global {
 	/* 0x24: Global Receive FIFO size register */
 	uint32_t volatile GRFLEN;
 	/* Rx FIFO depth */
-#define USBFS_GLOBAL_GRFLEN_RXFD_msb				15u
-#define USBFS_GLOBAL_GRFLEN_RXFD_lsb				0u
+#define USBFS_GLOBAL_GRFLEN_RXFD_Msb				15u
+#define USBFS_GLOBAL_GRFLEN_RXFD_Lsb				0u
 
 	/* 0x24 */
 	uint8_t RESERVED9[0x28u-0x24u];
@@ -13474,20 +13474,20 @@ struct sdk_usbfs_global {
 	/* 0x28: Host non-periodic transmit FIFO length register */
 	uint32_t volatile HNPTFLEN;
 	/* host non-periodic transmit Tx RAM start */
-#define USBFS_GLOBAL_HNPTFLEN_HNPTXRSAR_msb			15u
-#define USBFS_GLOBAL_HNPTFLEN_HNPTXRSAR_lsb			0u
+#define USBFS_GLOBAL_HNPTFLEN_HNPTXRSAR_Msb			15u
+#define USBFS_GLOBAL_HNPTFLEN_HNPTXRSAR_Lsb			0u
 	/* host non-periodic TxFIFO depth */
-#define USBFS_GLOBAL_HNPTFLEN_HNPTXFD_msb			31u
-#define USBFS_GLOBAL_HNPTFLEN_HNPTXFD_lsb			16u
+#define USBFS_GLOBAL_HNPTFLEN_HNPTXFD_Msb			31u
+#define USBFS_GLOBAL_HNPTFLEN_HNPTXFD_Lsb			16u
 
 	/* 0x28: Device IN endpoint 0 transmit FIFO length */
 	uint32_t volatile DIEP0TFLEN;
 	/* in endpoint 0 Tx FIFO depth */
-#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXFD_msb			31u
-#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXFD_lsb			16u
+#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXFD_Msb			31u
+#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXFD_Lsb			16u
 	/* in endpoint 0 Tx RAM start address */
-#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXRSAR_msb			15u
-#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXRSAR_lsb			0u
+#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXRSAR_Msb			15u
+#define USBFS_GLOBAL_DIEP0TFLEN_IEP0TXRSAR_Lsb			0u
 
 	/* 0x28 */
 	uint8_t RESERVED10[0x2Cu-0x28u];
@@ -13495,14 +13495,14 @@ struct sdk_usbfs_global {
 	/* 0x2C: Host non-periodic transmit FIFO/queue */
 	uint32_t volatile HNPTFQSTAT;
 	/* Non-periodic TxFIFO space */
-#define USBFS_GLOBAL_HNPTFQSTAT_NPTXFS_msb			15u
-#define USBFS_GLOBAL_HNPTFQSTAT_NPTXFS_lsb			0u
+#define USBFS_GLOBAL_HNPTFQSTAT_NPTXFS_Msb			15u
+#define USBFS_GLOBAL_HNPTFQSTAT_NPTXFS_Lsb			0u
 	/* Non-periodic transmit request queue */
-#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQS_msb			23u
-#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQS_lsb			16u
+#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQS_Msb			23u
+#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQS_Lsb			16u
 	/* Top of the non-periodic transmit request */
-#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQTOP_msb			30u
-#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQTOP_lsb			24u
+#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQTOP_Msb			30u
+#define USBFS_GLOBAL_HNPTFQSTAT_NPTXRQTOP_Lsb			24u
 
 	/* 0x2C */
 	uint8_t RESERVED11[0x38u-0x2Cu];
@@ -13526,8 +13526,8 @@ struct sdk_usbfs_global {
 	/* 0x3C: core ID register */
 	uint32_t volatile CID;
 	/* Core ID */
-#define USBFS_GLOBAL_CID_CID_msb				31u
-#define USBFS_GLOBAL_CID_CID_lsb				0u
+#define USBFS_GLOBAL_CID_CID_Msb				31u
+#define USBFS_GLOBAL_CID_CID_Lsb				0u
 
 	/* 0x3C */
 	uint8_t RESERVED13[0x100u-0x3Cu];
@@ -13535,11 +13535,11 @@ struct sdk_usbfs_global {
 	/* 0x100: Host periodic transmit FIFO length register (HPTFLEN) */
 	uint32_t volatile HPTFLEN;
 	/* Host periodic TxFIFO start */
-#define USBFS_GLOBAL_HPTFLEN_HPTXFSAR_msb			15u
-#define USBFS_GLOBAL_HPTFLEN_HPTXFSAR_lsb			0u
+#define USBFS_GLOBAL_HPTFLEN_HPTXFSAR_Msb			15u
+#define USBFS_GLOBAL_HPTFLEN_HPTXFSAR_Lsb			0u
 	/* Host periodic TxFIFO depth */
-#define USBFS_GLOBAL_HPTFLEN_HPTXFD_msb				31u
-#define USBFS_GLOBAL_HPTFLEN_HPTXFD_lsb				16u
+#define USBFS_GLOBAL_HPTFLEN_HPTXFD_Msb				31u
+#define USBFS_GLOBAL_HPTFLEN_HPTXFD_Lsb				16u
 
 	/* 0x100 */
 	uint8_t RESERVED14[0x104u-0x100u];
@@ -13547,11 +13547,11 @@ struct sdk_usbfs_global {
 	/* 0x104: device IN endpoint transmit FIFO size */
 	uint32_t volatile DIEP1TFLEN;
 	/* IN endpoint FIFO transmit RAM start */
-#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXRSAR_msb			15u
-#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXRSAR_lsb			0u
+#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXRSAR_Msb			15u
+#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXRSAR_Lsb			0u
 	/* IN endpoint TxFIFO depth */
-#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXFD_msb			31u
-#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXFD_lsb			16u
+#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXFD_Msb			31u
+#define USBFS_GLOBAL_DIEP1TFLEN_IEPTXFD_Lsb			16u
 
 	/* 0x104 */
 	uint8_t RESERVED15[0x108u-0x104u];
@@ -13559,11 +13559,11 @@ struct sdk_usbfs_global {
 	/* 0x108: device IN endpoint transmit FIFO size */
 	uint32_t volatile DIEP2TFLEN;
 	/* IN endpoint FIFO transmit RAM start */
-#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXRSAR_msb			15u
-#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXRSAR_lsb			0u
+#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXRSAR_Msb			15u
+#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXRSAR_Lsb			0u
 	/* IN endpoint TxFIFO depth */
-#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXFD_msb			31u
-#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXFD_lsb			16u
+#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXFD_Msb			31u
+#define USBFS_GLOBAL_DIEP2TFLEN_IEPTXFD_Lsb			16u
 
 	/* 0x108 */
 	uint8_t RESERVED16[0x10Cu-0x108u];
@@ -13571,24 +13571,24 @@ struct sdk_usbfs_global {
 	/* 0x10C: device IN endpoint transmit FIFO size */
 	uint32_t volatile DIEP3TFLEN;
 	/* IN endpoint FIFO4 transmit RAM start */
-#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXRSAR_msb			15u
-#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXRSAR_lsb			0u
+#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXRSAR_Msb			15u
+#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXRSAR_Lsb			0u
 	/* IN endpoint TxFIFO depth */
-#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXFD_msb			31u
-#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXFD_lsb			16u
+#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXFD_Msb			31u
+#define USBFS_GLOBAL_DIEP3TFLEN_IEPTXFD_Lsb			16u
 
 };
 
 
-#define USBFS_HOST ((struct sdk_usbfs_host *)0x50000400)
+#define USBFS_HOST ((struct mcu_usbfs_host *)0x50000400)
 
-struct sdk_usbfs_host {
+struct mcu_usbfs_host {
 
 	/* 0x00: host configuration register */
 	uint32_t volatile HCTL;
 	/* clock select for USB clock */
-#define USBFS_HOST_HCTL_CLKSEL_msb				1u
-#define USBFS_HOST_HCTL_CLKSEL_lsb				0u
+#define USBFS_HOST_HCTL_CLKSEL_Msb				1u
+#define USBFS_HOST_HCTL_CLKSEL_Lsb				0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -13596,8 +13596,8 @@ struct sdk_usbfs_host {
 	/* 0x04: Host frame interval */
 	uint32_t volatile HFT;
 	/* Frame interval */
-#define USBFS_HOST_HFT_FRI_msb					15u
-#define USBFS_HOST_HFT_FRI_lsb					0u
+#define USBFS_HOST_HFT_FRI_Msb					15u
+#define USBFS_HOST_HFT_FRI_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];
@@ -13605,11 +13605,11 @@ struct sdk_usbfs_host {
 	/* 0x08: FS host frame number/frame time */
 	uint32_t volatile HFINFR;
 	/* Frame number */
-#define USBFS_HOST_HFINFR_FRNUM_msb				15u
-#define USBFS_HOST_HFINFR_FRNUM_lsb				0u
+#define USBFS_HOST_HFINFR_FRNUM_Msb				15u
+#define USBFS_HOST_HFINFR_FRNUM_Lsb				0u
 	/* Frame remaining time */
-#define USBFS_HOST_HFINFR_FRT_msb				31u
-#define USBFS_HOST_HFINFR_FRT_lsb				16u
+#define USBFS_HOST_HFINFR_FRT_Msb				31u
+#define USBFS_HOST_HFINFR_FRT_Lsb				16u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x10u-0x08u];
@@ -13617,14 +13617,14 @@ struct sdk_usbfs_host {
 	/* 0x10: Host periodic transmit FIFO/queue */
 	uint32_t volatile HPTFQSTAT;
 	/* Periodic transmit data FIFO space */
-#define USBFS_HOST_HPTFQSTAT_PTXFS_msb				15u
-#define USBFS_HOST_HPTFQSTAT_PTXFS_lsb				0u
+#define USBFS_HOST_HPTFQSTAT_PTXFS_Msb				15u
+#define USBFS_HOST_HPTFQSTAT_PTXFS_Lsb				0u
 	/* Periodic transmit request queue space */
-#define USBFS_HOST_HPTFQSTAT_PTXREQS_msb			23u
-#define USBFS_HOST_HPTFQSTAT_PTXREQS_lsb			16u
+#define USBFS_HOST_HPTFQSTAT_PTXREQS_Msb			23u
+#define USBFS_HOST_HPTFQSTAT_PTXREQS_Lsb			16u
 	/* Top of the periodic transmit request */
-#define USBFS_HOST_HPTFQSTAT_PTXREQT_msb			31u
-#define USBFS_HOST_HPTFQSTAT_PTXREQT_lsb			24u
+#define USBFS_HOST_HPTFQSTAT_PTXREQT_Msb			31u
+#define USBFS_HOST_HPTFQSTAT_PTXREQT_Lsb			24u
 
 	/* 0x10 */
 	uint8_t RESERVED3[0x14u-0x10u];
@@ -13632,8 +13632,8 @@ struct sdk_usbfs_host {
 	/* 0x14:  */
 	uint32_t volatile HACHINT;
 	/* Host all channel interrupts */
-#define USBFS_HOST_HACHINT_HACHINT_msb				7u
-#define USBFS_HOST_HACHINT_HACHINT_lsb				0u
+#define USBFS_HOST_HACHINT_HACHINT_Msb				7u
+#define USBFS_HOST_HACHINT_HACHINT_Lsb				0u
 
 	/* 0x14 */
 	uint8_t RESERVED4[0x18u-0x14u];
@@ -13641,8 +13641,8 @@ struct sdk_usbfs_host {
 	/* 0x18: host all channels interrupt mask */
 	uint32_t volatile HACHINTEN;
 	/* Channel interrupt enable */
-#define USBFS_HOST_HACHINTEN_CINTEN_msb				7u
-#define USBFS_HOST_HACHINTEN_CINTEN_lsb				0u
+#define USBFS_HOST_HACHINTEN_CINTEN_Msb				7u
+#define USBFS_HOST_HACHINTEN_CINTEN_Lsb				0u
 
 	/* 0x18 */
 	uint8_t RESERVED5[0x40u-0x18u];
@@ -13664,13 +13664,13 @@ struct sdk_usbfs_host {
 	/* Port reset */
 #define USBFS_HOST_HPCS_PRST					8u
 	/* Port line status */
-#define USBFS_HOST_HPCS_PLST_msb				11u
-#define USBFS_HOST_HPCS_PLST_lsb				10u
+#define USBFS_HOST_HPCS_PLST_Msb				11u
+#define USBFS_HOST_HPCS_PLST_Lsb				10u
 	/* Port power */
 #define USBFS_HOST_HPCS_PP					12u
 	/* Port speed */
-#define USBFS_HOST_HPCS_PS_msb					18u
-#define USBFS_HOST_HPCS_PS_lsb					17u
+#define USBFS_HOST_HPCS_PS_Msb					18u
+#define USBFS_HOST_HPCS_PS_Lsb					17u
 
 	/* 0x40 */
 	uint8_t RESERVED6[0x100u-0x40u];
@@ -13678,21 +13678,21 @@ struct sdk_usbfs_host {
 	/* 0x100: host channel-0 characteristics */
 	uint32_t volatile HCH0CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH0CTL_MPL_msb				10u
-#define USBFS_HOST_HCH0CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH0CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH0CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH0CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH0CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH0CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH0CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH0CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH0CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH0CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH0CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH0CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH0CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH0CTL_DAR_msb				28u
-#define USBFS_HOST_HCH0CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH0CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH0CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH0CTL_ODDFRM				29u
 	/* Channel disable */
@@ -13706,21 +13706,21 @@ struct sdk_usbfs_host {
 	/* 0x120:  */
 	uint32_t volatile HCH1CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH1CTL_MPL_msb				10u
-#define USBFS_HOST_HCH1CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH1CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH1CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH1CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH1CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH1CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH1CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH1CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH1CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH1CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH1CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH1CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH1CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH1CTL_DAR_msb				28u
-#define USBFS_HOST_HCH1CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH1CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH1CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH1CTL_ODDFRM				29u
 	/* Channel disable */
@@ -13734,21 +13734,21 @@ struct sdk_usbfs_host {
 	/* 0x140: host channel-2 characteristics */
 	uint32_t volatile HCH2CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH2CTL_MPL_msb				10u
-#define USBFS_HOST_HCH2CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH2CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH2CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH2CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH2CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH2CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH2CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH2CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH2CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH2CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH2CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH2CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH2CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH2CTL_DAR_msb				28u
-#define USBFS_HOST_HCH2CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH2CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH2CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH2CTL_ODDFRM				29u
 	/* Channel disable */
@@ -13762,21 +13762,21 @@ struct sdk_usbfs_host {
 	/* 0x160: host channel-3 characteristics */
 	uint32_t volatile HCH3CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH3CTL_MPL_msb				10u
-#define USBFS_HOST_HCH3CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH3CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH3CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH3CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH3CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH3CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH3CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH3CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH3CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH3CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH3CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH3CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH3CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH3CTL_DAR_msb				28u
-#define USBFS_HOST_HCH3CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH3CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH3CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH3CTL_ODDFRM				29u
 	/* Channel disable */
@@ -13790,21 +13790,21 @@ struct sdk_usbfs_host {
 	/* 0x180:  */
 	uint32_t volatile HCH4CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH4CTL_MPL_msb				10u
-#define USBFS_HOST_HCH4CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH4CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH4CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH4CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH4CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH4CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH4CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH4CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH4CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH4CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH4CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH4CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH4CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH4CTL_DAR_msb				28u
-#define USBFS_HOST_HCH4CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH4CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH4CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH4CTL_ODDFRM				29u
 	/* Channel disable */
@@ -13818,21 +13818,21 @@ struct sdk_usbfs_host {
 	/* 0x1A0: host channel-5 characteristics */
 	uint32_t volatile HCH5CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH5CTL_MPL_msb				10u
-#define USBFS_HOST_HCH5CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH5CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH5CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH5CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH5CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH5CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH5CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH5CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH5CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH5CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH5CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH5CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH5CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH5CTL_DAR_msb				28u
-#define USBFS_HOST_HCH5CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH5CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH5CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH5CTL_ODDFRM				29u
 	/* Channel disable */
@@ -13846,21 +13846,21 @@ struct sdk_usbfs_host {
 	/* 0x1C0: host channel-6 characteristics */
 	uint32_t volatile HCH6CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH6CTL_MPL_msb				10u
-#define USBFS_HOST_HCH6CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH6CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH6CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH6CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH6CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH6CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH6CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH6CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH6CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH6CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH6CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH6CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH6CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH6CTL_DAR_msb				28u
-#define USBFS_HOST_HCH6CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH6CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH6CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH6CTL_ODDFRM				29u
 	/* Channel disable */
@@ -13874,21 +13874,21 @@ struct sdk_usbfs_host {
 	/* 0x1E0: host channel-7 characteristics */
 	uint32_t volatile HCH7CTL;
 	/* Maximum packet size */
-#define USBFS_HOST_HCH7CTL_MPL_msb				10u
-#define USBFS_HOST_HCH7CTL_MPL_lsb				0u
+#define USBFS_HOST_HCH7CTL_MPL_Msb				10u
+#define USBFS_HOST_HCH7CTL_MPL_Lsb				0u
 	/* Endpoint number */
-#define USBFS_HOST_HCH7CTL_EPNUM_msb				14u
-#define USBFS_HOST_HCH7CTL_EPNUM_lsb				11u
+#define USBFS_HOST_HCH7CTL_EPNUM_Msb				14u
+#define USBFS_HOST_HCH7CTL_EPNUM_Lsb				11u
 	/* Endpoint direction */
 #define USBFS_HOST_HCH7CTL_EPDIR				15u
 	/* Low-speed device */
 #define USBFS_HOST_HCH7CTL_LSD					17u
 	/* Endpoint type */
-#define USBFS_HOST_HCH7CTL_EPTYPE_msb				19u
-#define USBFS_HOST_HCH7CTL_EPTYPE_lsb				18u
+#define USBFS_HOST_HCH7CTL_EPTYPE_Msb				19u
+#define USBFS_HOST_HCH7CTL_EPTYPE_Lsb				18u
 	/* Device address */
-#define USBFS_HOST_HCH7CTL_DAR_msb				28u
-#define USBFS_HOST_HCH7CTL_DAR_lsb				22u
+#define USBFS_HOST_HCH7CTL_DAR_Msb				28u
+#define USBFS_HOST_HCH7CTL_DAR_Lsb				22u
 	/* Odd frame */
 #define USBFS_HOST_HCH7CTL_ODDFRM				29u
 	/* Channel disable */
@@ -14277,14 +14277,14 @@ struct sdk_usbfs_host {
 	/* 0x110: host channel-0 transfer length */
 	uint32_t volatile HCH0LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH0LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH0LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH0LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH0LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH0LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH0LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH0LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH0LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH0LEN_DPID_msb				30u
-#define USBFS_HOST_HCH0LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH0LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH0LEN_DPID_Lsb				29u
 
 	/* 0x110 */
 	uint8_t RESERVED28[0x130u-0x110u];
@@ -14292,14 +14292,14 @@ struct sdk_usbfs_host {
 	/* 0x130: host channel-1 transfer length */
 	uint32_t volatile HCH1LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH1LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH1LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH1LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH1LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH1LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH1LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH1LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH1LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH1LEN_DPID_msb				30u
-#define USBFS_HOST_HCH1LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH1LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH1LEN_DPID_Lsb				29u
 
 	/* 0x130 */
 	uint8_t RESERVED29[0x150u-0x130u];
@@ -14307,14 +14307,14 @@ struct sdk_usbfs_host {
 	/* 0x150:  */
 	uint32_t volatile HCH2LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH2LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH2LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH2LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH2LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH2LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH2LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH2LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH2LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH2LEN_DPID_msb				30u
-#define USBFS_HOST_HCH2LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH2LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH2LEN_DPID_Lsb				29u
 
 	/* 0x150 */
 	uint8_t RESERVED30[0x170u-0x150u];
@@ -14322,14 +14322,14 @@ struct sdk_usbfs_host {
 	/* 0x170:  */
 	uint32_t volatile HCH3LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH3LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH3LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH3LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH3LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH3LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH3LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH3LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH3LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH3LEN_DPID_msb				30u
-#define USBFS_HOST_HCH3LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH3LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH3LEN_DPID_Lsb				29u
 
 	/* 0x170 */
 	uint8_t RESERVED31[0x190u-0x170u];
@@ -14337,14 +14337,14 @@ struct sdk_usbfs_host {
 	/* 0x190: host channel-4 transfer length */
 	uint32_t volatile HCH4LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH4LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH4LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH4LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH4LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH4LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH4LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH4LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH4LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH4LEN_DPID_msb				30u
-#define USBFS_HOST_HCH4LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH4LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH4LEN_DPID_Lsb				29u
 
 	/* 0x190 */
 	uint8_t RESERVED32[0x1B0u-0x190u];
@@ -14352,14 +14352,14 @@ struct sdk_usbfs_host {
 	/* 0x1B0: host channel-5 transfer length */
 	uint32_t volatile HCH5LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH5LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH5LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH5LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH5LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH5LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH5LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH5LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH5LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH5LEN_DPID_msb				30u
-#define USBFS_HOST_HCH5LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH5LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH5LEN_DPID_Lsb				29u
 
 	/* 0x1B0 */
 	uint8_t RESERVED33[0x1D0u-0x1B0u];
@@ -14367,14 +14367,14 @@ struct sdk_usbfs_host {
 	/* 0x1D0: host channel-6 transfer length */
 	uint32_t volatile HCH6LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH6LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH6LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH6LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH6LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH6LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH6LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH6LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH6LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH6LEN_DPID_msb				30u
-#define USBFS_HOST_HCH6LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH6LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH6LEN_DPID_Lsb				29u
 
 	/* 0x1D0 */
 	uint8_t RESERVED34[0x1F0u-0x1D0u];
@@ -14382,35 +14382,35 @@ struct sdk_usbfs_host {
 	/* 0x1F0: host channel-7 transfer length */
 	uint32_t volatile HCH7LEN;
 	/* Transfer length */
-#define USBFS_HOST_HCH7LEN_TLEN_msb				18u
-#define USBFS_HOST_HCH7LEN_TLEN_lsb				0u
+#define USBFS_HOST_HCH7LEN_TLEN_Msb				18u
+#define USBFS_HOST_HCH7LEN_TLEN_Lsb				0u
 	/* Packet count */
-#define USBFS_HOST_HCH7LEN_PCNT_msb				28u
-#define USBFS_HOST_HCH7LEN_PCNT_lsb				19u
+#define USBFS_HOST_HCH7LEN_PCNT_Msb				28u
+#define USBFS_HOST_HCH7LEN_PCNT_Lsb				19u
 	/* Data PID */
-#define USBFS_HOST_HCH7LEN_DPID_msb				30u
-#define USBFS_HOST_HCH7LEN_DPID_lsb				29u
+#define USBFS_HOST_HCH7LEN_DPID_Msb				30u
+#define USBFS_HOST_HCH7LEN_DPID_Lsb				29u
 
 };
 
 
-#define USBFS_DEVICE ((struct sdk_usbfs_device *)0x50000800)
+#define USBFS_DEVICE ((struct mcu_usbfs_device *)0x50000800)
 
-struct sdk_usbfs_device {
+struct mcu_usbfs_device {
 
 	/* 0x00: device configuration register */
 	uint32_t volatile DCFG;
 	/* Device speed */
-#define USBFS_DEVICE_DCFG_DS_msb				1u
-#define USBFS_DEVICE_DCFG_DS_lsb				0u
+#define USBFS_DEVICE_DCFG_DS_Msb				1u
+#define USBFS_DEVICE_DCFG_DS_Lsb				0u
 	/* Non-zero-length status OUT */
 #define USBFS_DEVICE_DCFG_NZLSOH				2u
 	/* Device address */
-#define USBFS_DEVICE_DCFG_DAR_msb				10u
-#define USBFS_DEVICE_DCFG_DAR_lsb				4u
+#define USBFS_DEVICE_DCFG_DAR_Msb				10u
+#define USBFS_DEVICE_DCFG_DAR_Lsb				4u
 	/* end of periodic frame time */
-#define USBFS_DEVICE_DCFG_EOPFT_msb				12u
-#define USBFS_DEVICE_DCFG_EOPFT_lsb				11u
+#define USBFS_DEVICE_DCFG_EOPFT_Msb				12u
+#define USBFS_DEVICE_DCFG_EOPFT_Lsb				11u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -14444,11 +14444,11 @@ struct sdk_usbfs_device {
 	/* Suspend status */
 #define USBFS_DEVICE_DSTAT_SPST					0u
 	/* Enumerated speed */
-#define USBFS_DEVICE_DSTAT_ES_msb				2u
-#define USBFS_DEVICE_DSTAT_ES_lsb				1u
+#define USBFS_DEVICE_DSTAT_ES_Msb				2u
+#define USBFS_DEVICE_DSTAT_ES_Lsb				1u
 	/* Frame number of the received */
-#define USBFS_DEVICE_DSTAT_FNRSOF_msb				21u
-#define USBFS_DEVICE_DSTAT_FNRSOF_lsb				8u
+#define USBFS_DEVICE_DSTAT_FNRSOF_Msb				21u
+#define USBFS_DEVICE_DSTAT_FNRSOF_Lsb				8u
 
 	/* 0x08 */
 	uint8_t RESERVED2[0x10u-0x08u];
@@ -14488,11 +14488,11 @@ struct sdk_usbfs_device {
 	/* 0x18: device all endpoints interrupt */
 	uint32_t volatile DAEPINT;
 	/* Device all IN endpoint interrupt bits */
-#define USBFS_DEVICE_DAEPINT_IEPITB_msb				3u
-#define USBFS_DEVICE_DAEPINT_IEPITB_lsb				0u
+#define USBFS_DEVICE_DAEPINT_IEPITB_Msb				3u
+#define USBFS_DEVICE_DAEPINT_IEPITB_Lsb				0u
 	/* Device all OUT endpoint interrupt bits */
-#define USBFS_DEVICE_DAEPINT_OEPITB_msb				19u
-#define USBFS_DEVICE_DAEPINT_OEPITB_lsb				16u
+#define USBFS_DEVICE_DAEPINT_OEPITB_Msb				19u
+#define USBFS_DEVICE_DAEPINT_OEPITB_Lsb				16u
 
 	/* 0x18 */
 	uint8_t RESERVED5[0x1Cu-0x18u];
@@ -14500,11 +14500,11 @@ struct sdk_usbfs_device {
 	/* 0x1C: Device all endpoints interrupt enable register */
 	uint32_t volatile DAEPINTEN;
 	/* IN EP interrupt interrupt enable bits */
-#define USBFS_DEVICE_DAEPINTEN_IEPIE_msb			3u
-#define USBFS_DEVICE_DAEPINTEN_IEPIE_lsb			0u
+#define USBFS_DEVICE_DAEPINTEN_IEPIE_Msb			3u
+#define USBFS_DEVICE_DAEPINTEN_IEPIE_Lsb			0u
 	/* OUT endpoint interrupt enable bits */
-#define USBFS_DEVICE_DAEPINTEN_OEPIE_msb			19u
-#define USBFS_DEVICE_DAEPINTEN_OEPIE_lsb			16u
+#define USBFS_DEVICE_DAEPINTEN_OEPIE_Msb			19u
+#define USBFS_DEVICE_DAEPINTEN_OEPIE_Lsb			16u
 
 	/* 0x1C */
 	uint8_t RESERVED6[0x28u-0x1Cu];
@@ -14512,8 +14512,8 @@ struct sdk_usbfs_device {
 	/* 0x28: device VBUS discharge time */
 	uint32_t volatile DVBUSDT;
 	/* Device VBUS discharge time */
-#define USBFS_DEVICE_DVBUSDT_DVBUSDT_msb			15u
-#define USBFS_DEVICE_DVBUSDT_DVBUSDT_lsb			0u
+#define USBFS_DEVICE_DVBUSDT_DVBUSDT_Msb			15u
+#define USBFS_DEVICE_DVBUSDT_DVBUSDT_Lsb			0u
 
 	/* 0x28 */
 	uint8_t RESERVED7[0x2Cu-0x28u];
@@ -14521,8 +14521,8 @@ struct sdk_usbfs_device {
 	/* 0x2C: device VBUS pulsing time */
 	uint32_t volatile DVBUSPT;
 	/* Device VBUS pulsing time */
-#define USBFS_DEVICE_DVBUSPT_DVBUSPT_msb			11u
-#define USBFS_DEVICE_DVBUSPT_DVBUSPT_lsb			0u
+#define USBFS_DEVICE_DVBUSPT_DVBUSPT_Msb			11u
+#define USBFS_DEVICE_DVBUSPT_DVBUSPT_Lsb			0u
 
 	/* 0x2C */
 	uint8_t RESERVED8[0x34u-0x2Cu];
@@ -14530,8 +14530,8 @@ struct sdk_usbfs_device {
 	/* 0x34: device IN endpoint FIFO empty */
 	uint32_t volatile DIEPFEINTEN;
 	/* IN EP Tx FIFO empty interrupt enable */
-#define USBFS_DEVICE_DIEPFEINTEN_IEPTXFEIE_msb			3u
-#define USBFS_DEVICE_DIEPFEINTEN_IEPTXFEIE_lsb			0u
+#define USBFS_DEVICE_DIEPFEINTEN_IEPTXFEIE_Msb			3u
+#define USBFS_DEVICE_DIEPFEINTEN_IEPTXFEIE_Lsb			0u
 
 	/* 0x34 */
 	uint8_t RESERVED9[0x100u-0x34u];
@@ -14539,20 +14539,20 @@ struct sdk_usbfs_device {
 	/* 0x100: device IN endpoint 0 control */
 	uint32_t volatile DIEP0CTL;
 	/* Maximum packet length */
-#define USBFS_DEVICE_DIEP0CTL_MPL_msb				1u
-#define USBFS_DEVICE_DIEP0CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DIEP0CTL_MPL_Msb				1u
+#define USBFS_DEVICE_DIEP0CTL_MPL_Lsb				0u
 	/* endpoint active */
 #define USBFS_DEVICE_DIEP0CTL_EPACT				15u
 	/* NAK status */
 #define USBFS_DEVICE_DIEP0CTL_NAKS				17u
 	/* Endpoint type */
-#define USBFS_DEVICE_DIEP0CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DIEP0CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DIEP0CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DIEP0CTL_EPTYPE_Lsb			18u
 	/* STALL handshake */
 #define USBFS_DEVICE_DIEP0CTL_STALL				21u
 	/* TxFIFO number */
-#define USBFS_DEVICE_DIEP0CTL_TXFNUM_msb			25u
-#define USBFS_DEVICE_DIEP0CTL_TXFNUM_lsb			22u
+#define USBFS_DEVICE_DIEP0CTL_TXFNUM_Msb			25u
+#define USBFS_DEVICE_DIEP0CTL_TXFNUM_Lsb			22u
 	/* Clear NAK */
 #define USBFS_DEVICE_DIEP0CTL_CNAK				26u
 	/* Set NAK */
@@ -14580,13 +14580,13 @@ struct sdk_usbfs_device {
 	/* Clear NAK */
 #define USBFS_DEVICE_DIEP1CTL_CNAK				26u
 	/* Tx FIFO number */
-#define USBFS_DEVICE_DIEP1CTL_TXFNUM_msb			25u
-#define USBFS_DEVICE_DIEP1CTL_TXFNUM_lsb			22u
+#define USBFS_DEVICE_DIEP1CTL_TXFNUM_Msb			25u
+#define USBFS_DEVICE_DIEP1CTL_TXFNUM_Lsb			22u
 	/* STALL handshake */
 #define USBFS_DEVICE_DIEP1CTL_STALL				21u
 	/* Endpoint type */
-#define USBFS_DEVICE_DIEP1CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DIEP1CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DIEP1CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DIEP1CTL_EPTYPE_Lsb			18u
 	/* NAK status */
 #define USBFS_DEVICE_DIEP1CTL_NAKS				17u
 	/* EOFRM/DPID */
@@ -14594,8 +14594,8 @@ struct sdk_usbfs_device {
 	/* Endpoint active */
 #define USBFS_DEVICE_DIEP1CTL_EPACT				15u
 	/* maximum packet length */
-#define USBFS_DEVICE_DIEP1CTL_MPL_msb				10u
-#define USBFS_DEVICE_DIEP1CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DIEP1CTL_MPL_Msb				10u
+#define USBFS_DEVICE_DIEP1CTL_MPL_Lsb				0u
 
 	/* 0x120 */
 	uint8_t RESERVED11[0x140u-0x120u];
@@ -14615,13 +14615,13 @@ struct sdk_usbfs_device {
 	/* Clear NAK */
 #define USBFS_DEVICE_DIEP2CTL_CNAK				26u
 	/* Tx FIFO number */
-#define USBFS_DEVICE_DIEP2CTL_TXFNUM_msb			25u
-#define USBFS_DEVICE_DIEP2CTL_TXFNUM_lsb			22u
+#define USBFS_DEVICE_DIEP2CTL_TXFNUM_Msb			25u
+#define USBFS_DEVICE_DIEP2CTL_TXFNUM_Lsb			22u
 	/* STALL handshake */
 #define USBFS_DEVICE_DIEP2CTL_STALL				21u
 	/* Endpoint type */
-#define USBFS_DEVICE_DIEP2CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DIEP2CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DIEP2CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DIEP2CTL_EPTYPE_Lsb			18u
 	/* NAK status */
 #define USBFS_DEVICE_DIEP2CTL_NAKS				17u
 	/* EOFRM/DPID */
@@ -14629,8 +14629,8 @@ struct sdk_usbfs_device {
 	/* Endpoint active */
 #define USBFS_DEVICE_DIEP2CTL_EPACT				15u
 	/* maximum packet length */
-#define USBFS_DEVICE_DIEP2CTL_MPL_msb				10u
-#define USBFS_DEVICE_DIEP2CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DIEP2CTL_MPL_Msb				10u
+#define USBFS_DEVICE_DIEP2CTL_MPL_Lsb				0u
 
 	/* 0x140 */
 	uint8_t RESERVED12[0x160u-0x140u];
@@ -14650,13 +14650,13 @@ struct sdk_usbfs_device {
 	/* Clear NAK */
 #define USBFS_DEVICE_DIEP3CTL_CNAK				26u
 	/* Tx FIFO number */
-#define USBFS_DEVICE_DIEP3CTL_TXFNUM_msb			25u
-#define USBFS_DEVICE_DIEP3CTL_TXFNUM_lsb			22u
+#define USBFS_DEVICE_DIEP3CTL_TXFNUM_Msb			25u
+#define USBFS_DEVICE_DIEP3CTL_TXFNUM_Lsb			22u
 	/* STALL handshake */
 #define USBFS_DEVICE_DIEP3CTL_STALL				21u
 	/* Endpoint type */
-#define USBFS_DEVICE_DIEP3CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DIEP3CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DIEP3CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DIEP3CTL_EPTYPE_Lsb			18u
 	/* NAK status */
 #define USBFS_DEVICE_DIEP3CTL_NAKS				17u
 	/* EOFRM/DPID */
@@ -14664,8 +14664,8 @@ struct sdk_usbfs_device {
 	/* Endpoint active */
 #define USBFS_DEVICE_DIEP3CTL_EPACT				15u
 	/* maximum packet length */
-#define USBFS_DEVICE_DIEP3CTL_MPL_msb				10u
-#define USBFS_DEVICE_DIEP3CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DIEP3CTL_MPL_Msb				10u
+#define USBFS_DEVICE_DIEP3CTL_MPL_Lsb				0u
 
 	/* 0x160 */
 	uint8_t RESERVED13[0x300u-0x160u];
@@ -14685,15 +14685,15 @@ struct sdk_usbfs_device {
 	/* Snoop mode */
 #define USBFS_DEVICE_DOEP0CTL_SNOOP				20u
 	/* Endpoint type */
-#define USBFS_DEVICE_DOEP0CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DOEP0CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DOEP0CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DOEP0CTL_EPTYPE_Lsb			18u
 	/* NAK status */
 #define USBFS_DEVICE_DOEP0CTL_NAKS				17u
 	/* Endpoint active */
 #define USBFS_DEVICE_DOEP0CTL_EPACT				15u
 	/* Maximum packet length */
-#define USBFS_DEVICE_DOEP0CTL_MPL_msb				1u
-#define USBFS_DEVICE_DOEP0CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DOEP0CTL_MPL_Msb				1u
+#define USBFS_DEVICE_DOEP0CTL_MPL_Lsb				0u
 
 	/* 0x300 */
 	uint8_t RESERVED14[0x320u-0x300u];
@@ -14717,8 +14717,8 @@ struct sdk_usbfs_device {
 	/* Snoop mode */
 #define USBFS_DEVICE_DOEP1CTL_SNOOP				20u
 	/* Endpoint type */
-#define USBFS_DEVICE_DOEP1CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DOEP1CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DOEP1CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DOEP1CTL_EPTYPE_Lsb			18u
 	/* NAK status */
 #define USBFS_DEVICE_DOEP1CTL_NAKS				17u
 	/* EOFRM/DPID */
@@ -14726,8 +14726,8 @@ struct sdk_usbfs_device {
 	/* Endpoint active */
 #define USBFS_DEVICE_DOEP1CTL_EPACT				15u
 	/* maximum packet length */
-#define USBFS_DEVICE_DOEP1CTL_MPL_msb				10u
-#define USBFS_DEVICE_DOEP1CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DOEP1CTL_MPL_Msb				10u
+#define USBFS_DEVICE_DOEP1CTL_MPL_Lsb				0u
 
 	/* 0x320 */
 	uint8_t RESERVED15[0x340u-0x320u];
@@ -14751,8 +14751,8 @@ struct sdk_usbfs_device {
 	/* Snoop mode */
 #define USBFS_DEVICE_DOEP2CTL_SNOOP				20u
 	/* Endpoint type */
-#define USBFS_DEVICE_DOEP2CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DOEP2CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DOEP2CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DOEP2CTL_EPTYPE_Lsb			18u
 	/* NAK status */
 #define USBFS_DEVICE_DOEP2CTL_NAKS				17u
 	/* EOFRM/DPID */
@@ -14760,8 +14760,8 @@ struct sdk_usbfs_device {
 	/* Endpoint active */
 #define USBFS_DEVICE_DOEP2CTL_EPACT				15u
 	/* maximum packet length */
-#define USBFS_DEVICE_DOEP2CTL_MPL_msb				10u
-#define USBFS_DEVICE_DOEP2CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DOEP2CTL_MPL_Msb				10u
+#define USBFS_DEVICE_DOEP2CTL_MPL_Lsb				0u
 
 	/* 0x340 */
 	uint8_t RESERVED16[0x360u-0x340u];
@@ -14785,8 +14785,8 @@ struct sdk_usbfs_device {
 	/* Snoop mode */
 #define USBFS_DEVICE_DOEP3CTL_SNOOP				20u
 	/* Endpoint type */
-#define USBFS_DEVICE_DOEP3CTL_EPTYPE_msb			19u
-#define USBFS_DEVICE_DOEP3CTL_EPTYPE_lsb			18u
+#define USBFS_DEVICE_DOEP3CTL_EPTYPE_Msb			19u
+#define USBFS_DEVICE_DOEP3CTL_EPTYPE_Lsb			18u
 	/* NAK status */
 #define USBFS_DEVICE_DOEP3CTL_NAKS				17u
 	/* EOFRM/DPID */
@@ -14794,8 +14794,8 @@ struct sdk_usbfs_device {
 	/* Endpoint active */
 #define USBFS_DEVICE_DOEP3CTL_EPACT				15u
 	/* maximum packet length */
-#define USBFS_DEVICE_DOEP3CTL_MPL_msb				10u
-#define USBFS_DEVICE_DOEP3CTL_MPL_lsb				0u
+#define USBFS_DEVICE_DOEP3CTL_MPL_Msb				10u
+#define USBFS_DEVICE_DOEP3CTL_MPL_Lsb				0u
 
 	/* 0x108: device endpoint-0 interrupt */
 	uint32_t volatile DIEP0INTF;
@@ -14933,11 +14933,11 @@ struct sdk_usbfs_device {
 	/* 0x110: device IN endpoint-0 transfer length */
 	uint32_t volatile DIEP0LEN;
 	/* Packet count */
-#define USBFS_DEVICE_DIEP0LEN_PCNT_msb				20u
-#define USBFS_DEVICE_DIEP0LEN_PCNT_lsb				19u
+#define USBFS_DEVICE_DIEP0LEN_PCNT_Msb				20u
+#define USBFS_DEVICE_DIEP0LEN_PCNT_Lsb				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DIEP0LEN_TLEN_msb				6u
-#define USBFS_DEVICE_DIEP0LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DIEP0LEN_TLEN_Msb				6u
+#define USBFS_DEVICE_DIEP0LEN_TLEN_Lsb				0u
 
 	/* 0x110 */
 	uint8_t RESERVED24[0x310u-0x110u];
@@ -14945,25 +14945,25 @@ struct sdk_usbfs_device {
 	/* 0x310: device OUT endpoint-0 transfer length */
 	uint32_t volatile DOEP0LEN;
 	/* SETUP packet count */
-#define USBFS_DEVICE_DOEP0LEN_STPCNT_msb			30u
-#define USBFS_DEVICE_DOEP0LEN_STPCNT_lsb			29u
+#define USBFS_DEVICE_DOEP0LEN_STPCNT_Msb			30u
+#define USBFS_DEVICE_DOEP0LEN_STPCNT_Lsb			29u
 	/* Packet count */
 #define USBFS_DEVICE_DOEP0LEN_PCNT				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DOEP0LEN_TLEN_msb				6u
-#define USBFS_DEVICE_DOEP0LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DOEP0LEN_TLEN_Msb				6u
+#define USBFS_DEVICE_DOEP0LEN_TLEN_Lsb				0u
 
 	/* 0x130: device IN endpoint-1 transfer length */
 	uint32_t volatile DIEP1LEN;
 	/* Multi packet count per frame */
-#define USBFS_DEVICE_DIEP1LEN_MCPF_msb				30u
-#define USBFS_DEVICE_DIEP1LEN_MCPF_lsb				29u
+#define USBFS_DEVICE_DIEP1LEN_MCPF_Msb				30u
+#define USBFS_DEVICE_DIEP1LEN_MCPF_Lsb				29u
 	/* Packet count */
-#define USBFS_DEVICE_DIEP1LEN_PCNT_msb				28u
-#define USBFS_DEVICE_DIEP1LEN_PCNT_lsb				19u
+#define USBFS_DEVICE_DIEP1LEN_PCNT_Msb				28u
+#define USBFS_DEVICE_DIEP1LEN_PCNT_Lsb				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DIEP1LEN_TLEN_msb				18u
-#define USBFS_DEVICE_DIEP1LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DIEP1LEN_TLEN_Msb				18u
+#define USBFS_DEVICE_DIEP1LEN_TLEN_Lsb				0u
 
 	/* 0x130 */
 	uint8_t RESERVED25[0x150u-0x130u];
@@ -14971,14 +14971,14 @@ struct sdk_usbfs_device {
 	/* 0x150: device IN endpoint-2 transfer length */
 	uint32_t volatile DIEP2LEN;
 	/* Multi packet count per frame */
-#define USBFS_DEVICE_DIEP2LEN_MCPF_msb				30u
-#define USBFS_DEVICE_DIEP2LEN_MCPF_lsb				29u
+#define USBFS_DEVICE_DIEP2LEN_MCPF_Msb				30u
+#define USBFS_DEVICE_DIEP2LEN_MCPF_Lsb				29u
 	/* Packet count */
-#define USBFS_DEVICE_DIEP2LEN_PCNT_msb				28u
-#define USBFS_DEVICE_DIEP2LEN_PCNT_lsb				19u
+#define USBFS_DEVICE_DIEP2LEN_PCNT_Msb				28u
+#define USBFS_DEVICE_DIEP2LEN_PCNT_Lsb				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DIEP2LEN_TLEN_msb				18u
-#define USBFS_DEVICE_DIEP2LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DIEP2LEN_TLEN_Msb				18u
+#define USBFS_DEVICE_DIEP2LEN_TLEN_Lsb				0u
 
 	/* 0x150 */
 	uint8_t RESERVED26[0x170u-0x150u];
@@ -14986,14 +14986,14 @@ struct sdk_usbfs_device {
 	/* 0x170: device IN endpoint-3 transfer length */
 	uint32_t volatile DIEP3LEN;
 	/* Multi packet count per frame */
-#define USBFS_DEVICE_DIEP3LEN_MCPF_msb				30u
-#define USBFS_DEVICE_DIEP3LEN_MCPF_lsb				29u
+#define USBFS_DEVICE_DIEP3LEN_MCPF_Msb				30u
+#define USBFS_DEVICE_DIEP3LEN_MCPF_Lsb				29u
 	/* Packet count */
-#define USBFS_DEVICE_DIEP3LEN_PCNT_msb				28u
-#define USBFS_DEVICE_DIEP3LEN_PCNT_lsb				19u
+#define USBFS_DEVICE_DIEP3LEN_PCNT_Msb				28u
+#define USBFS_DEVICE_DIEP3LEN_PCNT_Lsb				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DIEP3LEN_TLEN_msb				18u
-#define USBFS_DEVICE_DIEP3LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DIEP3LEN_TLEN_Msb				18u
+#define USBFS_DEVICE_DIEP3LEN_TLEN_Lsb				0u
 
 	/* 0x170 */
 	uint8_t RESERVED27[0x330u-0x170u];
@@ -15001,14 +15001,14 @@ struct sdk_usbfs_device {
 	/* 0x330: device OUT endpoint-1 transfer length */
 	uint32_t volatile DOEP1LEN;
 	/* SETUP packet count/Received data PID */
-#define USBFS_DEVICE_DOEP1LEN_STPCNT_RXDPID_msb			30u
-#define USBFS_DEVICE_DOEP1LEN_STPCNT_RXDPID_lsb			29u
+#define USBFS_DEVICE_DOEP1LEN_STPCNT_RXDPID_Msb			30u
+#define USBFS_DEVICE_DOEP1LEN_STPCNT_RXDPID_Lsb			29u
 	/* Packet count */
-#define USBFS_DEVICE_DOEP1LEN_PCNT_msb				28u
-#define USBFS_DEVICE_DOEP1LEN_PCNT_lsb				19u
+#define USBFS_DEVICE_DOEP1LEN_PCNT_Msb				28u
+#define USBFS_DEVICE_DOEP1LEN_PCNT_Lsb				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DOEP1LEN_TLEN_msb				18u
-#define USBFS_DEVICE_DOEP1LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DOEP1LEN_TLEN_Msb				18u
+#define USBFS_DEVICE_DOEP1LEN_TLEN_Lsb				0u
 
 	/* 0x330 */
 	uint8_t RESERVED28[0x350u-0x330u];
@@ -15016,14 +15016,14 @@ struct sdk_usbfs_device {
 	/* 0x350: device OUT endpoint-2 transfer length */
 	uint32_t volatile DOEP2LEN;
 	/* SETUP packet count/Received data PID */
-#define USBFS_DEVICE_DOEP2LEN_STPCNT_RXDPID_msb			30u
-#define USBFS_DEVICE_DOEP2LEN_STPCNT_RXDPID_lsb			29u
+#define USBFS_DEVICE_DOEP2LEN_STPCNT_RXDPID_Msb			30u
+#define USBFS_DEVICE_DOEP2LEN_STPCNT_RXDPID_Lsb			29u
 	/* Packet count */
-#define USBFS_DEVICE_DOEP2LEN_PCNT_msb				28u
-#define USBFS_DEVICE_DOEP2LEN_PCNT_lsb				19u
+#define USBFS_DEVICE_DOEP2LEN_PCNT_Msb				28u
+#define USBFS_DEVICE_DOEP2LEN_PCNT_Lsb				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DOEP2LEN_TLEN_msb				18u
-#define USBFS_DEVICE_DOEP2LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DOEP2LEN_TLEN_Msb				18u
+#define USBFS_DEVICE_DOEP2LEN_TLEN_Lsb				0u
 
 	/* 0x350 */
 	uint8_t RESERVED29[0x370u-0x350u];
@@ -15031,20 +15031,20 @@ struct sdk_usbfs_device {
 	/* 0x370: device OUT endpoint-3 transfer length */
 	uint32_t volatile DOEP3LEN;
 	/* SETUP packet count/Received data PID */
-#define USBFS_DEVICE_DOEP3LEN_STPCNT_RXDPID_msb			30u
-#define USBFS_DEVICE_DOEP3LEN_STPCNT_RXDPID_lsb			29u
+#define USBFS_DEVICE_DOEP3LEN_STPCNT_RXDPID_Msb			30u
+#define USBFS_DEVICE_DOEP3LEN_STPCNT_RXDPID_Lsb			29u
 	/* Packet count */
-#define USBFS_DEVICE_DOEP3LEN_PCNT_msb				28u
-#define USBFS_DEVICE_DOEP3LEN_PCNT_lsb				19u
+#define USBFS_DEVICE_DOEP3LEN_PCNT_Msb				28u
+#define USBFS_DEVICE_DOEP3LEN_PCNT_Lsb				19u
 	/* Transfer length */
-#define USBFS_DEVICE_DOEP3LEN_TLEN_msb				18u
-#define USBFS_DEVICE_DOEP3LEN_TLEN_lsb				0u
+#define USBFS_DEVICE_DOEP3LEN_TLEN_Msb				18u
+#define USBFS_DEVICE_DOEP3LEN_TLEN_Lsb				0u
 
 	/* 0x118: device IN endpoint  0 transmit FIFO */
 	uint32_t volatile DIEP0TFSTAT;
 	/* IN endpoint TxFIFO space */
-#define USBFS_DEVICE_DIEP0TFSTAT_IEPTFS_msb			15u
-#define USBFS_DEVICE_DIEP0TFSTAT_IEPTFS_lsb			0u
+#define USBFS_DEVICE_DIEP0TFSTAT_IEPTFS_Msb			15u
+#define USBFS_DEVICE_DIEP0TFSTAT_IEPTFS_Lsb			0u
 
 	/* 0x118 */
 	uint8_t RESERVED30[0x138u-0x118u];
@@ -15052,8 +15052,8 @@ struct sdk_usbfs_device {
 	/* 0x138: device IN endpoint 1 transmit FIFO */
 	uint32_t volatile DIEP1TFSTAT;
 	/* IN endpoint TxFIFO space */
-#define USBFS_DEVICE_DIEP1TFSTAT_IEPTFS_msb			15u
-#define USBFS_DEVICE_DIEP1TFSTAT_IEPTFS_lsb			0u
+#define USBFS_DEVICE_DIEP1TFSTAT_IEPTFS_Msb			15u
+#define USBFS_DEVICE_DIEP1TFSTAT_IEPTFS_Lsb			0u
 
 	/* 0x138 */
 	uint8_t RESERVED31[0x158u-0x138u];
@@ -15061,8 +15061,8 @@ struct sdk_usbfs_device {
 	/* 0x158: device IN endpoint  2 transmit FIFO */
 	uint32_t volatile DIEP2TFSTAT;
 	/* IN endpoint TxFIFO space */
-#define USBFS_DEVICE_DIEP2TFSTAT_IEPTFS_msb			15u
-#define USBFS_DEVICE_DIEP2TFSTAT_IEPTFS_lsb			0u
+#define USBFS_DEVICE_DIEP2TFSTAT_IEPTFS_Msb			15u
+#define USBFS_DEVICE_DIEP2TFSTAT_IEPTFS_Lsb			0u
 
 	/* 0x158 */
 	uint8_t RESERVED32[0x178u-0x158u];
@@ -15070,15 +15070,15 @@ struct sdk_usbfs_device {
 	/* 0x178: device IN endpoint  3 transmit FIFO */
 	uint32_t volatile DIEP3TFSTAT;
 	/* IN endpoint TxFIFO space */
-#define USBFS_DEVICE_DIEP3TFSTAT_IEPTFS_msb			15u
-#define USBFS_DEVICE_DIEP3TFSTAT_IEPTFS_lsb			0u
+#define USBFS_DEVICE_DIEP3TFSTAT_IEPTFS_Msb			15u
+#define USBFS_DEVICE_DIEP3TFSTAT_IEPTFS_Lsb			0u
 
 };
 
 
-#define USBFS_PWRCLK ((struct sdk_usbfs_pwrclk *)0x50000E00)
+#define USBFS_PWRCLK ((struct mcu_usbfs_pwrclk *)0x50000E00)
 
-struct sdk_usbfs_pwrclk {
+struct mcu_usbfs_pwrclk {
 
 	/* 0x00: power and clock gating control */
 	uint32_t volatile PWRCLKCTL;
@@ -15090,17 +15090,17 @@ struct sdk_usbfs_pwrclk {
 };
 
 
-#define WWDGT ((struct sdk_wwdgt *)0x40002C00)
+#define WWDGT ((struct mcu_wwdgt *)0x40002C00)
 
-struct sdk_wwdgt {
+struct mcu_wwdgt {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTL;
 	/* Activation bit */
 #define WWDGT_CTL_WDGTEN					7u
 	/* 7-bit counter */
-#define WWDGT_CTL_CNT_msb					6u
-#define WWDGT_CTL_CNT_lsb					0u
+#define WWDGT_CTL_CNT_Msb					6u
+#define WWDGT_CTL_CNT_Lsb					0u
 
 	/* 0x00 */
 	uint8_t RESERVED0[0x04u-0x00u];
@@ -15110,11 +15110,11 @@ struct sdk_wwdgt {
 	/* Early wakeup interrupt */
 #define WWDGT_CFG_EWIE						9u
 	/* Prescaler */
-#define WWDGT_CFG_PSC_msb					8u
-#define WWDGT_CFG_PSC_lsb					7u
+#define WWDGT_CFG_PSC_Msb					8u
+#define WWDGT_CFG_PSC_Lsb					7u
 	/* 7-bit window value */
-#define WWDGT_CFG_WIN_msb					6u
-#define WWDGT_CFG_WIN_lsb					0u
+#define WWDGT_CFG_WIN_Msb					6u
+#define WWDGT_CFG_WIN_Lsb					0u
 
 	/* 0x04 */
 	uint8_t RESERVED1[0x08u-0x04u];

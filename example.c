@@ -22,7 +22,7 @@ enum led {
 void
 led_set(enum led led, int onoff)
 {
-	struct sdk_gpio *gpio;
+	struct mcu_gpio *gpio;
 	uint8_t pin;
 
 	switch (led) {

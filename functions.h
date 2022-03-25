@@ -1,19 +1,13 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-
-/* macros */
 #define MASK32(o)		(o == 31 ? 0xFFFFFFFF : (1u << (o + 1)) - 1)
-#define MASK(fld)		(MASK32(fld##_msb) ^ MASK32(fld##_lsb - 1))
+#define MASK(fld)		(MASK32(fld##_Msb) ^ MASK32(fld##_Lsb - 1))
 #define BIT(fld)		(1u << (fld))
-#define BITS(fld, val)		((val) << fld##_lsb)
-#define FIELD(reg, fld)		(((reg) & MASK32(fld##_msb)) >> fld##_lsb)
+#define BITS(fld, val)		((val) << fld##_Lsb)
+#define FIELD(reg, fld)		(((reg) & MASK32(fld##_Msb)) >> fld##_Lsb)
 
 /* halt the execution */
 void __stop_program(void);
-
-/* interrupts */
-void irq_sercom0(void);
-void irq_usart0(void); /* from irq_sercom0 */
 
 
 /* clock */
@@ -52,43 +46,43 @@ void port_pin_clear(uint8_t pin);
 /* usart */
 
 /* set `usart` to UART mode with internal clock rate and a clock pin */
-void usart_set_internal_async(struct sdk_usart *usart);
+void usart_set_internal_async(struct mcu_usart *usart);
 
 /* set `usart` number of data bits per frame (either 8 or 9) */
-void usart_set_data_bits(struct sdk_usart *usart, uint8_t bits);
+void usart_set_data_bits(struct mcu_usart *usart, uint8_t bits);
 
 /* set `usart` baud rate by reading the current clock rate */
-void usart_set_baud_rate(struct sdk_usart *usart, uint16_t baud_hz);
+void usart_set_baud_rate(struct mcu_usart *usart, uint16_t baud_hz);
 
 /* set `usart` pinout within the pad for TX */
-void usart_set_pinout_tx(struct sdk_usart *usart, uint8_t txpo);
+void usart_set_pinout_tx(struct mcu_usart *usart, uint8_t txpo);
 
 /* set `usart` pinout within the pad for RX */
-void usart_set_pinout_rx(struct sdk_usart *usart, uint8_t rxpo);
+void usart_set_pinout_rx(struct mcu_usart *usart, uint8_t rxpo);
 
 /* set `usart` number of stop bits (1 or 2) */
-void usart_set_stop_bits(struct sdk_usart *usart, uint8_t bits);
+void usart_set_stop_bits(struct mcu_usart *usart, uint8_t bits);
 
 /* set `usart` to parity mode with "odd" parity */
-void usart_set_parity_odd(struct sdk_usart *usart);
+void usart_set_parity_odd(struct mcu_usart *usart);
 
 /* set `usart` to parity mode with "even" parity */
-void usart_set_parity_even(struct sdk_usart *usart);
+void usart_set_parity_even(struct mcu_usart *usart);
 
 /* set `usart` data order to MSB first */
-void usart_set_most_significant_bit_first(struct sdk_usart *usart);
+void usart_set_most_significant_bit_first(struct mcu_usart *usart);
 
 /* set `usart` data order to LSB first */
-void usart_set_least_significant_bit_first(struct sdk_usart *usart);
+void usart_set_least_significant_bit_first(struct mcu_usart *usart);
 
 /* enable the usart, to call last before sending data */
-void usart_enable(struct sdk_usart *usart);
+void usart_enable(struct mcu_usart *usart);
 
 /* transmit one byte over the already configured usart */
-void usart_send_byte(struct sdk_usart *usart, uint8_t byte);
+void usart_send_byte(struct mcu_usart *usart, uint8_t byte);
 
 /* set `usart` to trigger interrupts */
-void usart_enable_interrupts(struct sdk_usart *usart);
+void usart_enable_interrupts(struct mcu_usart *usart);
 
 
 /* power */
